@@ -1,0 +1,33 @@
+import type { Metadata } from "next";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+
+export const metadata: Metadata = { title: "Page not found" };
+
+export default function NotFound() {
+  return (
+    <section className="flex min-h-[65vh] items-center py-24">
+      <Container>
+        <Eyebrow>404</Eyebrow>
+        <h1 className="mt-5 font-display text-display-sm font-medium text-ink">
+          This page has left the listing.
+        </h1>
+        <p className="mt-5 max-w-xl text-graphite">
+          The address you are looking for does not exist — or has recently been sold. Let us take
+          you somewhere worth seeing.
+        </p>
+        <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <Button href="/" size="lg">
+            Back to home
+          </Button>
+          <Button variant="ghost" href="/#work">
+            See our work
+            <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+          </Button>
+        </div>
+      </Container>
+    </section>
+  );
+}

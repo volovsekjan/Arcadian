@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="64" viewBox="0 0 240 64">
+  <g transform="translate(8,0)"><rect x="6" y="18" width="28" height="28" fill="none" stroke="#4A463D" stroke-width="2.5"/><line x1="6" y1="18" x2="34" y2="46" stroke="#4A463D" stroke-width="2.5"/></g>
+  <text x="56" y="39" font-family="Georgia, serif" font-size="17" letter-spacing="3" fill="#4A463D">NORDHAUS</text>
+</svg>

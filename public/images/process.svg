@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <defs>
+    <linearGradient id="pr" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#F1ECE3"/>
+      <stop offset="1" stop-color="#D9CBB2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1500" fill="url(#pr)"/>
+  <rect x="56" y="56" width="1088" height="1388" fill="none" stroke="#4A463D" stroke-width="1.5" opacity="0.3"/>
+  <g stroke="#4A463D" stroke-width="2.5" fill="none" opacity="0.55">
+    <line x1="180" y1="1080" x2="1020" y2="1080"/>
+    <path d="M340 1080 V640 A160 160 0 0 1 660 640 V1080"/>
+    <line x1="500" y1="520" x2="500" y2="1080"/>
+    <rect x="760" y="720" width="220" height="360"/>
+    <line x1="870" y1="720" x2="870" y2="1080"/>
+  </g>
+  <circle cx="920" cy="330" r="70" stroke="#A9834C" stroke-width="2.5" fill="none" opacity="0.6"/>
+  <text x="600" y="1360" text-anchor="middle" font-family="Georgia, serif" font-size="30" letter-spacing="10" fill="#8C877A">PLACEHOLDER</text>
+</svg>
