@@ -30,7 +30,7 @@ export type Step = {
 };
 
 export type PricingTier = {
-  id: "single" | "studio" | "agency";
+  id: "starter" | "management" | "funnel-takeover";
   name: string;
   tagline: string;
   /** Display price, e.g. "€180" — [PLACEHOLDER] until real pricing is set. */

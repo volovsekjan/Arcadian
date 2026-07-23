@@ -79,7 +79,7 @@ export function Pricing() {
         <Reveal delay={0.16}>
           {/* TODO [PLACEHOLDER]: confirm billing terms before launch */}
           <p className="mt-10 text-center text-sm text-graphite">
-            All prices exclude VAT. Pause or cancel the Studio plan any time.
+            All prices exclude VAT.
           </p>
         </Reveal>
       </Container>

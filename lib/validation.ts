@@ -2,9 +2,9 @@ import { z } from "zod";
 
 /** Options for the "Plan of interest" select in the contact form. */
 export const planOptions = [
-  { value: "single", label: "Single — one-off listing" },
-  { value: "studio", label: "Studio — monthly plan" },
-  { value: "agency", label: "Agency — teams & brokerages" },
+  { value: "starter", label: "Starter — content done for you" },
+  { value: "management", label: "Management — social media, fully managed" },
+  { value: "funnel-takeover", label: "Funnel Takeover — we run your selling process" },
   { value: "not-sure", label: "Not sure yet" },
 ] as const;
 
@@ -19,7 +19,7 @@ export const contactSchema = z.object({
     .email("Please enter a valid email address.")
     .max(254, "That email address is too long."),
   company: z.string().trim().max(120, "Company name is too long.").optional().or(z.literal("")),
-  plan: z.enum(["single", "studio", "agency", "not-sure"], {
+  plan: z.enum(["starter", "management", "funnel-takeover", "not-sure"], {
     errorMap: () => ({ message: "Please choose a plan." }),
   }),
   message: z

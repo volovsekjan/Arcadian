@@ -13,7 +13,7 @@ export const faq: FaqItem[] = [
   {
     question: "How fast will I get my video?",
     answer:
-      "Turnaround depends on your plan — typically [X] days for a single video and priority delivery on the Studio and Agency plans.",
+      "Turnaround depends on your plan — typically [X] days for a video, with priority delivery on the Management and Funnel Takeover plans.",
   },
   {
     question: "Which platforms are the videos made for?",
@@ -23,7 +23,7 @@ export const faq: FaqItem[] = [
   {
     question: "Can I request changes?",
     answer:
-      "Yes. Every plan includes revisions so the final video is exactly how you want it.",
+      "If something doesn't feel right, let us know — we'll work with you to make sure the content fits your brand.",
   },
   {
     question: "What formats do I receive?",
