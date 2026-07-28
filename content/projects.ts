@@ -1,10 +1,12 @@
 import type { Project } from "./types";
 
 /**
- * Portfolio projects shown in the hero marquee and the Selected Work grid.
+ * Work shown in the hero marquee and the Selected Work grid.
  *
- * TODO [PLACEHOLDER]: every entry below is placeholder content. Before launch:
- *  1. Replace titles, locations, and tags with real projects.
+ * Every entry below is CONCEPT work — creative demonstrations of the format,
+ * not active property listings and not client projects. They are labelled as
+ * such on the cards and in the section copy. When real client work exists:
+ *  1. Add it with `kind: "client"` and accurate title/location/deliverables.
  *  2. Replace the SVG posters in /public/posters with real video poster frames
  *     (JPG/WebP, 9:16, ~720×1280).
  *  3. Set `video` to the hosted stream URL — use Mux or Cloudflare Stream,
@@ -12,66 +14,82 @@ import type { Project } from "./types";
  */
 export const projects: Project[] = [
   {
-    slug: "lakeside-penthouse",
-    title: "Lakeside Penthouse",
-    location: "Vienna",
-    tags: ["Residential", "Penthouse"],
+    slug: "marina-apartment",
+    title: "Marina Apartment",
+    location: "Concept project",
+    tags: ["Apartment", "Concept"],
+    kind: "concept",
+    deliverables: "1 Reel · 6 Story frames · 1 carousel",
     poster: "/posters/project-01.svg",
     video: null,
   },
   {
-    slug: "villa-miramar",
-    title: "Villa Miramar",
-    location: "Lisbon",
-    tags: ["Residential", "Villa"],
+    slug: "palm-villa",
+    title: "Beachfront Villa",
+    location: "Concept project",
+    tags: ["Villa", "Concept"],
+    kind: "concept",
+    deliverables: "1 Reel · 2 short cuts · 4 Story frames",
     poster: "/posters/project-02.svg",
     video: null,
   },
   {
-    slug: "meridian-loft",
-    title: "The Meridian Loft",
-    location: "Berlin",
-    tags: ["Residential", "Loft"],
+    slug: "downtown-loft",
+    title: "Downtown Loft",
+    location: "Concept project",
+    tags: ["Loft", "Concept"],
+    kind: "concept",
+    deliverables: "1 Reel · 1 carousel · 5 Story frames",
     poster: "/posters/project-03.svg",
     video: null,
   },
   {
-    slug: "chalet-aurora",
-    title: "Chalet Aurora",
-    location: "Kitzbühel",
-    tags: ["Residential", "Chalet"],
+    slug: "hillside-chalet",
+    title: "Hillside Chalet",
+    location: "Concept project",
+    tags: ["Chalet", "Concept"],
+    kind: "concept",
+    deliverables: "1 Reel · 2 short cuts · 1 carousel",
     poster: "/posters/project-04.svg",
     video: null,
   },
   {
-    slug: "palazzo-serena",
-    title: "Palazzo Serena",
-    location: "Milan",
-    tags: ["Residential", "Apartment"],
+    slug: "classic-residence",
+    title: "Classic Residence",
+    location: "Concept project",
+    tags: ["Apartment", "Concept"],
+    kind: "concept",
+    deliverables: "1 Reel · 6 Story frames",
     poster: "/posters/project-05.svg",
     video: null,
   },
   {
-    slug: "orchard-house",
-    title: "The Orchard House",
-    location: "Ljubljana",
-    tags: ["Residential", "Family Home"],
+    slug: "garden-family-home",
+    title: "Garden Family Home",
+    location: "Concept project",
+    tags: ["Family Home", "Concept"],
+    kind: "concept",
+    deliverables: "1 Reel · 1 carousel · 4 Story frames",
     poster: "/posters/project-06.svg",
     video: null,
   },
   {
-    slug: "villa-adriatica",
-    title: "Villa Adriatica",
-    location: "Split",
-    tags: ["Residential", "Villa"],
+    slug: "coastal-villa",
+    title: "Coastal Villa",
+    location: "Concept project",
+    tags: ["Villa", "Concept"],
+    kind: "concept",
+    deliverables: "1 Reel · 2 short cuts · 6 Story frames",
     poster: "/posters/project-07.svg",
     video: null,
   },
   {
     slug: "sky-garden-residence",
     title: "Sky Garden Residence",
-    location: "Zagreb",
-    tags: ["Residential", "New Build"],
+    location: "Concept project",
+    tags: ["New Build", "Concept"],
+    kind: "concept",
+    deliverables: "1 Reel · 1 carousel · 5 Story frames",
     poster: "/posters/project-08.svg",
     video: null,
   },

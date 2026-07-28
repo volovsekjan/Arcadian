@@ -4,29 +4,31 @@
  */
 export const site = {
   name: "Arcadian",
-  tagline: "Cinematic property videos, made from your photos.",
+  tagline: "Property videos and social content made from the photos you already have.",
   description:
-    "Arcadian turns your property photos into scroll-stopping, cinematic videos made for Instagram, TikTok, and Reels — no shoot to schedule, no crew to coordinate.",
+    "Arcadian turns existing property photos into videos, Stories and feed posts for Dubai real estate agencies. Choose ready-to-publish content or fully managed posting.",
   // TODO [PLACEHOLDER]: replace with the real production domain before launch.
   url: "https://arcadian.example.com",
   // TODO [PLACEHOLDER]: replace with the real contact email before launch.
+  // The landing page does not render this address while it is a placeholder —
+  // it is kept for the legal pages and JSON-LD, which must be updated too.
   email: "hello@arcadian.example.com",
   responseNote: "We reply within one business day.",
   locale: "en",
   nav: [
     { label: "Work", href: "/#work" },
     { label: "Services", href: "/#services" },
-    { label: "How it works", href: "/#process" },
+    { label: "How It Works", href: "/#process" },
     { label: "Pricing", href: "/#pricing" },
     { label: "FAQ", href: "/#faq" },
   ],
-  cta: { label: "Get a video", href: "/#contact" },
-  socials: [
-    // TODO [PLACEHOLDER]: replace with real profile URLs.
-    { name: "Instagram", href: "https://instagram.com/arcadian.example" },
-    { name: "TikTok", href: "https://tiktok.com/@arcadian.example" },
-    { name: "YouTube", href: "https://youtube.com/@arcadian.example" },
-  ],
+  cta: { label: "Book a Call", href: "/#contact" },
+  /**
+   * TODO: add real profile URLs when the accounts exist, e.g.
+   * { name: "Instagram", href: "https://instagram.com/..." }.
+   * Kept empty on purpose — placeholder links must not render on the site.
+   */
+  socials: [] as { name: string; href: string }[],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "/terms" },

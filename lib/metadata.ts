@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
 
-const defaultTitle = `${site.name} — Cinematic Real Estate Videos, Made From Your Photos`;
+const defaultTitle = `${site.name} | Real Estate Content for Dubai Agencies`;
 
 /**
  * Site-wide metadata defaults (App Router Metadata API).
@@ -15,12 +15,12 @@ export const defaultMetadata: Metadata = {
   },
   description: site.description,
   keywords: [
-    "real estate video",
-    "property video production",
-    "real estate reels",
+    "real estate content Dubai",
+    "property video from photos",
+    "real estate reels Dubai",
     "listing videos",
-    "cinematic property tour",
-    "real estate social media content",
+    "real estate social media management Dubai",
+    "property marketing content",
   ],
   authors: [{ name: site.name }],
   creator: site.name,

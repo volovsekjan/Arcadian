@@ -5,7 +5,7 @@ import { site } from "@/content/site";
 // Windows builds; the Edge bundle works everywhere (including Vercel).
 export const runtime = "edge";
 
-export const alt = `${site.name} — Cinematic real estate videos, made from your photos`;
+export const alt = `${site.name} — Property videos and social content made from your listing photos`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -59,10 +59,10 @@ export default function OpenGraphImage() {
               maxWidth: 980,
             }}
           >
-            Every Listing Deserves a Film.
+            Better content that sells faster.
           </div>
           <div style={{ fontSize: 30, color: "#8C877A", maxWidth: 900 }}>
-            Cinematic property videos for Instagram, TikTok & Reels — made from your photos.
+            Videos, Stories and feed posts for Dubai agencies — made from your listing photos.
           </div>
         </div>
         <div style={{ display: "flex", width: 220, height: 3, background: "#A9834C" }} />

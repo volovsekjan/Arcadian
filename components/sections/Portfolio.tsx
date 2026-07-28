@@ -17,11 +17,11 @@ export function Portfolio() {
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
             eyebrow="Selected work"
-            title="Projects that define our style."
-            description="A few of the homes we have turned into films — every one starting from photos alone."
+            title="Examples of how we turn listing photos into videos, posts and Story assets."
+            description="The projects below are concept work — creative demonstrations of the format, not active property listings. Client work will be shown here as it is published."
           />
           <Button variant="ghost" href="/#contact" className="hidden md:inline-flex">
-            Start your project
+            Book a Call
             <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
           </Button>
         </Reveal>

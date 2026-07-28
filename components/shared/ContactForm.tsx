@@ -7,7 +7,12 @@ import { CheckCircle2, ChevronDown, Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-import { contactSchema, planOptions, type ContactInput } from "@/lib/validation";
+import {
+  contactSchema,
+  listingVolumeOptions,
+  serviceOptions,
+  type ContactInput,
+} from "@/lib/validation";
 
 const fieldClasses =
   "w-full rounded-xl border border-ivory/15 bg-ivory/5 px-4 py-3 text-sm text-ivory placeholder:text-ivory/60 transition-colors focus-visible:ring-offset-espresso";
@@ -21,7 +26,7 @@ type Status = "idle" | "error" | "success";
 type ContactApiResponse = { ok: boolean; message: string };
 
 const DEFAULT_ERROR =
-  "Something went wrong sending your message. Please try again, or email us directly.";
+  "Something went wrong sending your request. Please try again, or message us directly.";
 
 /**
  * Contact form on the espresso CTA band — React Hook Form + Zod,
@@ -48,9 +53,13 @@ export function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
+      whatsapp: "",
       company: "",
-      plan: "not-sure",
+      listingUrl: "",
+      listingsPerMonth: "not-sure",
+      service: "not-sure",
       message: "",
+      authorized: false,
       consent: false,
     },
   });
@@ -87,7 +96,7 @@ export function ContactForm() {
   // reliably announce the confirmation when its content appears.
   const liveRegion = (
     <div aria-live="polite" className="sr-only">
-      {status === "success" ? "Your message has been sent." : ""}
+      {status === "success" ? "Your request has been sent." : ""}
     </div>
   );
 
@@ -101,7 +110,7 @@ export function ContactForm() {
           tabIndex={-1}
           className="mt-4 font-display text-xl font-medium text-ivory outline-none"
         >
-          Thank you — your message is on its way.
+          Thank you — your request is on its way.
         </h3>
         <p className="mt-2 text-sm text-ivory/70">
           We will get back to you within one business day.
@@ -111,7 +120,7 @@ export function ContactForm() {
           onClick={() => setStatus("idle")}
           className="mt-6 inline-flex h-10 items-center justify-center rounded-full border border-ivory/25 px-5 text-sm text-ivory transition-colors duration-300 ease-out-soft hover:border-ivory/60 focus-visible:ring-offset-espresso"
         >
-          Send another message
+          Send another request
         </button>
       </div>
     );
@@ -157,13 +166,13 @@ export function ContactForm() {
 
         <div>
           <label htmlFor="contact-email" className={labelClasses}>
-            Email*
+            Work email*
           </label>
           <input
             id="contact-email"
             type="email"
             autoComplete="email"
-            placeholder="you@company.com"
+            placeholder="you@agency.com"
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? "contact-email-error" : undefined}
             className={fieldClasses}
@@ -177,14 +186,35 @@ export function ContactForm() {
         </div>
 
         <div>
+          <label htmlFor="contact-whatsapp" className={labelClasses}>
+            WhatsApp number*
+          </label>
+          <input
+            id="contact-whatsapp"
+            type="tel"
+            autoComplete="tel"
+            placeholder="+971 50 000 0000"
+            aria-invalid={!!errors.whatsapp}
+            aria-describedby={errors.whatsapp ? "contact-whatsapp-error" : undefined}
+            className={fieldClasses}
+            {...register("whatsapp")}
+          />
+          {errors.whatsapp && (
+            <p id="contact-whatsapp-error" className={errorClasses}>
+              {errors.whatsapp.message}
+            </p>
+          )}
+        </div>
+
+        <div>
           <label htmlFor="contact-company" className={labelClasses}>
-            Company (optional)
+            Agency or company*
           </label>
           <input
             id="contact-company"
             type="text"
             autoComplete="organization"
-            placeholder="Company or brokerage"
+            placeholder="Agency or company name"
             aria-invalid={!!errors.company}
             aria-describedby={errors.company ? "contact-company-error" : undefined}
             className={fieldClasses}
@@ -197,19 +227,39 @@ export function ContactForm() {
           )}
         </div>
 
+        <div className="sm:col-span-2">
+          <label htmlFor="contact-listing-url" className={labelClasses}>
+            Listing URL or photo link (optional)
+          </label>
+          <input
+            id="contact-listing-url"
+            type="text"
+            placeholder="A portal listing link, or a Drive / WeTransfer link to the photos"
+            aria-invalid={!!errors.listingUrl}
+            aria-describedby={errors.listingUrl ? "contact-listing-url-error" : undefined}
+            className={fieldClasses}
+            {...register("listingUrl")}
+          />
+          {errors.listingUrl && (
+            <p id="contact-listing-url-error" className={errorClasses}>
+              {errors.listingUrl.message}
+            </p>
+          )}
+        </div>
+
         <div>
-          <label htmlFor="contact-plan" className={labelClasses}>
-            Plan of interest*
+          <label htmlFor="contact-volume" className={labelClasses}>
+            New listings per month (approx.)*
           </label>
           <div className="relative">
             <select
-              id="contact-plan"
-              aria-invalid={!!errors.plan}
-              aria-describedby={errors.plan ? "contact-plan-error" : undefined}
+              id="contact-volume"
+              aria-invalid={!!errors.listingsPerMonth}
+              aria-describedby={errors.listingsPerMonth ? "contact-volume-error" : undefined}
               className={cn(fieldClasses, "appearance-none pr-10")}
-              {...register("plan")}
+              {...register("listingsPerMonth")}
             >
-              {planOptions.map((option) => (
+              {listingVolumeOptions.map((option) => (
                 <option key={option.value} value={option.value} className="bg-espresso text-ivory">
                   {option.label}
                 </option>
@@ -221,21 +271,52 @@ export function ContactForm() {
               aria-hidden="true"
             />
           </div>
-          {errors.plan && (
-            <p id="contact-plan-error" className={errorClasses}>
-              {errors.plan.message}
+          {errors.listingsPerMonth && (
+            <p id="contact-volume-error" className={errorClasses}>
+              {errors.listingsPerMonth.message}
+            </p>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="contact-service" className={labelClasses}>
+            Service of interest*
+          </label>
+          <div className="relative">
+            <select
+              id="contact-service"
+              aria-invalid={!!errors.service}
+              aria-describedby={errors.service ? "contact-service-error" : undefined}
+              className={cn(fieldClasses, "appearance-none pr-10")}
+              {...register("service")}
+            >
+              {serviceOptions.map((option) => (
+                <option key={option.value} value={option.value} className="bg-espresso text-ivory">
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <ChevronDown
+              className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ivory/50"
+              strokeWidth={1.5}
+              aria-hidden="true"
+            />
+          </div>
+          {errors.service && (
+            <p id="contact-service-error" className={errorClasses}>
+              {errors.service.message}
             </p>
           )}
         </div>
 
         <div className="sm:col-span-2">
           <label htmlFor="contact-message" className={labelClasses}>
-            Message*
+            Message (optional)
           </label>
           <textarea
             id="contact-message"
-            rows={5}
-            placeholder="Tell us about the listing — a link or address, and what you would like made."
+            rows={4}
+            placeholder="Anything we should know about the property or your accounts."
             aria-invalid={!!errors.message}
             aria-describedby={errors.message ? "contact-message-error" : undefined}
             className={fieldClasses}
@@ -244,6 +325,28 @@ export function ContactForm() {
           {errors.message && (
             <p id="contact-message-error" className={errorClasses}>
               {errors.message.message}
+            </p>
+          )}
+        </div>
+
+        <div className="sm:col-span-2">
+          <div className="flex items-start gap-3">
+            <input
+              id="contact-authorized"
+              type="checkbox"
+              aria-invalid={!!errors.authorized}
+              aria-describedby={errors.authorized ? "contact-authorized-error" : undefined}
+              className="mt-1 h-4 w-4 shrink-0 accent-gold focus-visible:ring-offset-espresso"
+              {...register("authorized")}
+            />
+            <label htmlFor="contact-authorized" className="text-sm text-ivory/70">
+              I confirm that I am authorized to share these listing assets for the purpose of
+              creating marketing content.
+            </label>
+          </div>
+          {errors.authorized && (
+            <p id="contact-authorized-error" className={errorClasses}>
+              {errors.authorized.message}
             </p>
           )}
         </div>
@@ -297,7 +400,7 @@ export function ContactForm() {
                 Sending…
               </>
             ) : (
-              "Send message"
+              "Send Request"
             )}
           </Button>
         </div>

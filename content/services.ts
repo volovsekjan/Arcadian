@@ -1,25 +1,48 @@
-import { Clapperboard, Film, Megaphone, UserRound } from "lucide-react";
+import {
+  Clapperboard,
+  GalleryVerticalEnd,
+  LayoutGrid,
+  LayoutTemplate,
+  MessageSquareText,
+  Scissors,
+} from "lucide-react";
 import type { Service } from "./types";
 
+/** The six things we make from a set of listing photos. */
 export const services: Service[] = [
   {
     icon: Clapperboard,
-    title: "Signature Property Reels",
-    description: "Vertical, social-first videos that showcase the whole home.",
+    title: "Property Reels",
+    description:
+      "Short vertical videos that show the strongest rooms, features and details of the property.",
   },
   {
-    icon: Film,
-    title: "Cinematic Walkthroughs",
-    description: "Smooth, flowing tours that move through every room.",
+    icon: GalleryVerticalEnd,
+    title: "Story Assets",
+    description:
+      "Ready-to-use Story frames for new listings, key features, location highlights and calls to action.",
   },
   {
-    icon: Megaphone,
-    title: "Listing Ad Cuts",
-    description: "Short, punchy edits built to convert in paid campaigns.",
+    icon: LayoutGrid,
+    title: "Feed Posts and Carousels",
+    description:
+      "Consistent posts your team can use between listing launches and video posts.",
   },
   {
-    icon: UserRound,
-    title: "Agent Brand Content",
-    description: "Consistent, on-brand content that grows your personal presence.",
+    icon: Scissors,
+    title: "Short Promotional Cuts",
+    description: "Shorter video versions for reposting, announcements and paid promotion.",
+  },
+  {
+    icon: MessageSquareText,
+    title: "Captions and Calls to Action",
+    description:
+      "Clear captions written around the property and the action you want the viewer to take.",
+  },
+  {
+    icon: LayoutTemplate,
+    title: "Agency Templates",
+    description:
+      "A consistent visual style across different listings, agents and property types.",
   },
 ];

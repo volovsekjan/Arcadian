@@ -55,15 +55,19 @@ export async function POST(request: Request) {
     );
   }
 
-  // 4. Forward the fields n8n expects as separate top-level values. `company`
-  //    is always a string (empty when not provided); `plan` is the raw selected
-  //    value. `consent` is intentionally not forwarded (validation-only).
+  // 4. Forward the fields n8n expects as separate top-level values. `plan` is
+  //    kept as the key for the selected service so existing n8n mappings keep
+  //    working. `consent` and `authorized` are intentionally not forwarded
+  //    (validation-only).
   const outgoing = JSON.stringify({
     name: data.name,
     email: data.email,
-    company: data.company ?? "",
-    plan: data.plan,
-    message: data.message,
+    whatsapp: data.whatsapp,
+    company: data.company,
+    plan: data.service,
+    listingUrl: data.listingUrl ?? "",
+    listingsPerMonth: data.listingsPerMonth,
+    message: data.message ?? "",
   });
 
   // 5. Forward to n8n with a bounded timeout; treat anything non-2xx as failure.

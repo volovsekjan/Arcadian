@@ -22,19 +22,22 @@ export function Footer() {
               <Wordmark />
             </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-ivory/60">{site.tagline}</p>
-            <div className="mt-7 flex gap-6">
-              {site.socials.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={footerLink}
-                >
-                  {social.name}
-                </a>
-              ))}
-            </div>
+            {/* Social links render only once real profiles exist in content/site.ts. */}
+            {site.socials.length > 0 && (
+              <div className="mt-7 flex gap-6">
+                {site.socials.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={footerLink}
+                  >
+                    {social.name}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           <nav aria-label="Footer navigation">
@@ -78,7 +81,7 @@ export function Footer() {
           <p className="text-xs text-ivory/50">
             &copy; {new Date().getFullYear()} Arcadian. All rights reserved.
           </p>
-          <span className="text-xs text-ivory/50">Made for agents, agencies, and developers.</span>
+          <span className="text-xs text-ivory/50">More content from every property listing.</span>
         </div>
       </Container>
     </footer>

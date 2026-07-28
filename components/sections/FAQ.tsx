@@ -21,7 +21,7 @@ export function FAQ() {
               <SectionHeading
                 eyebrow="FAQ"
                 title="Frequently asked questions."
-                description="Everything you need to know before your first video. If your question is not here, we are one message away."
+                description="Everything you need to know before your first listing. If your question is not here, we are one message away."
               />
               <div className="mt-8">
                 <Button variant="ghost" href="/#contact">

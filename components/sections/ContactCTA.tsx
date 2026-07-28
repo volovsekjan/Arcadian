@@ -1,9 +1,18 @@
-import { ArrowUpRight, Clock, Mail } from "lucide-react";
+import { CalendarOff, Check, Clock, ShieldCheck } from "lucide-react";
 import { ContactForm } from "@/components/shared/ContactForm";
 import { Reveal } from "@/components/shared/Reveal";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/content/site";
+
+// TODO: when the real contact email and social profiles exist, add them back
+// to this column (see content/site.ts) — placeholders must not render here.
+
+const reassurances = [
+  { icon: CalendarOff, text: "No additional shoot." },
+  { icon: Check, text: "No obligation." },
+  { icon: ShieldCheck, text: "Nothing is published without your approval." },
+] as const;
 
 /** Section 4.11 — final CTA band with the contact form, on espresso. */
 export function ContactCTA() {
@@ -14,39 +23,22 @@ export function ContactCTA() {
           <SectionHeading
             tone="dark"
             eyebrow="Get started"
-            title="Ready to make your listings unforgettable?"
-            description="Tell us about your listing — we will come back with the best way to bring it to life."
+            title="Tell us about your listings. We will take it from there."
+            description="Share a few details about your agency and monthly volume. We will walk you through the plans — or set up a single-listing pilot if you want to test the workflow first."
           />
 
-          <div className="mt-10 space-y-5 text-sm">
-            <div className="flex items-center gap-3">
-              <Mail className="h-4 w-4 text-gold" strokeWidth={1.5} aria-hidden="true" />
-              <a
-                href={`mailto:${site.email}`}
-                className="text-ivory underline decoration-gold/50 underline-offset-4 transition-colors hover:decoration-gold focus-visible:ring-offset-espresso"
-              >
-                {site.email}
-              </a>
-            </div>
-            <div className="flex items-center gap-3">
-              <Clock className="h-4 w-4 text-gold" strokeWidth={1.5} aria-hidden="true" />
-              <span className="text-ivory/70">{site.responseNote}</span>
-            </div>
-          </div>
-
-          <div className="mt-8 flex flex-wrap gap-x-7 gap-y-3 text-sm">
-            {site.socials.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-ivory/70 transition-colors hover:text-ivory focus-visible:ring-offset-espresso"
-              >
-                {social.name}
-                <ArrowUpRight className="h-3.5 w-3.5 text-gold" strokeWidth={1.5} aria-hidden="true" />
-              </a>
+          <ul className="mt-10 space-y-4 text-sm">
+            {reassurances.map((item) => (
+              <li key={item.text} className="flex items-center gap-3">
+                <item.icon className="h-4 w-4 shrink-0 text-gold" strokeWidth={1.5} aria-hidden="true" />
+                <span className="text-ivory/80">{item.text}</span>
+              </li>
             ))}
+          </ul>
+
+          <div className="mt-8 flex items-center gap-3 text-sm">
+            <Clock className="h-4 w-4 text-gold" strokeWidth={1.5} aria-hidden="true" />
+            <span className="text-ivory/70">{site.responseNote}</span>
           </div>
         </Reveal>
 

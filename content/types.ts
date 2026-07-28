@@ -4,8 +4,12 @@ export type Project = {
   slug: string;
   title: string;
   location: string;
-  /** Short tags shown as pills on the card, e.g. ["Residential", "Penthouse"]. */
+  /** Short tags shown as pills on the card, e.g. ["Apartment", "Concept"]. */
   tags: string[];
+  /** "concept" work is labelled as such on the card and must never read as client work. */
+  kind: "client" | "concept";
+  /** What was (or would be) produced from the listing photos, e.g. "1 Reel · 6 Story frames". */
+  deliverables: string;
   /** Poster image path under /public (9:16). */
   poster: string;
   /**
@@ -22,6 +26,12 @@ export type Service = {
   description: string;
 };
 
+/** One of the three levels of working with Arcadian, explained in one line. */
+export type ServiceLevel = {
+  name: string;
+  summary: string;
+};
+
 export type Step = {
   number: string;
   icon: LucideIcon;
@@ -30,13 +40,16 @@ export type Step = {
 };
 
 export type PricingTier = {
-  id: "starter" | "management" | "funnel-takeover";
+  id: "content" | "managed-content" | "funnel-takeover";
   name: string;
+  /** One-line plain-language summary, e.g. "We make the content. Your team posts it." */
   tagline: string;
-  /** Display price, e.g. "€180" — [PLACEHOLDER] until real pricing is set. */
+  /** Display price without the "From" prefix, e.g. "AED 3,500". */
   price: string;
   period: string | null;
   features: string[];
+  /** Scope boundary shown under the feature list. */
+  scopeNote: string;
   cta: string;
   highlighted: boolean;
 };
@@ -46,20 +59,9 @@ export type FaqItem = {
   answer: string;
 };
 
-export type Testimonial = {
-  quote: string;
-  name: string;
-  role: string;
-  avatar: string;
-  rating: number;
-};
-
-export type Stat = {
-  value: string;
-  label: string;
-};
-
-export type ClientLogo = {
-  name: string;
-  src: string;
+/** A concrete benefit shown in the band under the hero (replaces unverifiable stats). */
+export type Benefit = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
 };

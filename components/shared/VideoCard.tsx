@@ -63,6 +63,7 @@ export function VideoCard({
         <span className="text-xs uppercase tracking-[0.1em] text-ivory/70">
           {project.location}
         </span>
+        <span className="mt-1 text-xs text-ivory/60">{project.deliverables}</span>
       </span>
     </button>
   );

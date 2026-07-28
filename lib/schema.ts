@@ -20,15 +20,18 @@ export function serviceJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Real estate video production",
-    serviceType: "Cinematic property videos for social media",
+    name: "Real estate social media content",
+    serviceType: "Property videos, Stories and feed posts made from listing photos",
     description: site.description,
     provider: {
       "@type": "Organization",
       name: site.name,
       url: site.url,
     },
-    areaServed: "Worldwide",
+    areaServed: {
+      "@type": "City",
+      name: "Dubai",
+    },
   };
 }
 

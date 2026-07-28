@@ -18,7 +18,7 @@ export function HowItWorks() {
                 {/* TODO [PLACEHOLDER]: replace with a real portfolio still or short looping video */}
                 <Image
                   src="/images/process.svg"
-                  alt="Editorial interior artwork — placeholder for a portfolio still"
+                  alt="Editorial interior artwork"
                   fill
                   sizes="(min-width: 1024px) 44vw, 100vw"
                   className="object-cover"
@@ -31,7 +31,7 @@ export function HowItWorks() {
             <Reveal>
               <SectionHeading
                 eyebrow="How it works"
-                title="From photos to social-ready in four simple steps."
+                title="Send the photos once. Here is what happens next."
               />
             </Reveal>
 

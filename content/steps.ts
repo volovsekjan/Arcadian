@@ -5,26 +5,28 @@ export const steps: Step[] = [
   {
     number: "01",
     icon: Images,
-    title: "Share your photos",
-    description: "Send us your listing photos and a few details. That's all we need.",
+    title: "Send the listing",
+    description:
+      "Share the property photos, correct listing details, brand assets and required permit information.",
   },
   {
     number: "02",
     icon: Sparkles,
-    title: "We craft your video",
-    description:
-      "Our studio produces a polished, cinematic edit tailored to the property and your brand.",
+    title: "We create the assets",
+    description: "We prepare the agreed videos, Story frames, feed posts and captions.",
   },
   {
     number: "03",
     icon: MessageSquareText,
-    title: "Review & refine",
-    description: "You review the draft and we fine-tune it until it's exactly right.",
+    title: "Review the work",
+    description:
+      "Your team checks the property details and requests any revisions included in the plan.",
   },
   {
     number: "04",
     icon: Send,
-    title: "Post & impress",
-    description: "Receive your social-ready video, correctly formatted for every platform.",
+    title: "Publish it, or leave it to us",
+    description:
+      "On the Content plan you receive everything ready to use. On managed plans, Arcadian schedules and publishes it for you.",
   },
 ];

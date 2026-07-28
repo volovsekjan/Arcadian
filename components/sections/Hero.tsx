@@ -40,27 +40,26 @@ export function Hero() {
       <Container>
         <div className="max-w-3xl">
           <Reveal>
-            <Eyebrow>Property films</Eyebrow>
+            <Eyebrow>Dubai Real Estate Content</Eyebrow>
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="mt-5 font-display text-display font-medium text-ink">
-              Every Listing Deserves a <em className="italic text-gold">Film.</em>
+              Better content that <em className="italic text-gold">sells faster.</em>
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-6 max-w-2xl text-graphite">
-              Arcadian turns your property photos into scroll-stopping, cinematic videos made for
-              Instagram, TikTok, and Reels — no shoot to schedule, no crew to coordinate. Just send
-              photos.
+              Send us the property photos you already have. We turn them into videos, Stories and
+              posts your team can use across social media — or we can handle the posting too.
             </p>
           </Reveal>
           <Reveal delay={0.24}>
             <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <Button href="/#work" size="lg">
-                See our work
+              <Button href="/#contact" size="lg">
+                Book a Call
               </Button>
-              <Button variant="ghost" href="/#contact">
-                Get a video <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+              <Button variant="ghost" href="/#work">
+                See Our Work <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
               </Button>
             </div>
           </Reveal>
@@ -80,6 +79,11 @@ export function Hero() {
             />
           ))}
         </Marquee>
+        <Container>
+          <p className="mt-5 text-xs uppercase tracking-[0.12em] text-graphite/80">
+            Concept work — creative demonstrations, not active property listings.
+          </p>
+        </Container>
       </Reveal>
     </section>
   );

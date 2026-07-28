@@ -1,51 +1,33 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/shared/Reveal";
-import { stats, clientLogos } from "@/content/stats";
+import { benefits } from "@/content/benefits";
 
-// TODO [PLACEHOLDER]: stats and client logos below are editable placeholders —
-// they are flagged in /content/stats.ts; replace with real numbers and marks before launch.
-
-/** Section 4.3 — stats and client logo cloud, a calm bone-colored band. */
+/**
+ * Section 4.3 — a calm bone-colored band with three concrete benefits.
+ * Deliberately carries no statistics or client logos: numbers and logos may
+ * only be added here once they are real and verifiable (see content/benefits.ts).
+ */
 export function TrustBar() {
   return (
-    <section className="border-y border-line bg-bone py-16 md:py-20">
+    <section className="border-y border-line bg-bone py-14 md:py-16">
       <Container>
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
-          {stats.map((stat, i) => (
-            <Reveal key={stat.label} delay={i * 0.08}>
-              <p className="font-display text-4xl font-medium text-ink md:text-5xl">{stat.value}</p>
-              <p className="mt-2 text-sm text-graphite">{stat.label}</p>
+        <div className="grid gap-10 md:grid-cols-3 md:gap-8">
+          {benefits.map((benefit, i) => (
+            <Reveal key={benefit.title} delay={i * 0.08} className="flex items-start gap-4">
+              <benefit.icon
+                className="mt-1 h-6 w-6 shrink-0 text-gold"
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
+              <div>
+                <p className="font-display text-lg font-medium text-ink">{benefit.title}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-graphite">
+                  {benefit.description}
+                </p>
+              </div>
             </Reveal>
           ))}
         </div>
-
-        <div className="my-12 border-t border-line" aria-hidden="true" />
-
-        <Reveal>
-          {/* The visible [PLACEHOLDER] marking is deliberate — a fabricated
-              client roster must not be able to ship looking real. Replace the
-              caption with e.g. "Trusted by agencies across Europe" at launch. */}
-          <p className="mb-6 text-center text-xs uppercase tracking-[0.12em] text-graphite md:text-left">
-            [Placeholder] client &amp; partner logos — replace before launch
-          </p>
-          <ul
-            aria-label="Placeholder client and partner logos"
-            className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:justify-between"
-          >
-            {clientLogos.map((logo) => (
-              <li key={logo.name}>
-                <Image
-                  src={logo.src}
-                  alt={logo.name}
-                  width={140}
-                  height={38}
-                  className="h-8 w-auto opacity-60 transition-opacity duration-300 hover:opacity-100"
-                />
-              </li>
-            ))}
-          </ul>
-        </Reveal>
       </Container>
     </section>
   );

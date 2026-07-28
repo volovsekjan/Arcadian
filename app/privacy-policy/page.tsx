@@ -19,7 +19,7 @@ const sections: LegalSection[] = [
   {
     heading: "Who we are",
     paragraphs: [
-      "[PLACEHOLDER] Arcadian ([legal entity name], [registered address]) operates this website and produces short cinematic property videos from photos supplied by clients. For the purposes of the GDPR, Arcadian is the controller of the personal data described in this policy.",
+      "[PLACEHOLDER] Arcadian ([legal entity name], [registered address]) operates this website and produces property videos and social media content from photos supplied by clients. For the purposes of the GDPR, Arcadian is the controller of the personal data described in this policy.",
     ],
   },
   {
