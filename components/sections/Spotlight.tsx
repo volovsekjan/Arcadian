@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { ArrowRight, CalendarCheck, Inbox, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
+import { BeforeAfterSlider } from "@/components/shared/BeforeAfterSlider";
 import { Reveal } from "@/components/shared/Reveal";
 
 const points = [
@@ -17,16 +17,17 @@ export function Spotlight() {
     <section className="bg-espresso py-24 md:py-32">
       <Container className="grid gap-14 lg:grid-cols-12 lg:items-center">
         <Reveal className="lg:col-span-7">
-          <figure className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-ivory/10">
-            {/* TODO [PLACEHOLDER]: replace with a real portfolio still or short looping video */}
-            <Image
-              src="/images/spotlight.svg"
-              alt="Architectural artwork"
-              fill
-              sizes="(min-width: 1024px) 56vw, 100vw"
-              className="object-cover"
+          <div className="mx-auto w-full max-w-sm">
+            <BeforeAfterSlider
+              before="/images/enhance-before.jpg"
+              after="/images/enhance-after.jpg"
+              beforeAlt="Listing photo before enhancement — dark and low resolution"
+              afterAlt="The same listing photo after photo correction and enhancement"
             />
-          </figure>
+            <p className="mt-4 text-center text-sm text-ivory/60">
+              Drag to compare — the same listing photo, before and after.
+            </p>
+          </div>
         </Reveal>
 
         <Reveal delay={0.1} className="lg:col-span-5">
