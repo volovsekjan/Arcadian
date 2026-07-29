@@ -1,18 +1,65 @@
 import type { Project } from "./types";
 
 /**
- * Work shown in the hero marquee and the Selected Work grid.
+ * Work shown in the hero marquee and the Selected Work grid, in display order —
+ * the strongest pieces first (videos are numbered 1–10 in /public).
  *
  * Every entry below is CONCEPT work — creative demonstrations of the format,
  * not active property listings and not client projects. They are labelled as
- * such on the cards and in the section copy. When real client work exists:
- *  1. Add it with `kind: "client"` and accurate title/location/deliverables.
- *  2. Replace the SVG posters in /public/posters with real video poster frames
- *     (JPG/WebP, 9:16, ~720×1280).
- *  3. Set `video` to the hosted stream URL — use Mux or Cloudflare Stream,
- *     do NOT ship raw multi-MB mp4s from /public.
+ * such on the cards and in the section copy. When real client work exists,
+ * add it with `kind: "client"` and accurate title/location/deliverables.
  */
 export const projects: Project[] = [
+  {
+    slug: "countryside-cottage",
+    title: "Countryside Cottage",
+    location: "Concept project",
+    tags: ["Cottage", "Concept"],
+    kind: "concept",
+    deliverables: "1 Reel · 6 Story frames · 1 carousel",
+    poster: "/posters/project-01.webp",
+    video: "/1.webm",
+  },
+  {
+    slug: "skyline-apartment",
+    title: "Skyline Apartment",
+    location: "Concept project",
+    tags: ["Apartment", "Concept"],
+    kind: "concept",
+    deliverables: "1 Reel · 2 short cuts · 4 Story frames",
+    poster: "/posters/project-02.webp",
+    video: "/2.webm",
+  },
+  {
+    slug: "compact-city-apartment",
+    title: "Compact City Apartment",
+    location: "Concept project",
+    tags: ["Apartment", "Concept"],
+    kind: "concept",
+    deliverables: "1 Reel · 1 carousel · 5 Story frames",
+    poster: "/posters/project-03.webp",
+    video: "/3.webm",
+  },
+  {
+    slug: "cozy-family-apartment",
+    title: "Cozy Family Apartment",
+    location: "Concept project",
+    tags: ["Apartment", "Concept"],
+    kind: "concept",
+    deliverables: "1 Reel · 2 short cuts · 1 carousel",
+    poster: "/posters/project-04.webp",
+    video: "/4.webm",
+  },
+  {
+    slug: "bright-modern-apartment",
+    title: "Bright Modern Apartment",
+    location: "Concept project",
+    tags: ["Apartment", "Concept"],
+    kind: "concept",
+    deliverables: "1 Reel · 6 Story frames",
+    poster: "/posters/project-05.webp",
+    video: "/5.webm",
+  },
   {
     slug: "beachfront-apartment",
     title: "Beachfront Apartment",
@@ -20,8 +67,8 @@ export const projects: Project[] = [
     tags: ["Apartment", "Concept"],
     kind: "concept",
     deliverables: "1 Reel · 6 Story frames · 1 carousel",
-    poster: "/posters/project-01.webp",
-    video: "/hf_20260727_094016.webm",
+    poster: "/posters/project-06.webp",
+    video: "/6.webm",
   },
   {
     slug: "grand-villa",
@@ -30,8 +77,8 @@ export const projects: Project[] = [
     tags: ["Villa", "Concept"],
     kind: "concept",
     deliverables: "1 Reel · 2 short cuts · 4 Story frames",
-    poster: "/posters/project-02.webp",
-    video: "/hf_20260727_110039.webm",
+    poster: "/posters/project-07.webp",
+    video: "/7.webm",
   },
   {
     slug: "classic-city-apartment",
@@ -40,18 +87,18 @@ export const projects: Project[] = [
     tags: ["Apartment", "Concept"],
     kind: "concept",
     deliverables: "1 Reel · 1 carousel · 5 Story frames",
-    poster: "/posters/project-03.webp",
-    video: "/hf_20260727_143639.webm",
+    poster: "/posters/project-08.webp",
+    video: "/8.webm",
   },
   {
-    slug: "family-home",
+    slug: "suburban-family-home",
     title: "Suburban Family Home",
     location: "Concept project",
     tags: ["Family Home", "Concept"],
     kind: "concept",
     deliverables: "1 Reel · 2 short cuts · 1 carousel",
-    poster: "/posters/project-04.webp",
-    video: "/hf_20260729_095753.webm",
+    poster: "/posters/project-09.webp",
+    video: "/9.webm",
   },
   {
     slug: "mountain-chalet",
@@ -60,37 +107,7 @@ export const projects: Project[] = [
     tags: ["Chalet", "Concept"],
     kind: "concept",
     deliverables: "1 Reel · 6 Story frames",
-    poster: "/posters/project-05.webp",
-    video: "/hf_20260729_095839.webm",
-  },
-  {
-    slug: "garden-family-home",
-    title: "Garden Family Home",
-    location: "Concept project",
-    tags: ["Family Home", "Concept"],
-    kind: "concept",
-    deliverables: "1 Reel · 1 carousel · 4 Story frames",
-    poster: "/posters/project-06.svg",
-    video: null,
-  },
-  {
-    slug: "coastal-villa",
-    title: "Coastal Villa",
-    location: "Concept project",
-    tags: ["Villa", "Concept"],
-    kind: "concept",
-    deliverables: "1 Reel · 2 short cuts · 6 Story frames",
-    poster: "/posters/project-07.svg",
-    video: null,
-  },
-  {
-    slug: "sky-garden-residence",
-    title: "Sky Garden Residence",
-    location: "Concept project",
-    tags: ["New Build", "Concept"],
-    kind: "concept",
-    deliverables: "1 Reel · 1 carousel · 5 Story frames",
-    poster: "/posters/project-08.svg",
-    video: null,
+    poster: "/posters/project-10.webp",
+    video: "/10.webm",
   },
 ];
