@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
 
-const defaultTitle = `${site.name} | Real Estate Content for Dubai Agencies`;
+const defaultTitle = "High quality content for real estate agencies";
 
 /**
  * Site-wide metadata defaults (App Router Metadata API).
