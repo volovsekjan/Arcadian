@@ -19,8 +19,8 @@ export function Spotlight() {
         <Reveal className="lg:col-span-7">
           <div className="mx-auto w-full max-w-sm">
             <BeforeAfterSlider
-              before="/images/enhance-before.jpg"
-              after="/images/enhance-after.jpg"
+              before="/images/before.png"
+              after="/images/after.png"
               beforeAlt="Listing photo before enhancement — dark and low resolution"
               afterAlt="The same listing photo after photo correction and enhancement"
             />
