@@ -104,7 +104,7 @@ export function ContactForm() {
     return (
       <div className="rounded-2xl border border-ivory/15 bg-ivory/5 p-10 text-center">
         {liveRegion}
-        <CheckCircle2 className="mx-auto h-8 w-8 text-bone" strokeWidth={1.5} aria-hidden="true" />
+        <CheckCircle2 className="mx-auto h-8 w-8 text-gold" strokeWidth={1.5} aria-hidden="true" />
         <h3
           ref={successHeadingRef}
           tabIndex={-1}
@@ -366,7 +366,7 @@ export function ContactForm() {
               the{" "}
               <Link
                 href="/privacy-policy"
-                className="underline decoration-bone/50 underline-offset-4 transition-colors hover:decoration-bone focus-visible:ring-offset-espresso"
+                className="underline decoration-gold/50 underline-offset-4 transition-colors hover:decoration-gold focus-visible:ring-offset-espresso"
               >
                 privacy policy
               </Link>

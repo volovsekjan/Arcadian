@@ -25,8 +25,8 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 80,
-          background: "#161616",
-          color: "#FFF7F5",
+          background: "#201D16",
+          color: "#FAF8F3",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
@@ -35,7 +35,7 @@ export default function OpenGraphImage() {
               width: 12,
               height: 12,
               borderRadius: "50%",
-              background: "#722613",
+              background: "#A9834C",
             }}
           />
           <div
@@ -43,7 +43,7 @@ export default function OpenGraphImage() {
               fontSize: 28,
               letterSpacing: "0.24em",
               textTransform: "uppercase",
-              color: "#E7B3A6",
+              color: "#C7A472",
             }}
           >
             {site.name}
@@ -61,11 +61,11 @@ export default function OpenGraphImage() {
           >
             Better content that sells faster.
           </div>
-          <div style={{ fontSize: 30, color: "#9C9CA2", maxWidth: 900 }}>
+          <div style={{ fontSize: 30, color: "#8C877A", maxWidth: 900 }}>
             Videos, Stories and feed posts for Dubai agencies — made from your listing photos.
           </div>
         </div>
-        <div style={{ display: "flex", width: 220, height: 3, background: "#722613" }} />
+        <div style={{ display: "flex", width: 220, height: 3, background: "#A9834C" }} />
       </div>
     ),
     size,

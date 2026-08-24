@@ -50,7 +50,7 @@ export function NewsletterForm() {
       <button
         type="submit"
         aria-label="Subscribe to the newsletter"
-        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gold text-bone transition-colors hover:bg-earth focus-visible:ring-offset-espresso"
+        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gold text-ink transition-colors hover:bg-gold-soft focus-visible:ring-offset-espresso"
       >
         <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
       </button>

@@ -30,14 +30,14 @@ export function ContactCTA() {
           <ul className="mt-10 space-y-4 text-sm">
             {reassurances.map((item) => (
               <li key={item.text} className="flex items-center gap-3">
-                <item.icon className="h-4 w-4 shrink-0 text-bone" strokeWidth={1.5} aria-hidden="true" />
+                <item.icon className="h-4 w-4 shrink-0 text-gold" strokeWidth={1.5} aria-hidden="true" />
                 <span className="text-ivory/80">{item.text}</span>
               </li>
             ))}
           </ul>
 
           <div className="mt-8 flex items-center gap-3 text-sm">
-            <Clock className="h-4 w-4 text-bone" strokeWidth={1.5} aria-hidden="true" />
+            <Clock className="h-4 w-4 text-gold" strokeWidth={1.5} aria-hidden="true" />
             <span className="text-ivory/70">{site.responseNote}</span>
           </div>
         </Reveal>

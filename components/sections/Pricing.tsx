@@ -10,12 +10,11 @@ import { cn } from "@/lib/utils";
 /** Section 4.8 — three service levels, the middle one highlighted, plus the paid pilot. */
 export function Pricing() {
   return (
-    <section id="pricing" className="bg-earth py-24 md:py-32">
+    <section id="pricing" className="bg-ivory py-24 md:py-32">
       <Container>
         <Reveal>
           <SectionHeading
             align="center"
-            tone="dark"
             eyebrow="Pricing"
             title="Choose how much we take on."
             description="Every plan starts from the photos you already have. The difference is whether your team posts the work — or we do."
@@ -30,12 +29,12 @@ export function Pricing() {
             <Reveal key={tier.id} delay={i * 0.08} className="h-full min-w-0">
               <Card
                 className={cn(
-                  "relative flex h-full flex-col border-bone bg-bone p-8",
-                  tier.highlighted && "shadow-lift lg:-translate-y-3",
+                  "relative flex h-full flex-col p-8",
+                  tier.highlighted && "border-gold shadow-lift lg:-translate-y-3",
                 )}
               >
                 {tier.highlighted && (
-                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-4 py-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.1em] text-bone">
+                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-4 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-ink">
                     Most Popular
                   </span>
                 )}
@@ -85,7 +84,7 @@ export function Pricing() {
         </div>
 
         <Reveal delay={0.16}>
-          <p className="mt-10 text-center text-sm text-bone/80">
+          <p className="mt-10 text-center text-sm text-graphite">
             Final scope depends on monthly listing volume, number of accounts and required
             deliverables. All prices exclude VAT and advertising spend.
           </p>
@@ -93,7 +92,7 @@ export function Pricing() {
 
         {/* Lower-commitment way in: the paid single-listing pilot. */}
         <Reveal className="mx-auto mt-16 max-w-2xl">
-          <Card className="border-bone bg-bone p-8">
+          <Card className="p-8">
             <h3 className="font-display text-xl font-medium text-ink">{pilot.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-graphite">{pilot.description}</p>
             <p className="mt-6 text-sm font-medium text-ink">The pilot can include:</p>

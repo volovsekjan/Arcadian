@@ -15,26 +15,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ivory: "#F3F3F4", // primary background (cool off-white)
-        bone: "#FFF7F5", // sand — light warm sections & cards on earth
-        paper: "#FFFFFF", // white surfaces (forms, chips)
-        ink: "#161616", // primary text (coal)
-        graphite: "#4B4B50", // secondary text
-        mist: "#8B8B91", // muted text / captions
-        line: "#E3E3E6", // borders / hairlines
+        ivory: "#FAF8F3", // primary background (warm off-white)
+        bone: "#F1ECE3", // secondary surface / alt sections
+        paper: "#FFFFFF", // cards
+        ink: "#17150F", // primary text (warm near-black)
+        graphite: "#4A463D", // secondary text
+        mist: "#8C877A", // muted text / captions
+        line: "#E4DDD0", // borders / hairlines
         gold: {
-          // Token name kept for low-churn migration — the value is now the
-          // brand maroon used for CTAs, icons, and the navbar.
-          DEFAULT: "#590800",
-          soft: "#E7B3A6", // light warm tint for accents/errors on dark surfaces
-          deep: "#590800", // small accent text on light surfaces (AA ≥4.5:1)
+          DEFAULT: "#A9834C", // primary accent (matte bronze-gold)
+          soft: "#C7A472", // accent hover / highlights
+          deep: "#7A5E37", // darker gold for SMALL text on light surfaces (AA ≥4.5:1)
         },
-        espresso: "#161616", // coal — dark sections (footer, problem, final CTA)
-        earth: "#722613", // pricing band & cards on sand
+        espresso: "#201D16", // dark section background (warm near-black)
       },
       fontFamily: {
-        display: ["var(--font-prata)", "Georgia", "serif"],
-        sans: ["var(--font-satoshi)", ...defaultTheme.fontFamily.sans],
+        display: ["var(--font-fraunces)", "Georgia", "serif"],
+        sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         // Fluid editorial type scale

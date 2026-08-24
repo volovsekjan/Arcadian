@@ -17,12 +17,12 @@ export function Eyebrow({ children, className, withRule = true, tone = "light" }
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-3 font-sans text-eyebrow font-bold uppercase",
-        tone === "dark" ? "text-bone" : "text-gold-deep",
+        "inline-flex items-center gap-3 font-sans text-eyebrow font-semibold uppercase",
+        tone === "dark" ? "text-gold" : "text-gold-deep",
         className,
       )}
     >
-      {withRule && <span aria-hidden="true" className="h-px w-8 bg-current" />}
+      {withRule && <span aria-hidden="true" className="h-px w-8 bg-gold" />}
       {children}
     </span>
   );

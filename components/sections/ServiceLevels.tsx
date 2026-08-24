@@ -22,12 +22,12 @@ export function ServiceLevels() {
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {serviceLevels.map((level, i) => (
             <Reveal key={level.name} delay={i * 0.08} className="h-full">
-              <Card className="flex h-full flex-col border-espresso bg-espresso p-7">
-                <span className="font-display text-base text-bone/60">
+              <Card className="flex h-full flex-col p-7">
+                <span className="font-sans text-eyebrow font-semibold uppercase text-gold-deep">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-4 font-display text-xl font-medium text-bone">{level.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-bone/70">{level.summary}</p>
+                <h3 className="mt-4 font-display text-xl font-medium text-ink">{level.name}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-graphite">{level.summary}</p>
               </Card>
             </Reveal>
           ))}

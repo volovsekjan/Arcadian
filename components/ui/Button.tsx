@@ -24,10 +24,10 @@ type NativeButtonProps = CommonProps & { href?: undefined } & Omit<
 export type ButtonProps = AnchorButtonProps | NativeButtonProps;
 
 const base =
-  "inline-flex items-center justify-center gap-2 font-sans font-bold transition-all duration-300 ease-out-soft disabled:pointer-events-none disabled:opacity-50";
+  "inline-flex items-center justify-center gap-2 font-sans font-medium transition-all duration-300 ease-out-soft disabled:pointer-events-none disabled:opacity-50";
 
 const variants: Record<Variant, string> = {
-  primary: "rounded-full bg-gold text-bone hover:bg-earth",
+  primary: "rounded-full bg-gold text-ink hover:bg-gold-soft",
   secondary:
     "rounded-full border border-ink/25 text-ink hover:border-ink hover:bg-ink hover:text-ivory",
   ghost: "text-ink underline decoration-gold/50 underline-offset-4 hover:decoration-gold",

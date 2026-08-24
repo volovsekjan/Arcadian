@@ -30,9 +30,9 @@ export function OneListing() {
         <div className="mt-14 grid grid-cols-2 gap-5 lg:grid-cols-4">
           {exampleOutput.map((item, i) => (
             <Reveal key={item.label} delay={i * 0.08} className="h-full">
-              <Card className="flex h-full flex-col border-earth bg-earth p-7">
-                <p className="font-display text-5xl font-medium text-bone">{item.count}</p>
-                <p className="mt-3 text-sm leading-relaxed text-bone/80">{item.label}</p>
+              <Card className="flex h-full flex-col p-7">
+                <p className="font-display text-5xl font-medium text-gold-deep">{item.count}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink">{item.label}</p>
               </Card>
             </Reveal>
           ))}
