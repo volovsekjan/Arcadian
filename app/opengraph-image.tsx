@@ -35,7 +35,7 @@ export default function OpenGraphImage() {
               width: 12,
               height: 12,
               borderRadius: "50%",
-              background: "#A9834C",
+              background: "#BF9D6B",
             }}
           />
           <div
@@ -43,7 +43,7 @@ export default function OpenGraphImage() {
               fontSize: 28,
               letterSpacing: "0.24em",
               textTransform: "uppercase",
-              color: "#C7A472",
+              color: "#D2BA93",
             }}
           >
             {site.name}
@@ -65,7 +65,7 @@ export default function OpenGraphImage() {
             Videos, Stories and feed posts for Dubai agencies — made from your listing photos.
           </div>
         </div>
-        <div style={{ display: "flex", width: 220, height: 3, background: "#A9834C" }} />
+        <div style={{ display: "flex", width: 220, height: 3, background: "#BF9D6B" }} />
       </div>
     ),
     size,

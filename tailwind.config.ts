@@ -23,9 +23,9 @@ const config: Config = {
         mist: "#8C877A", // muted text / captions
         line: "#E4DDD0", // borders / hairlines
         gold: {
-          DEFAULT: "#A9834C", // primary accent (matte bronze-gold)
-          soft: "#C7A472", // accent hover / highlights
-          deep: "#7A5E37", // darker gold for SMALL text on light surfaces (AA ≥4.5:1)
+          DEFAULT: "#BF9D6B", // primary accent (brand brown)
+          soft: "#D2BA93", // accent hover / highlights (lighter tint of the brand brown)
+          deep: "#74603C", // darker shade of the brand brown for SMALL text on light surfaces (AA ≥4.5:1)
         },
         espresso: "#201D16", // dark section background (warm near-black)
       },
