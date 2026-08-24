@@ -8,7 +8,6 @@ import {
   useTransform,
   wrap,
 } from "framer-motion";
-import { Pause, Play } from "lucide-react";
 import { Children, useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
@@ -240,22 +239,6 @@ export function Marquee({ children, className, speed = 32 }: MarqueeProps) {
         </div>
       </div>
 
-      <button
-        type="button"
-        onClick={() => {
-          if (!paused) velocityRef.current = 0; // pausing stops all motion at once
-          setPaused((value) => !value);
-        }}
-        aria-pressed={paused}
-        aria-label={paused ? "Play the project carousel" : "Pause the project carousel"}
-        className="ml-5 mt-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-paper/90 text-ink transition-colors duration-300 ease-out-soft hover:border-gold hover:text-gold focus-visible:ring-offset-4 motion-reduce:hidden sm:ml-8 lg:ml-12"
-      >
-        {paused ? (
-          <Play className="ml-0.5 h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
-        ) : (
-          <Pause className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
-        )}
-      </button>
     </div>
   );
 }

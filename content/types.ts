@@ -4,12 +4,8 @@ export type Project = {
   slug: string;
   title: string;
   location: string;
-  /** Short tags shown as pills on the card, e.g. ["Apartment", "Concept"]. */
-  tags: string[];
   /** "concept" work is labelled as such on the card and must never read as client work. */
   kind: "client" | "concept";
-  /** What was (or would be) produced from the listing photos, e.g. "1 Reel · 6 Story frames". */
-  deliverables: string;
   /** Poster image path under /public (9:16). */
   poster: string;
   /**

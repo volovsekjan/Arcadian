@@ -4,7 +4,6 @@ import { Reveal } from "@/components/shared/Reveal";
 import { VideoCard } from "@/components/shared/VideoCard";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 import { projects } from "@/content/projects";
 
 /**
@@ -39,11 +38,8 @@ export function Hero() {
 
       <Container>
         <div className="max-w-3xl">
-          <Reveal>
-            <Eyebrow>Dubai Real Estate Content</Eyebrow>
-          </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-5 font-display text-display font-medium text-ink">
+            <h1 className="font-display text-display font-medium text-ink">
               Better content that <em className="italic text-gold">sells faster.</em>
             </h1>
           </Reveal>
@@ -79,11 +75,6 @@ export function Hero() {
             />
           ))}
         </Marquee>
-        <Container>
-          <p className="mt-5 text-xs uppercase tracking-[0.12em] text-graphite/80">
-            Concept work — creative demonstrations, not active property listings.
-          </p>
-        </Container>
       </Reveal>
     </section>
   );
