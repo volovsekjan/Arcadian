@@ -22,10 +22,16 @@ export function Navbar() {
   const toggleRef = useRef<HTMLButtonElement>(null);
   const reduceMotion = useReducedMotion();
 
-  // Condense after a slight scroll; passive listener + initial check so a
+  // Condense on scroll, with hysteresis. Collapsing the bar removes 16px of
+  // document height, and the browser's scroll anchoring compensates by pulling
+  // scrollY back — with a single threshold, every position between it and
+  // it+16px is an unstable flip-flop zone (the header "vibrates"). Collapse at
+  // 80 / expand at 40: the 40px gap swallows the anchoring correction so the
+  // state can't re-cross a boundary. Passive listener + initial check so a
   // page restored mid-scroll renders the condensed state immediately.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () =>
+      setScrolled((prev) => (prev ? window.scrollY > 40 : window.scrollY > 80));
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -87,7 +93,7 @@ export function Navbar() {
       >
         <div
           className={cn(
-            "transition-all duration-300 ease-out-soft",
+            "transition-[height] duration-300 ease-out-soft",
             scrolled ? "h-16" : "h-20",
           )}
         >
