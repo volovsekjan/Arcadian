@@ -47,7 +47,7 @@ export function Spotlight() {
             {points.map((point) => (
               <li key={point.text} className="flex items-start gap-4">
                 <point.icon
-                  className="mt-1 h-5 w-5 shrink-0 text-gold"
+                  className="mt-1 h-5 w-5 shrink-0 text-bone"
                   strokeWidth={1.5}
                   aria-hidden="true"
                 />
@@ -60,7 +60,7 @@ export function Spotlight() {
             <Button
               variant="ghost"
               href="/#process"
-              className="text-ivory decoration-gold/60 hover:decoration-gold focus-visible:ring-offset-espresso"
+              className="text-ivory decoration-bone/60 hover:decoration-bone focus-visible:ring-offset-espresso"
             >
               See how it works
               <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />

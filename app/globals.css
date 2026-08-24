@@ -46,3 +46,9 @@
     @apply inline-block h-px w-8 bg-gold align-middle;
   }
 }
+
+/* Prata ships only a 400 cut — block synthetic bolding so display text set
+   with font-medium/semibold renders the true design weight. */
+.font-display {
+  font-synthesis: none;
+}

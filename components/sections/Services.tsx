@@ -20,10 +20,10 @@ export function Services() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <Reveal key={service.title} delay={i * 0.08} className="h-full">
-              <Card className="group flex h-full flex-col p-7 transition-all duration-300 ease-out-soft hover:-translate-y-1 hover:shadow-card">
-                <service.icon className="h-6 w-6 text-gold" strokeWidth={1.5} aria-hidden="true" />
-                <h3 className="mt-6 font-display text-xl font-medium text-ink">{service.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-graphite">{service.description}</p>
+              <Card className="group flex h-full flex-col border-espresso bg-espresso p-7 transition-all duration-300 ease-out-soft hover:-translate-y-1 hover:shadow-card">
+                <service.icon className="h-6 w-6 text-bone" strokeWidth={1.5} aria-hidden="true" />
+                <h3 className="mt-6 font-display text-xl font-medium text-bone">{service.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-bone/70">{service.description}</p>
               </Card>
             </Reveal>
           ))}

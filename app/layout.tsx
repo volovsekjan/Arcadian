@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "@/components/sections/Footer";
 import { Navbar } from "@/components/sections/Navbar";
@@ -10,17 +10,24 @@ import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import { defaultMetadata } from "@/lib/metadata";
 import { organizationJsonLd } from "@/lib/schema";
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  axes: ["opsz"],
-  variable: "--font-fraunces",
+const prata = localFont({
+  src: "./fonts/Prata-Regular.ttf",
+  weight: "400",
+  variable: "--font-prata",
   display: "swap",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+// Satoshi Medium doubles as the regular body weight (400 and 500) per the
+// design spec ("Body — Satoshi Medium"); Black serves as the bold weight —
+// no Bold cut was supplied.
+const satoshi = localFont({
+  src: [
+    { path: "./fonts/Satoshi-Light.ttf", weight: "300", style: "normal" },
+    { path: "./fonts/Satoshi-Medium.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/Satoshi-Medium.ttf", weight: "500", style: "normal" },
+    { path: "./fonts/Satoshi-Black.ttf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-satoshi",
   display: "swap",
 });
 
@@ -33,13 +40,13 @@ export const revalidate = 86400;
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  // Token: ivory (#FAF8F3) — raw value required by the Viewport API.
-  themeColor: "#FAF8F3",
+  // Token: ivory (#F3F3F4) — raw value required by the Viewport API.
+  themeColor: "#F3F3F4",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="en" className={`${prata.variable} ${satoshi.variable}`}>
       <body>
         <a
           href="#main"

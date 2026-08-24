@@ -27,13 +27,13 @@ const arcadianProvides = [
 
 function ResponsibilityList({ heading, items }: { heading: string; items: readonly string[] }) {
   return (
-    <Card className="h-full p-8">
-      <h3 className="font-display text-xl font-medium text-ink">{heading}</h3>
+    <Card className="h-full border-earth bg-earth p-8">
+      <h3 className="font-display text-xl font-medium text-bone">{heading}</h3>
       <ul className="mt-6 space-y-3">
         {items.map((item) => (
           <li key={item} className="flex items-start gap-3">
-            <Check className="mt-1 h-4 w-4 shrink-0 text-gold" strokeWidth={2} aria-hidden="true" />
-            <span className="text-sm leading-relaxed text-graphite">{item}</span>
+            <Check className="mt-1 h-4 w-4 shrink-0 text-bone" strokeWidth={2} aria-hidden="true" />
+            <span className="text-sm leading-relaxed text-bone/80">{item}</span>
           </li>
         ))}
       </ul>

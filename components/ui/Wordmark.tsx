@@ -29,7 +29,9 @@ export function Wordmark({ className, priority = false }: WordmarkProps) {
       // SVGs gain nothing from the raster optimizer; serving the file directly
       // avoids Next's SVG content-type handling and keeps rendering deterministic.
       unoptimized
-      className={cn("h-6 w-auto sm:h-7", className)}
+      // brightness-0 + invert renders the mark white — it now always sits on
+      // dark surfaces (maroon navbar, coal footer).
+      className={cn("h-6 w-auto brightness-0 invert sm:h-7", className)}
     />
   );
 }

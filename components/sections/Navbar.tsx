@@ -85,10 +85,10 @@ export function Navbar() {
         className={cn(
           "sticky top-0 z-50 border-b transition-colors duration-300 ease-out-soft",
           open
-            ? "border-ivory/10 bg-espresso"
+            ? "border-bone/10 bg-gold"
             : scrolled
-              ? "border-line bg-ivory/85 backdrop-blur-md"
-              : "border-transparent bg-ivory",
+              ? "border-bone/15 bg-gold/95 backdrop-blur-md"
+              : "border-transparent bg-gold",
         )}
       >
         <div
@@ -112,7 +112,7 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="relative text-sm text-graphite transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 after:ease-out-soft hover:text-ink hover:after:scale-x-100"
+                  className="relative text-sm text-bone/80 transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-bone after:transition-transform after:duration-300 after:ease-out-soft hover:text-bone hover:after:scale-x-100"
                 >
                   {item.label}
                 </Link>
@@ -120,7 +120,11 @@ export function Navbar() {
             </nav>
 
             <div className="flex items-center gap-3 sm:gap-5">
-              <Button href={site.cta.href} size="md" className="hidden sm:inline-flex">
+              <Button
+                href={site.cta.href}
+                size="md"
+                className="hidden bg-bone text-gold hover:bg-paper sm:inline-flex"
+              >
                 {site.cta.label}
               </Button>
               <button
@@ -131,10 +135,7 @@ export function Navbar() {
                 aria-label={open ? "Close menu" : "Open menu"}
                 onClick={() => (open ? closeMenu() : setOpen(true))}
                 className={cn(
-                  "-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-300 lg:hidden",
-                  open
-                    ? "text-ivory hover:text-gold-soft focus-visible:ring-offset-espresso"
-                    : "text-ink hover:text-graphite",
+                  "-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full text-bone transition-colors duration-300 hover:text-gold-soft lg:hidden",
                 )}
               >
                 {open ? (
@@ -152,7 +153,7 @@ export function Navbar() {
         {open && (
           <motion.div
             id="mobile-menu"
-            className="fixed inset-0 z-40 overflow-y-auto bg-espresso lg:hidden"
+            className="fixed inset-0 z-40 overflow-y-auto bg-gold lg:hidden"
             initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
@@ -170,7 +171,7 @@ export function Navbar() {
                       >
                         <span
                           aria-hidden="true"
-                          className="font-sans text-eyebrow font-semibold text-gold"
+                          className="font-sans text-eyebrow font-bold text-bone/60"
                         >
                           {String(i + 1).padStart(2, "0")}
                         </span>
@@ -188,7 +189,7 @@ export function Navbar() {
                   href={site.cta.href}
                   size="lg"
                   onClick={closeMenu}
-                  className="w-full focus-visible:ring-offset-espresso sm:w-auto"
+                  className="w-full bg-bone text-gold hover:bg-paper focus-visible:ring-offset-espresso sm:w-auto"
                 >
                   {site.cta.label}
                 </Button>
