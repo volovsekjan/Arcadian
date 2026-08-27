@@ -2,7 +2,8 @@ import type { Project } from "./types";
 
 /**
  * Work shown in the hero marquee and the Selected Work grid, in display order —
- * the strongest pieces first (videos are numbered 1–10 in /public).
+ * the strongest pieces first (videos live in /public; the numbering has gaps
+ * where retired entries were removed).
  *
  * Every entry below is CONCEPT work — creative demonstrations of the format,
  * not active property listings and not client projects. They are labelled as
@@ -27,28 +28,12 @@ export const projects: Project[] = [
     video: "/2.webm",
   },
   {
-    slug: "compact-city-apartment",
-    title: "Compact City Apartment",
-    location: "Concept project",
-    kind: "concept",
-    poster: "/posters/project-03.webp",
-    video: "/3.webm",
-  },
-  {
     slug: "cozy-family-apartment",
     title: "Cozy Family Apartment",
     location: "Concept project",
     kind: "concept",
     poster: "/posters/project-04.webp",
     video: "/4.webm",
-  },
-  {
-    slug: "bright-modern-apartment",
-    title: "Bright Modern Apartment",
-    location: "Concept project",
-    kind: "concept",
-    poster: "/posters/project-05.webp",
-    video: "/5.webm",
   },
   {
     slug: "beachfront-apartment",

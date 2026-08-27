@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Wordmark } from "@/components/ui/Wordmark";
-import { NewsletterForm } from "@/components/shared/NewsletterForm";
 import { site } from "@/content/site";
 
 const columnHeading = "text-eyebrow font-semibold uppercase text-mist";
@@ -16,7 +15,7 @@ export function Footer() {
   return (
     <footer className="border-t border-ivory/10 bg-espresso pb-10 pt-16 md:pt-20">
       <Container>
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[2.2fr_1fr_1fr_1.6fr]">
+        <div className="grid gap-12 md:grid-cols-[1.8fr_1fr_1fr] lg:grid-cols-[2.6fr_1fr_1fr]">
           <div>
             <Link href="/" className="inline-flex focus-visible:ring-offset-espresso">
               <Wordmark />
@@ -65,16 +64,6 @@ export function Footer() {
               ))}
             </ul>
           </nav>
-
-          <div>
-            <p className={columnHeading}>Newsletter</p>
-            <p className="mt-5 text-sm text-ivory/60">
-              Occasional notes on property marketing. No spam, unsubscribe any time.
-            </p>
-            <div className="mt-5">
-              <NewsletterForm />
-            </div>
-          </div>
         </div>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-ivory/10 pt-6 sm:flex-row sm:items-center sm:justify-between">

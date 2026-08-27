@@ -72,9 +72,6 @@ just returns success. The route contains a ready-to-uncomment **Resend** example
 `resend`, set `RESEND_API_KEY`, and send the email where the `TODO` marks the spot. Add rate
 limiting (e.g. Upstash Ratelimit) before launch.
 
-The footer newsletter form ([components/shared/NewsletterForm.tsx](components/shared/NewsletterForm.tsx))
-is a stub with a `TODO` for your email-marketing provider.
-
 ## Plugging in the video host
 
 Portfolio entries in [content/projects.ts](content/projects.ts) have `video: null`, which
