@@ -11,10 +11,10 @@ const points = [
   { icon: ShieldCheck, text: "Your team approves everything before it goes out." },
 ] as const;
 
-/** Section — the operational problem Arcadian removes, on the dark espresso band. */
+/** Section — the operational problem Arcadian removes, on the black band. */
 export function Spotlight() {
   return (
-    <section className="bg-espresso py-24 md:py-32">
+    <section className="bg-black py-24 md:py-32">
       <Container className="grid gap-14 lg:grid-cols-12 lg:items-center">
         <Reveal className="lg:col-span-7">
           <div className="mx-auto w-full max-w-sm">
@@ -60,7 +60,7 @@ export function Spotlight() {
             <Button
               variant="ghost"
               href="/#process"
-              className="text-ivory decoration-gold/60 hover:decoration-gold focus-visible:ring-offset-espresso"
+              className="text-ivory decoration-gold/60 hover:decoration-gold focus-visible:ring-offset-black"
             >
               See how it works
               <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />

@@ -5,6 +5,7 @@ import { VideoCard } from "@/components/shared/VideoCard";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { projects } from "@/content/projects";
+import { site } from "@/content/site";
 
 /**
  * Hero — the page's h1, subhead, primary CTAs, and a full-bleed auto-moving
@@ -40,13 +41,14 @@ export function Hero() {
         <div className="max-w-3xl">
           <Reveal delay={0.08}>
             <h1 className="font-display text-display font-medium text-ink">
-              Better content that <em className="italic text-gold">sells faster.</em>
+              Your listings already have <em className="italic text-gold">everything we need.</em>
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-6 max-w-2xl text-graphite">
-              Send us the property photos you already have. We turn them into videos, Stories and
-              posts your team can use across social media — or we can handle the posting too.
+              Send us the photos your agency has on file. We turn them into property Reels, Story
+              sets and feed posts your agents can publish this week — or we schedule and publish
+              them for you.
             </p>
           </Reveal>
           <Reveal delay={0.24}>
@@ -58,6 +60,20 @@ export function Hero() {
                 See Our Work <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
               </Button>
             </div>
+          </Reveal>
+          <Reveal delay={0.28}>
+            <p className="mt-5 text-sm text-graphite">
+              Or{" "}
+              <a
+                href={site.whatsapp.href}
+                target="_blank"
+                rel="noreferrer"
+                className="text-ink underline decoration-gold/50 underline-offset-4 transition-colors duration-300 ease-out-soft hover:decoration-gold"
+              >
+                message us on WhatsApp
+              </a>
+              .
+            </p>
           </Reveal>
         </div>
       </Container>

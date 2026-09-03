@@ -12,7 +12,7 @@ export const steps: Step[] = [
   {
     number: "02",
     icon: Sparkles,
-    title: "We create the assets",
+    title: "We produce it",
     description: "We prepare the agreed videos, Story frames, feed posts and captions.",
   },
   {

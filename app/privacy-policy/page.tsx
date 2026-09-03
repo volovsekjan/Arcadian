@@ -73,9 +73,7 @@ export default function PrivacyPolicyPage() {
         <div>
           {sections.map((section) => (
             <div key={section.heading}>
-              <h2 className="mt-12 font-display text-h3 font-medium text-ink">
-                {section.heading}
-              </h2>
+              <h2 className="mt-12 font-display text-h3 font-medium text-ink">{section.heading}</h2>
               {section.paragraphs.map((paragraph, i) => (
                 <p key={i} className="mt-4 leading-relaxed text-graphite">
                   {paragraph}

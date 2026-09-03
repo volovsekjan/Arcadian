@@ -2,7 +2,7 @@ import {
   Clapperboard,
   GalleryVerticalEnd,
   LayoutGrid,
-  LayoutTemplate,
+  Sofa,
   MessageSquareText,
   Scissors,
 } from "lucide-react";
@@ -25,8 +25,7 @@ export const services: Service[] = [
   {
     icon: LayoutGrid,
     title: "Feed Posts and Carousels",
-    description:
-      "Consistent posts your team can use between listing launches and video posts.",
+    description: "Consistent posts your team can use between listing launches and video posts.",
   },
   {
     icon: Scissors,
@@ -40,9 +39,9 @@ export const services: Service[] = [
       "Clear captions written around the property and the action you want the viewer to take.",
   },
   {
-    icon: LayoutTemplate,
-    title: "Agency Templates",
+    icon: Sofa,
+    title: "Empty-Property Staging",
     description:
-      "A consistent visual style across different listings, agents and property types.",
+      "Empty units are the hardest to market and the easiest to skip. We show the room as it is, then furnish it on screen, so buyers can read the space instead of guessing at it.",
   },
 ];

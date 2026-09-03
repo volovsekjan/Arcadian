@@ -15,19 +15,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ivory: "#FAF8F3", // primary background (warm off-white)
-        bone: "#F1ECE3", // secondary surface / alt sections
+        ivory: "#FFFFFF", // primary background (white)
+        bone: "#FFFFFF", // alt sections — white; separated by hairline borders, not fill
         paper: "#FFFFFF", // cards
         ink: "#17150F", // primary text (warm near-black)
         graphite: "#4A463D", // secondary text
         mist: "#8C877A", // muted text / captions
-        line: "#E4DDD0", // borders / hairlines
+        line: "#EAE6E0", // hairline borders — the only thing separating white bands now
         gold: {
-          DEFAULT: "#BF9D6B", // primary accent (brand brown)
-          soft: "#D2BA93", // accent hover / highlights (lighter tint of the brand brown)
-          deep: "#74603C", // darker shade of the brand brown for SMALL text on light surfaces (AA ≥4.5:1)
+          DEFAULT: "#D8A25C", // primary accent (brand gold)
+          soft: "#E5BE8B", // accent hover / highlights (lighter tint of the brand gold)
+          deep: "#896029", // darker shade of the brand gold for SMALL text on light surfaces (AA ≥4.5:1)
         },
-        espresso: "#201D16", // dark section background (warm near-black)
+        espresso: "#201D16", // dark surfaces: video cards, lightbox, cookie banner, mobile nav
+        // The single dark block that closes the page — contact and footer share
+        // it so the two read as one continuous surface, with no seam between.
+        midnight: "#0F0F0E",
       },
       fontFamily: {
         display: ["var(--font-fraunces)", "Georgia", "serif"],

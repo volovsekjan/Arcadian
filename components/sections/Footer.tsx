@@ -3,40 +3,30 @@ import { Container } from "@/components/ui/Container";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { site } from "@/content/site";
 
-const columnHeading = "text-eyebrow font-semibold uppercase text-mist";
+const columnHeading = "text-eyebrow font-semibold uppercase text-gold";
 const footerLink =
-  "text-sm text-ivory/70 transition-colors hover:text-ivory focus-visible:ring-offset-espresso";
+  "text-sm text-ivory/70 transition-colors hover:text-ivory focus-visible:ring-offset-midnight";
 
 /**
- * Section 4.12 — site footer on espresso. Sits directly below the espresso
- * ContactCTA, separated by a hairline border.
+ * Site footer.
+ *
+ * Shares the `midnight` token with the contact section directly above it, and
+ * carries no border between them, so the bottom of the page reads as one
+ * continuous dark block.
+ *
+ * The social row is gone: the profile list is empty, so it rendered nothing.
+ * Put it back when there are real accounts to link.
  */
 export function Footer() {
   return (
-    <footer className="border-t border-ivory/10 bg-espresso pb-10 pt-16 md:pt-20">
+    <footer className="bg-midnight pb-10 pt-16 md:pt-20">
       <Container>
-        <div className="grid gap-12 md:grid-cols-[1.8fr_1fr_1fr] lg:grid-cols-[2.6fr_1fr_1fr]">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[2.2fr_1fr_1fr_1.3fr]">
           <div>
-            <Link href="/" className="inline-flex focus-visible:ring-offset-espresso">
+            <Link href="/" className="inline-flex focus-visible:ring-offset-midnight">
               <Wordmark />
             </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-ivory/60">{site.tagline}</p>
-            {/* Social links render only once real profiles exist in content/site.ts. */}
-            {site.socials.length > 0 && (
-              <div className="mt-7 flex gap-6">
-                {site.socials.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={footerLink}
-                  >
-                    {social.name}
-                  </a>
-                ))}
-              </div>
-            )}
           </div>
 
           <nav aria-label="Footer navigation">
@@ -64,6 +54,27 @@ export function Footer() {
               ))}
             </ul>
           </nav>
+
+          <div>
+            <p className={columnHeading}>Contact</p>
+            <ul className="mt-5 space-y-3">
+              <li>
+                <a href={`mailto:${site.email}`} className={footerLink}>
+                  {site.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.whatsapp.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={footerLink}
+                >
+                  WhatsApp {site.whatsapp.display}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-ivory/10 pt-6 sm:flex-row sm:items-center sm:justify-between">

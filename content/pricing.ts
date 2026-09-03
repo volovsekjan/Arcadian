@@ -1,3 +1,4 @@
+import { site } from "./site";
 import type { PricingTier } from "./types";
 
 /**
@@ -37,6 +38,7 @@ export const pricing: PricingTier[] = [
       "Up to 30 individual Story frames",
       "Captions and calls to action",
       "Photo correction and presentation enhancement",
+      "Empty-property staging",
       "Custom agency templates",
       "Monthly content calendar",
       "Scheduling and publishing",
@@ -55,6 +57,7 @@ export const pricing: PricingTier[] = [
     features: [
       "20 property Reels per month",
       "Regular feed posts and Story assets",
+      "Empty-property staging",
       "Custom agency templates",
       "Content scheduling and publishing",
       "Comment and direct-message monitoring during agreed hours",
@@ -74,7 +77,7 @@ export const pricing: PricingTier[] = [
 /** The paid single-listing pilot, shown below the plans. */
 export const pilot = {
   title: "Want to test the workflow first?",
-  description: "Start with one paid listing pilot before choosing a monthly plan.",
+  description: `Start with one paid listing before committing to a monthly plan. ${site.pilotPrice}, one property, the full process end to end.`,
   includes: [
     "1 main Reel",
     "2 shorter video cuts",

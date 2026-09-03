@@ -1,3 +1,4 @@
+import { site } from "./site";
 import type { FaqItem } from "./types";
 
 /**
@@ -22,7 +23,7 @@ export const faq: FaqItem[] = [
   {
     question: "How quickly will we receive the first draft?",
     answer:
-      "We agree turnaround times when we scope your plan, and monthly plans run on a shared content calendar. As a guide, the first draft for a single listing is normally ready within a few working days.",
+      "The first draft for a single listing is normally with you within three working days. Monthly plans run on a shared content calendar, so recurring work is scheduled rather than requested each time.",
   },
   {
     question: "Will you publish the content for us?",
@@ -37,7 +38,7 @@ export const faq: FaqItem[] = [
   {
     question: "Do you use AI?",
     answer:
-      "We use a mix of AI-assisted production, editing tools and human review to create more from the property assets you already have. We do not use those tools to invent rooms, amenities or property details that are not part of the listing. Every asset is reviewed before it is sent to your team.",
+      "Yes, as a production tool, and a person reviews every frame before it reaches you. We use it to correct and sharpen photos, extend them to vertical, tidy the presentation and animate stills into camera moves. We do not use it to invent rooms, amenities or views, to change the size or layout of a space, to remove structural defects, or to replace fitted materials. Where we furnish an empty unit, the content states that the furniture is a visualisation and is not part of the property.",
   },
   {
     question: "Who is responsible for listing accuracy and permits?",
@@ -51,8 +52,7 @@ export const faq: FaqItem[] = [
   },
   {
     question: "Can we start with one property?",
-    answer:
-      "Yes. Book a paid pilot for a single listing to test the full workflow before choosing a monthly plan.",
+    answer: `Yes. The paid pilot is one listing at ${site.pilotPrice} and runs the full process end to end, so you see how we work before committing to a month.`,
   },
   {
     question: "Do you guarantee views, enquiries or sales?",

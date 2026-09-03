@@ -44,13 +44,13 @@ function ResponsibilityList({ heading, items }: { heading: string; items: readon
 /** Section — who does what, including Dubai advertising-permit responsibilities. */
 export function Responsibilities() {
   return (
-    <section className="border-y border-line bg-bone py-24 md:py-32">
+    <section className="border-t border-line bg-bone py-24 md:py-32">
       <Container>
         <Reveal>
           <SectionHeading
             eyebrow="Responsibilities"
-            title="Clear responsibilities from the start."
-            description="Good property marketing in Dubai depends on accurate listings and valid permits. Here is how the work is divided."
+            title="Permit-safe by default."
+            description="Property marketing in Dubai depends on accurate listings and valid permits. We are built around that, not around it. Here is how the work divides."
           />
         </Reveal>
 
@@ -66,13 +66,17 @@ export function Responsibilities() {
         <Reveal delay={0.16}>
           <div className="mt-10 max-w-3xl space-y-4 text-sm leading-relaxed text-graphite">
             <p>
-              Clients remain responsible for listing accuracy, marketing authorization and
-              obtaining the required advertising permits. Arcadian can place the permit number and
-              QR code supplied by the client into the agreed content.
+              Clients remain responsible for listing accuracy, marketing authorization and obtaining
+              the required advertising permits. Arcadian can place the permit number and QR code
+              supplied by the client into the agreed content.
             </p>
             <p>
               For managed plans, content requiring permit information will not be published until
               the necessary materials have been supplied and approved.
+            </p>
+            <p>
+              If permit information is missing when a post is due, we hold the post and tell you. We
+              do not publish and fix it afterwards.
             </p>
           </div>
         </Reveal>

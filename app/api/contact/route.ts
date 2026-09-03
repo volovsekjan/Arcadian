@@ -19,8 +19,7 @@ export const dynamic = "force-dynamic";
 
 const WEBHOOK_TIMEOUT_MS = 10_000;
 
-const GENERIC_FAILURE =
-  "We couldn't send your message right now. Please try again shortly, or email us directly.";
+const GENERIC_FAILURE = "We could not send your message right now. Please try again shortly.";
 
 type ApiResponse = { ok: boolean; message: string };
 
@@ -49,10 +48,7 @@ export async function POST(request: Request) {
   const webhookUrl = process.env.N8N_EMAIL_WEBHOOK_URL;
   if (!webhookUrl) {
     console.error("[contact] N8N_EMAIL_WEBHOOK_URL is not configured.");
-    return reply(
-      { ok: false, message: "The contact form is temporarily unavailable. Please email us directly." },
-      500,
-    );
+    return reply({ ok: false, message: "The contact form is temporarily unavailable." }, 500);
   }
 
   // 4. Forward the fields n8n expects as separate top-level values. `plan` is

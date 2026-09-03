@@ -7,17 +7,30 @@ export const site = {
   tagline: "Property videos and social content made from the photos you already have.",
   description:
     "Arcadian turns existing property photos into videos, Stories and feed posts for Dubai real estate agencies. Choose ready-to-publish content or fully managed posting.",
-  // TODO [PLACEHOLDER]: replace with the real production domain before launch.
-  url: "https://arcadian.example.com",
-  // TODO [PLACEHOLDER]: replace with the real contact email before launch.
-  // The landing page does not render this address while it is a placeholder —
-  // it is kept for the legal pages and JSON-LD, which must be updated too.
-  email: "hello@arcadian.example.com",
+  /*
+   * TODO — REPLACE BEFORE LAUNCH.
+   * These four values were not supplied, so they are left as visible
+   * placeholders rather than invented. `{{...}}` tokens are greppable and
+   * obviously wrong on sight; the domain has to parse as a URL (metadataBase
+   * calls `new URL()` on it), so it uses the reserved `.invalid` TLD, which
+   * can never resolve to somebody else's site.
+   *
+   * They now render on the page — in the contact block, the footer, the form
+   * error messages and the pricing pilot — so nothing here can ship unnoticed.
+   */
+  url: "https://arcadian.invalid",
+  email: "{{EMAIL}}",
+  whatsapp: {
+    display: "{{WHATSAPP_NUMBER}}",
+    href: "https://wa.me/{{WHATSAPP_NUMBER}}",
+  },
+  pilotPrice: "{{PILOT_PRICE}}",
   responseNote: "We reply within one business day.",
   locale: "en",
   nav: [
     { label: "Work", href: "/#work" },
     { label: "Services", href: "/#services" },
+    { label: "Compare", href: "/#compare" },
     { label: "How It Works", href: "/#process" },
     { label: "Pricing", href: "/#pricing" },
     { label: "FAQ", href: "/#faq" },

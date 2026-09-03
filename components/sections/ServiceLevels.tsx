@@ -15,7 +15,7 @@ export function ServiceLevels() {
           <SectionHeading
             eyebrow="What we do"
             title="Three ways to work with us."
-            description="Arcadian is a content studio for real estate agencies. We take the listing photos you already have and turn them into videos, Stories and feed posts. How much of the posting we take on is up to you."
+            description="Arcadian is a production studio for real estate agencies. Every plan starts from the photos you already have. What changes is how much of the publishing you hand over."
           />
         </Reveal>
 

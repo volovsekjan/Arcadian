@@ -14,60 +14,82 @@ export const contentType = "image/png";
  * TODO: optionally replace with a designed static image (public/og.jpg) and
  * reference it via openGraph.images in lib/metadata.ts.
  */
-export default function OpenGraphImage() {
+// Satori parses neither woff2 nor variable fonts, so the image routes load
+// static TTF cuts of Satoshi. Loaded lazily on first request, not at module
+// scope: the build imports this module in Node, where the relative asset URL
+// cannot be resolved.
+let fonts: Promise<[ArrayBuffer, ArrayBuffer]> | undefined;
+
+function loadFonts() {
+  fonts ??= Promise.all([
+    fetch(new URL("./fonts/Satoshi-Regular.ttf", import.meta.url)).then((res) => res.arrayBuffer()),
+    fetch(new URL("./fonts/Satoshi-Medium.ttf", import.meta.url)).then((res) => res.arrayBuffer()),
+  ]);
+  return fonts;
+}
+
+export default async function OpenGraphImage() {
+  const [regular, medium] = await loadFonts();
+
   return new ImageResponse(
-    (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: 80,
-          background: "#201D16",
-          color: "#FAF8F3",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div
-            style={{
-              width: 12,
-              height: 12,
-              borderRadius: "50%",
-              background: "#BF9D6B",
-            }}
-          />
-          <div
-            style={{
-              fontSize: 28,
-              letterSpacing: "0.24em",
-              textTransform: "uppercase",
-              color: "#D2BA93",
-            }}
-          >
-            {site.name}
-          </div>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        padding: 80,
+        background: "#201D16",
+        color: "#FAF8F3",
+        fontFamily: "Satoshi",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <div
+          style={{
+            width: 12,
+            height: 12,
+            borderRadius: "50%",
+            background: "#D8A25C",
+          }}
+        />
+        <div
+          style={{
+            fontSize: 28,
+            letterSpacing: "0.24em",
+            textTransform: "uppercase",
+            color: "#E5BE8B",
+          }}
+        >
+          {site.name}
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-          <div
-            style={{
-              fontSize: 84,
-              fontFamily: "Georgia, serif",
-              lineHeight: 1.05,
-              letterSpacing: "-0.02em",
-              maxWidth: 980,
-            }}
-          >
-            Better content that sells faster.
-          </div>
-          <div style={{ fontSize: 30, color: "#8C877A", maxWidth: 900 }}>
-            Videos, Stories and feed posts for Dubai agencies — made from your listing photos.
-          </div>
-        </div>
-        <div style={{ display: "flex", width: 220, height: 3, background: "#BF9D6B" }} />
       </div>
-    ),
-    size,
+      <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+        <div
+          style={{
+            fontSize: 84,
+            fontWeight: 500,
+            lineHeight: 1.05,
+            letterSpacing: "-0.02em",
+            maxWidth: 980,
+          }}
+        >
+          Your listings already have everything we need.
+        </div>
+        <div style={{ fontSize: 30, color: "#8C877A", maxWidth: 900 }}>
+          Property Reels, Story sets and feed posts for Dubai agencies, made from the listing photos
+          you already have.
+        </div>
+      </div>
+      <div style={{ display: "flex", width: 220, height: 3, background: "#D8A25C" }} />
+    </div>,
+    {
+      ...size,
+      fonts: [
+        { name: "Satoshi", data: regular, weight: 400, style: "normal" },
+        { name: "Satoshi", data: medium, weight: 500, style: "normal" },
+      ],
+    },
   );
 }

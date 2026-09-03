@@ -102,7 +102,10 @@ export function Navbar() {
               href="/"
               aria-label="Arcadian — home"
               onClick={() => setOpen(false)}
-              className={cn("inline-flex items-center", open && "focus-visible:ring-offset-espresso")}
+              className={cn(
+                "inline-flex items-center",
+                open && "focus-visible:ring-offset-espresso",
+              )}
             >
               <Wordmark priority />
             </Link>

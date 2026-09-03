@@ -11,7 +11,7 @@ type SectionHeadingProps = {
   className?: string;
 };
 
-/** Eyebrow + serif H2 + optional description, in the house style. */
+/** Eyebrow + display H2 + optional description, in the house style. */
 export function SectionHeading({
   eyebrow,
   title,

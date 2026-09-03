@@ -33,8 +33,8 @@ export const revalidate = 86400;
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  // Token: ivory (#FAF8F3) — raw value required by the Viewport API.
-  themeColor: "#FAF8F3",
+  // Token: ivory (#FFFFFF) — raw value required by the Viewport API.
+  themeColor: "#FFFFFF",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

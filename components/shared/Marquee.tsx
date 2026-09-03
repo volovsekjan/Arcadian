@@ -217,8 +217,8 @@ export function Marquee({ children, className, speed = 32 }: MarqueeProps) {
           }
         }}
         className={cn(
-          "select-none overflow-hidden py-4 touch-pan-y sm:py-8",
-          "[&_img]:pointer-events-none [&_button]:cursor-[inherit] [&_a]:cursor-[inherit]",
+          "touch-pan-y select-none overflow-hidden py-4 sm:py-8",
+          "[&_a]:cursor-[inherit] [&_button]:cursor-[inherit] [&_img]:pointer-events-none",
           grabbing ? "cursor-grabbing" : "cursor-grab",
         )}
       >
@@ -238,7 +238,6 @@ export function Marquee({ children, className, speed = 32 }: MarqueeProps) {
           {withOffsets(children)}
         </div>
       </div>
-
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, ChevronDown, Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/Button";
+import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
 import {
   contactSchema,
@@ -15,7 +16,7 @@ import {
 } from "@/lib/validation";
 
 const fieldClasses =
-  "w-full rounded-xl border border-ivory/15 bg-ivory/5 px-4 py-3 text-sm text-ivory placeholder:text-ivory/60 transition-colors focus-visible:ring-offset-espresso";
+  "w-full rounded-xl border border-ivory/25 bg-ivory/10 px-4 py-3 text-sm text-ivory placeholder:text-ivory/70 transition-colors focus-visible:ring-offset-midnight";
 
 const labelClasses = "mb-2 block text-sm font-medium text-ivory/90";
 
@@ -25,8 +26,13 @@ type Status = "idle" | "error" | "success";
 
 type ContactApiResponse = { ok: boolean; message: string };
 
-const DEFAULT_ERROR =
-  "Something went wrong sending your request. Please try again, or message us directly.";
+/**
+ * Shown when the request never reached the API. The API supplies its own
+ * message for every other failure. No variant names a channel inline — the
+ * block below always renders both as live links, so every error state
+ * resolves to something the visitor can actually click.
+ */
+const DEFAULT_ERROR = "Something went wrong sending your request. Please try again.";
 
 /**
  * Contact form on the espresso CTA band — React Hook Form + Zod,
@@ -102,7 +108,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-ivory/15 bg-ivory/5 p-10 text-center">
+      <div className="rounded-2xl border border-ivory/25 bg-ivory/10 p-10 text-center">
         {liveRegion}
         <CheckCircle2 className="mx-auto h-8 w-8 text-gold" strokeWidth={1.5} aria-hidden="true" />
         <h3
@@ -118,7 +124,7 @@ export function ContactForm() {
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-6 inline-flex h-10 items-center justify-center rounded-full border border-ivory/25 px-5 text-sm text-ivory transition-colors duration-300 ease-out-soft hover:border-ivory/60 focus-visible:ring-offset-espresso"
+          className="mt-6 inline-flex h-10 items-center justify-center rounded-full border border-ivory/35 px-5 text-sm text-ivory transition-colors duration-300 ease-out-soft hover:border-ivory/70 focus-visible:ring-offset-midnight"
         >
           Send another request
         </button>
@@ -130,7 +136,7 @@ export function ContactForm() {
     <form
       noValidate
       onSubmit={handleSubmit(onSubmit)}
-      className="rounded-2xl border border-ivory/10 p-6 sm:p-8"
+      className="rounded-2xl border border-ivory/20 p-6 sm:p-8"
     >
       {liveRegion}
       {status === "error" && (
@@ -138,7 +144,26 @@ export function ContactForm() {
           role="alert"
           className="mb-5 rounded-xl border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-ivory"
         >
-          {errorMessage}
+          <p>{errorMessage}</p>
+          <p className="mt-1.5 text-ivory/85">
+            You can also message us on WhatsApp at{" "}
+            <a
+              href={site.whatsapp.href}
+              target="_blank"
+              rel="noreferrer"
+              className="whitespace-nowrap underline decoration-gold/60 underline-offset-4 transition-colors hover:decoration-gold focus-visible:ring-offset-midnight"
+            >
+              {site.whatsapp.display}
+            </a>{" "}
+            or email{" "}
+            <a
+              href={`mailto:${site.email}`}
+              className="underline decoration-gold/60 underline-offset-4 transition-colors hover:decoration-gold focus-visible:ring-offset-midnight"
+            >
+              {site.email}
+            </a>
+            .
+          </p>
         </div>
       )}
 
@@ -260,7 +285,7 @@ export function ContactForm() {
               {...register("listingsPerMonth")}
             >
               {listingVolumeOptions.map((option) => (
-                <option key={option.value} value={option.value} className="bg-espresso text-ivory">
+                <option key={option.value} value={option.value} className="bg-midnight text-ivory">
                   {option.label}
                 </option>
               ))}
@@ -291,7 +316,7 @@ export function ContactForm() {
               {...register("service")}
             >
               {serviceOptions.map((option) => (
-                <option key={option.value} value={option.value} className="bg-espresso text-ivory">
+                <option key={option.value} value={option.value} className="bg-midnight text-ivory">
                   {option.label}
                 </option>
               ))}
@@ -336,10 +361,10 @@ export function ContactForm() {
               type="checkbox"
               aria-invalid={!!errors.authorized}
               aria-describedby={errors.authorized ? "contact-authorized-error" : undefined}
-              className="mt-1 h-4 w-4 shrink-0 accent-gold focus-visible:ring-offset-espresso"
+              className="mt-1 h-4 w-4 shrink-0 accent-gold focus-visible:ring-offset-midnight"
               {...register("authorized")}
             />
-            <label htmlFor="contact-authorized" className="text-sm text-ivory/70">
+            <label htmlFor="contact-authorized" className="text-sm text-ivory/85">
               I confirm that I am authorized to share these listing assets for the purpose of
               creating marketing content.
             </label>
@@ -358,15 +383,15 @@ export function ContactForm() {
               type="checkbox"
               aria-invalid={!!errors.consent}
               aria-describedby={errors.consent ? "contact-consent-error" : undefined}
-              className="mt-1 h-4 w-4 shrink-0 accent-gold focus-visible:ring-offset-espresso"
+              className="mt-1 h-4 w-4 shrink-0 accent-gold focus-visible:ring-offset-midnight"
               {...register("consent")}
             />
-            <label htmlFor="contact-consent" className="text-sm text-ivory/70">
+            <label htmlFor="contact-consent" className="text-sm text-ivory/85">
               I agree that Arcadian may use my details to respond to this enquiry, as described in
               the{" "}
               <Link
                 href="/privacy-policy"
-                className="underline decoration-gold/50 underline-offset-4 transition-colors hover:decoration-gold focus-visible:ring-offset-espresso"
+                className="underline decoration-gold/50 underline-offset-4 transition-colors hover:decoration-gold focus-visible:ring-offset-midnight"
               >
                 privacy policy
               </Link>
@@ -388,7 +413,7 @@ export function ContactForm() {
             type="submit"
             size="lg"
             disabled={isSubmitting}
-            className="w-full sm:w-auto focus-visible:ring-offset-espresso"
+            className="w-full focus-visible:ring-offset-midnight sm:w-auto"
           >
             {isSubmitting ? (
               <>

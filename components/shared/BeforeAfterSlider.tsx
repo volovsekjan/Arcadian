@@ -80,7 +80,14 @@ export function BeforeAfterSlider({
       style={{ touchAction: "pan-y" }}
     >
       {/* After — base layer */}
-      <Image src={after} alt={afterAlt} fill sizes={sizes} draggable={false} className="object-cover" />
+      <Image
+        src={after}
+        alt={afterAlt}
+        fill
+        sizes={sizes}
+        draggable={false}
+        className="object-cover"
+      />
 
       {/* Before — clipped to the left of the divider */}
       <div
@@ -88,14 +95,7 @@ export function BeforeAfterSlider({
         className="absolute inset-0"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
-        <Image
-          src={before}
-          alt=""
-          fill
-          sizes={sizes}
-          draggable={false}
-          className="object-cover"
-        />
+        <Image src={before} alt="" fill sizes={sizes} draggable={false} className="object-cover" />
       </div>
       {/* The before layer is aria-hidden (it duplicates the same room); expose
           its description to AT without rendering a second image. */}
