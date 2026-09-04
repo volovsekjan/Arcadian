@@ -45,7 +45,7 @@ export function Hero() {
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-2xl text-graphite">
+            <p className="type-lede mt-6 max-w-2xl text-graphite">
               Send us the photos your agency has on file. We turn them into property Reels, Story
               sets and feed posts your agents can publish this week — or we schedule and publish
               them for you.

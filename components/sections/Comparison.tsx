@@ -163,7 +163,7 @@ export function Comparison() {
 
         <Reveal delay={0.16}>
           <div className="mt-10 flex flex-col gap-6">
-            <p className="max-w-2xl text-sm leading-relaxed text-graphite">{comparisonFootnote}</p>
+            <p className="type-note max-w-2xl text-graphite">{comparisonFootnote}</p>
             <div>
               <Button variant="ghost" href="/#pricing">
                 See the plans

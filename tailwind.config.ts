@@ -33,8 +33,12 @@ const config: Config = {
         midnight: "#0F0F0E",
       },
       fontFamily: {
-        display: ["var(--font-fraunces)", "Georgia", "serif"],
-        sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+        // Satoshi is the dominant typeface. Both tokens resolve to it, so
+        // `font-display` and `font-sans` differ by weight and size, not family.
+        display: ["var(--font-satoshi)", ...defaultTheme.fontFamily.sans],
+        sans: ["var(--font-satoshi)", ...defaultTheme.fontFamily.sans],
+        // Accent only — reach for it through .type-lede / .type-note, not directly.
+        serif: ["var(--font-instrument-serif)", ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
         // Fluid editorial type scale

@@ -40,9 +40,37 @@
   }
 }
 
+@layer components {
+  /*
+   * The two serif tokens. Instrument Serif appears ONLY through these, so the
+   * accent stays governed in one place instead of drifting across components.
+   *
+   * Both step up in size from the Satoshi they replace. A serif at the same
+   * pixel size reads optically smaller, and matching the number would look
+   * like a size drop rather than a change of voice. Neither goes below 15px:
+   * this is a display serif with fine strokes and a single weight, and its
+   * hairlines start to break up under that on non-retina screens.
+   */
+
+  /* Section lede: the sentence under a section heading, and the hero subhead. */
+  .type-lede {
+    @apply font-serif text-[1.1875rem] leading-[1.6] tracking-[0.005em] sm:text-[1.3125rem] sm:leading-[1.55];
+  }
+
+  /* Supporting note: captions, footnotes, taglines. */
+  .type-note {
+    @apply font-serif text-[0.9375rem] leading-[1.55] tracking-[0.005em] sm:text-base;
+  }
+}
+
 @layer utilities {
   /* Hairline rule used by eyebrow labels and dividers */
   .rule-gold {
     @apply inline-block h-px w-8 bg-gold align-middle;
+  }
+
+  /* Prices, counters and step numbers: keep digit widths stable. */
+  .nums-tabular {
+    font-variant-numeric: tabular-nums;
   }
 }

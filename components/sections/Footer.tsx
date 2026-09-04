@@ -26,7 +26,7 @@ export function Footer() {
             <Link href="/" className="inline-flex focus-visible:ring-offset-midnight">
               <Wordmark />
             </Link>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-ivory/60">{site.tagline}</p>
+            <p className="type-note mt-3 max-w-xs text-ivory/60">{site.tagline}</p>
           </div>
 
           <nav aria-label="Footer navigation">

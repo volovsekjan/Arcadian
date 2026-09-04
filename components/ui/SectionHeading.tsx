@@ -11,7 +11,14 @@ type SectionHeadingProps = {
   className?: string;
 };
 
-/** Eyebrow + display H2 + optional description, in the house style. */
+/**
+ * Eyebrow + display H2 + optional description, in the house style.
+ *
+ * The description is the site's one recurring editorial voice, so it carries
+ * `.type-lede` (Instrument Serif) while the heading stays Satoshi. Setting it
+ * here rather than per section is what keeps the serif consistent across all
+ * eleven sections — and easy to withdraw from all of them at once.
+ */
 export function SectionHeading({
   eyebrow,
   title,
@@ -36,7 +43,7 @@ export function SectionHeading({
         {title}
       </h2>
       {description && (
-        <p className={cn("mt-5", tone === "dark" ? "text-ivory/70" : "text-graphite")}>
+        <p className={cn("type-lede mt-5", tone === "dark" ? "text-ivory/70" : "text-graphite")}>
           {description}
         </p>
       )}

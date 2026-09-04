@@ -42,7 +42,7 @@ export function HowItWorks() {
                   <Reveal delay={i * 0.08} className="grid grid-cols-[3rem_1fr] gap-x-6">
                     <span
                       aria-hidden="true"
-                      className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-bone font-display text-sm text-gold-deep"
+                      className="nums-tabular relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-bone font-display text-sm text-gold-deep"
                     >
                       {step.number}
                     </span>

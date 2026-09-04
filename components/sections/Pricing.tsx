@@ -40,12 +40,12 @@ export function Pricing() {
                 )}
 
                 <h3 className="font-display text-xl font-medium text-ink">{tier.name}</h3>
-                <p className="mt-1 text-sm text-graphite">{tier.tagline}</p>
+                <p className="type-note mt-1.5 text-graphite">{tier.tagline}</p>
 
                 <div className="mt-7">
                   <p className="text-sm text-graphite">From</p>
                   <p className="mt-0.5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                    <span className="font-display text-4xl font-medium text-ink [overflow-wrap:anywhere]">
+                    <span className="nums-tabular font-display text-4xl font-medium text-ink [overflow-wrap:anywhere]">
                       {tier.price}
                     </span>
                     {tier.period && <span className="text-sm text-graphite">{tier.period}</span>}
@@ -84,7 +84,7 @@ export function Pricing() {
         </div>
 
         <Reveal delay={0.16}>
-          <p className="mt-10 text-center text-sm text-graphite">
+          <p className="type-note mt-10 text-center text-graphite">
             Final scope depends on monthly listing volume, number of accounts and required
             deliverables. All prices exclude VAT and advertising spend.
           </p>
@@ -94,7 +94,7 @@ export function Pricing() {
         <Reveal className="mx-auto mt-16 max-w-2xl">
           <Card className="p-8">
             <h3 className="font-display text-xl font-medium text-ink">{pilot.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-graphite">{pilot.description}</p>
+            <p className="type-note mt-2 text-graphite">{pilot.description}</p>
             <p className="mt-6 text-sm font-medium text-ink">The pilot can include:</p>
             <ul className="mt-3 space-y-2.5">
               {pilot.includes.map((item) => (

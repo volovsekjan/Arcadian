@@ -24,7 +24,7 @@ export function Spotlight() {
               beforeAlt="Listing photo before enhancement — dark and low resolution"
               afterAlt="The same listing photo after photo correction and enhancement"
             />
-            <p className="mt-4 text-center text-sm text-ivory/60">
+            <p className="type-note mt-4 text-center text-ivory/60">
               Drag to compare — the same listing photo, before and after.
             </p>
           </div>

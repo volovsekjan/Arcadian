@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Instrument_Serif } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "@/components/sections/Footer";
 import { Navbar } from "@/components/sections/Navbar";
@@ -10,18 +11,38 @@ import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import { defaultMetadata } from "@/lib/metadata";
 import { organizationJsonLd } from "@/lib/schema";
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  axes: ["opsz"],
-  variable: "--font-fraunces",
+/**
+ * Satoshi carries the site: headings, navigation, buttons, card titles,
+ * prices, figures and every piece of UI. Self-hosted (Fontshare / ITF Free
+ * Font License — see app/fonts/LICENSE.txt); one variable file covers the
+ * whole 300–900 range, so every weight the UI uses costs no extra request.
+ *
+ * Both `font-display` and `font-sans` resolve here, so the existing tokens
+ * keep working untouched across every component.
+ */
+const satoshi = localFont({
+  src: [
+    { path: "./fonts/Satoshi-Variable.woff2", weight: "300 900", style: "normal" },
+    { path: "./fonts/Satoshi-VariableItalic.woff2", weight: "300 900", style: "italic" },
+  ],
+  variable: "--font-satoshi",
   display: "swap",
+  fallback: ["system-ui", "-apple-system", "Segoe UI", "Helvetica Neue", "Arial", "sans-serif"],
 });
 
-const inter = Inter({
+/**
+ * Instrument Serif is the accent only — section ledes, captions, footnotes and
+ * taglines, through the `.type-lede` and `.type-note` tokens in globals.css.
+ * It is a display serif with fine strokes and a single weight, so it is never
+ * used for headings, UI, or anything below 15px.
+ */
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
   display: "swap",
+  fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
 export const metadata: Metadata = defaultMetadata;
@@ -39,7 +60,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="en" className={`${satoshi.variable} ${instrumentSerif.variable}`}>
       <body>
         <a
           href="#main"
