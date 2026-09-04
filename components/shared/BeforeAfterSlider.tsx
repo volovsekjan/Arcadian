@@ -126,7 +126,7 @@ export function BeforeAfterSlider({
         className="absolute top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-ivory/40 bg-espresso/70 text-ivory shadow-lift backdrop-blur-sm transition-colors hover:bg-espresso/90 focus-visible:ring-offset-espresso"
         style={{ left: `${position}%` }}
       >
-        <ChevronsLeftRight className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
+        <ChevronsLeftRight className="icon-list" strokeWidth={1.75} aria-hidden="true" />
       </button>
     </div>
   );

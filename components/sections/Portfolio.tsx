@@ -22,7 +22,7 @@ export function Portfolio() {
           />
           <Button variant="ghost" href="/#contact" className="hidden md:inline-flex">
             Book a Call
-            <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+            <ArrowRight className="icon-inline" strokeWidth={1.75} aria-hidden="true" />
           </Button>
         </Reveal>
 

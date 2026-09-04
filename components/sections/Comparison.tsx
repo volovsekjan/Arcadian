@@ -29,7 +29,7 @@ function Mark({ value, ours }: { value: ComparisonValue; ours: boolean }) {
     return (
       <>
         <Check
-          className={cn("h-4 w-4", ours ? "text-gold-deep" : "text-graphite")}
+          className={cn("icon-inline", ours ? "text-gold-deep" : "text-graphite")}
           strokeWidth={2.5}
           aria-hidden="true"
         />
@@ -40,7 +40,7 @@ function Mark({ value, ours }: { value: ComparisonValue; ours: boolean }) {
   if (value === "no") {
     return (
       <>
-        <X className="h-4 w-4 text-mist" strokeWidth={2.5} aria-hidden="true" />
+        <X className="icon-inline text-mist" strokeWidth={2.5} aria-hidden="true" />
         <span className="sr-only">No</span>
       </>
     );
@@ -167,7 +167,7 @@ export function Comparison() {
             <div>
               <Button variant="ghost" href="/#pricing">
                 See the plans
-                <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+                <ArrowRight className="icon-inline" strokeWidth={1.75} aria-hidden="true" />
               </Button>
             </div>
           </div>

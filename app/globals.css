@@ -93,6 +93,35 @@
     @apply inline-block h-px w-8 bg-gold align-middle;
   }
 
+  /*
+   * ICON SCALE. Three sizes, one per role, so icons stay in proportion to the
+   * text they sit beside instead of drifting a step at a time per component.
+   *
+   *   icon-inline  beside a line of text: ticks, chevrons, button arrows
+   *   icon-list    the marker on a list row or a process step
+   *   icon-feature the icon that heads a card
+   *
+   * Each is one step up from the sizes these replaced (16 / 20 / 24px), which
+   * is what makes them read as present rather than incidental. `shrink-0` is
+   * built in: every one of these sits in a flex row, and without it a long
+   * label squeezes the icon into an oval.
+   *
+   * Fixed rather than responsive on purpose. These are 18-28px; scaling them
+   * down on small screens is what makes an icon look like a smudge, and the
+   * rows they sit in are already single-column there.
+   */
+  .icon-inline {
+    @apply h-[1.125rem] w-[1.125rem] shrink-0;
+  }
+
+  .icon-list {
+    @apply h-[1.375rem] w-[1.375rem] shrink-0;
+  }
+
+  .icon-feature {
+    @apply h-7 w-7 shrink-0;
+  }
+
   /* Prices, counters and step numbers: keep digit widths stable. */
   .nums-tabular {
     font-variant-numeric: tabular-nums;

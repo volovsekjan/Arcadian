@@ -112,7 +112,7 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
               aria-label="Close video"
               className="absolute -top-12 right-0 flex h-10 w-10 items-center justify-center rounded-full border border-ivory/30 text-ivory transition-colors duration-300 hover:border-ivory focus-visible:ring-offset-espresso"
             >
-              <X className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
+              <X className="icon-list" strokeWidth={1.75} aria-hidden="true" />
             </button>
             <div className="overflow-hidden rounded-2xl border border-ivory/10 bg-espresso">
               <div className="relative aspect-[9/16] w-full">

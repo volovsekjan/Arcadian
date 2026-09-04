@@ -49,8 +49,8 @@ export function HowItWorks() {
                     <div>
                       <h3 className="flex items-center gap-2.5 pt-2.5 font-display text-xl font-medium text-ink">
                         <step.icon
-                          className="h-5 w-5 text-gold"
-                          strokeWidth={1.5}
+                          className="icon-list text-gold"
+                          strokeWidth={1.75}
                           aria-hidden="true"
                         />
                         {step.title}

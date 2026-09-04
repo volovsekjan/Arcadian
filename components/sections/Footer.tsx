@@ -21,7 +21,7 @@ export function Footer() {
   return (
     <footer className="bg-midnight pb-10 pt-16 md:pt-20">
       <Container>
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[2.2fr_1fr_1fr_1.3fr]">
+        <div className="grid gap-12 md:grid-cols-[1.8fr_1fr_1fr] lg:grid-cols-[2.6fr_1fr_1fr]">
           <div>
             <Link href="/" className="inline-flex focus-visible:ring-offset-midnight">
               <Wordmark />
@@ -54,27 +54,6 @@ export function Footer() {
               ))}
             </ul>
           </nav>
-
-          <div>
-            <p className={columnHeading}>Contact</p>
-            <ul className="mt-5 space-y-3">
-              <li>
-                <a href={`mailto:${site.email}`} className={footerLink}>
-                  {site.email}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.whatsapp.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={footerLink}
-                >
-                  WhatsApp {site.whatsapp.display}
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-ivory/10 pt-6 sm:flex-row sm:items-center sm:justify-between">

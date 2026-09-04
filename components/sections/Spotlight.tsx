@@ -46,11 +46,7 @@ export function Spotlight() {
           <ul className="mt-10 space-y-5">
             {points.map((point) => (
               <li key={point.text} className="flex items-start gap-4">
-                <point.icon
-                  className="mt-1 h-5 w-5 shrink-0 text-gold"
-                  strokeWidth={1.5}
-                  aria-hidden="true"
-                />
+                <point.icon className="icon-list text-gold" strokeWidth={1.75} aria-hidden="true" />
                 <span className="text-ivory/80">{point.text}</span>
               </li>
             ))}
@@ -63,7 +59,7 @@ export function Spotlight() {
               className="text-ivory decoration-gold/60 hover:decoration-gold focus-visible:ring-offset-black"
             >
               See how it works
-              <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+              <ArrowRight className="icon-inline" strokeWidth={1.75} aria-hidden="true" />
             </Button>
           </div>
         </Reveal>

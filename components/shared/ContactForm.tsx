@@ -6,7 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, ChevronDown, Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/Button";
-import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
 import {
   contactSchema,
@@ -28,9 +27,11 @@ type ContactApiResponse = { ok: boolean; message: string };
 
 /**
  * Shown when the request never reached the API. The API supplies its own
- * message for every other failure. No variant names a channel inline — the
- * block below always renders both as live links, so every error state
- * resolves to something the visitor can actually click.
+ * message for every other failure.
+ *
+ * No error names an alternative channel: the site publishes no inbox and no
+ * messaging number, so "email us instead" would point nowhere. Every failure
+ * state asks for a retry instead.
  */
 const DEFAULT_ERROR = "Something went wrong sending your request. Please try again.";
 
@@ -110,7 +111,7 @@ export function ContactForm() {
     return (
       <div className="rounded-2xl border border-ivory/25 bg-ivory/10 p-10 text-center">
         {liveRegion}
-        <CheckCircle2 className="mx-auto h-8 w-8 text-gold" strokeWidth={1.5} aria-hidden="true" />
+        <CheckCircle2 className="mx-auto h-8 w-8 text-gold" strokeWidth={1.75} aria-hidden="true" />
         <h3
           ref={successHeadingRef}
           tabIndex={-1}
@@ -145,25 +146,6 @@ export function ContactForm() {
           className="mb-5 rounded-xl border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-ivory"
         >
           <p>{errorMessage}</p>
-          <p className="mt-1.5 text-ivory/85">
-            You can also message us on WhatsApp at{" "}
-            <a
-              href={site.whatsapp.href}
-              target="_blank"
-              rel="noreferrer"
-              className="whitespace-nowrap underline decoration-gold/60 underline-offset-4 transition-colors hover:decoration-gold focus-visible:ring-offset-midnight"
-            >
-              {site.whatsapp.display}
-            </a>{" "}
-            or email{" "}
-            <a
-              href={`mailto:${site.email}`}
-              className="underline decoration-gold/60 underline-offset-4 transition-colors hover:decoration-gold focus-visible:ring-offset-midnight"
-            >
-              {site.email}
-            </a>
-            .
-          </p>
         </div>
       )}
 
@@ -291,8 +273,8 @@ export function ContactForm() {
               ))}
             </select>
             <ChevronDown
-              className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ivory/50"
-              strokeWidth={1.5}
+              className="icon-inline pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-ivory/50"
+              strokeWidth={1.75}
               aria-hidden="true"
             />
           </div>
@@ -322,8 +304,8 @@ export function ContactForm() {
               ))}
             </select>
             <ChevronDown
-              className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ivory/50"
-              strokeWidth={1.5}
+              className="icon-inline pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-ivory/50"
+              strokeWidth={1.75}
               aria-hidden="true"
             />
           </div>
@@ -361,7 +343,7 @@ export function ContactForm() {
               type="checkbox"
               aria-invalid={!!errors.authorized}
               aria-describedby={errors.authorized ? "contact-authorized-error" : undefined}
-              className="mt-1 h-4 w-4 shrink-0 accent-gold focus-visible:ring-offset-midnight"
+              className="icon-inline mt-0.5 accent-gold focus-visible:ring-offset-midnight"
               {...register("authorized")}
             />
             <label htmlFor="contact-authorized" className="text-sm text-ivory/85">
@@ -383,7 +365,7 @@ export function ContactForm() {
               type="checkbox"
               aria-invalid={!!errors.consent}
               aria-describedby={errors.consent ? "contact-consent-error" : undefined}
-              className="mt-1 h-4 w-4 shrink-0 accent-gold focus-visible:ring-offset-midnight"
+              className="icon-inline mt-0.5 accent-gold focus-visible:ring-offset-midnight"
               {...register("consent")}
             />
             <label htmlFor="contact-consent" className="text-sm text-ivory/85">
@@ -418,8 +400,8 @@ export function ContactForm() {
             {isSubmitting ? (
               <>
                 <Loader2
-                  className="h-4 w-4 animate-spin motion-reduce:animate-none"
-                  strokeWidth={1.5}
+                  className="icon-inline animate-spin motion-reduce:animate-none"
+                  strokeWidth={1.75}
                   aria-hidden="true"
                 />
                 Sending…

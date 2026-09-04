@@ -26,7 +26,7 @@ export function FAQ() {
               <div className="mt-8">
                 <Button variant="ghost" href="/#contact">
                   Ask us directly
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" strokeWidth={1.5} />
+                  <ArrowRight className="icon-inline" aria-hidden="true" strokeWidth={1.75} />
                 </Button>
               </div>
             </Reveal>

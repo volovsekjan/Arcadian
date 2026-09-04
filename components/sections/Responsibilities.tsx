@@ -32,7 +32,7 @@ function ResponsibilityList({ heading, items }: { heading: string; items: readon
       <ul className="mt-6 space-y-3">
         {items.map((item) => (
           <li key={item} className="flex items-start gap-3">
-            <Check className="mt-1 h-4 w-4 shrink-0 text-gold" strokeWidth={2} aria-hidden="true" />
+            <Check className="icon-inline mt-0.5 text-gold" strokeWidth={2} aria-hidden="true" />
             <span className="text-sm leading-relaxed text-graphite">{item}</span>
           </li>
         ))}

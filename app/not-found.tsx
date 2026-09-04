@@ -24,7 +24,7 @@ export default function NotFound() {
           </Button>
           <Button variant="ghost" href="/#work">
             See our work
-            <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+            <ArrowRight className="icon-inline" strokeWidth={1.75} aria-hidden="true" />
           </Button>
         </div>
       </Container>

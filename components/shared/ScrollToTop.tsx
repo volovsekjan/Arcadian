@@ -40,7 +40,7 @@ export function ScrollToTop() {
         visible ? "opacity-100" : "pointer-events-none opacity-0",
       )}
     >
-      <ArrowUp className="h-4 w-4" aria-hidden="true" />
+      <ArrowUp className="icon-inline" aria-hidden="true" />
     </button>
   );
 }

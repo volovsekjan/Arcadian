@@ -181,7 +181,7 @@ export function AccentPicker() {
         aria-label="Open the accent colour picker"
         className="fixed bottom-6 right-20 z-[100] flex h-11 w-11 items-center justify-center rounded-full border border-line bg-paper/90 text-mist shadow-card backdrop-blur transition-colors duration-300 ease-out-soft hover:text-ink"
       >
-        <Palette className="h-4 w-4" aria-hidden />
+        <Palette className="icon-inline" aria-hidden />
         <span
           className="absolute -right-0.5 -top-0.5 h-3 w-3 rounded-full border border-paper"
           style={{ background: accent }}

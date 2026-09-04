@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { site } from "@/content/site";
@@ -85,13 +86,13 @@ export default function PrivacyPolicyPage() {
           <h2 className="mt-12 font-display text-h3 font-medium text-ink">Contact</h2>
           <p className="mt-4 leading-relaxed text-graphite">
             [PLACEHOLDER] Questions about this policy, or a request concerning your data, can be
-            sent to{" "}
-            <a
-              href={`mailto:${site.email}`}
+            sent through the{" "}
+            <Link
+              href="/#contact"
               className="text-ink underline decoration-gold/50 underline-offset-4 transition-colors duration-300 ease-out-soft hover:decoration-gold"
             >
-              {site.email}
-            </a>
+              contact form
+            </Link>
             . {site.responseNote}
           </p>
         </div>

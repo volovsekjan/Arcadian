@@ -56,7 +56,7 @@ export function Pricing() {
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <Check
-                        className="mt-1 h-4 w-4 shrink-0 text-gold"
+                        className="icon-inline mt-0.5 text-gold"
                         strokeWidth={2}
                         aria-hidden="true"
                       />
@@ -100,7 +100,7 @@ export function Pricing() {
               {pilot.includes.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <Check
-                    className="mt-1 h-4 w-4 shrink-0 text-gold"
+                    className="icon-inline mt-0.5 text-gold"
                     strokeWidth={2}
                     aria-hidden="true"
                   />

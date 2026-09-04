@@ -5,7 +5,6 @@ import { VideoCard } from "@/components/shared/VideoCard";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { projects } from "@/content/projects";
-import { site } from "@/content/site";
 
 /**
  * Hero — the page's h1, subhead, primary CTAs, and a full-bleed auto-moving
@@ -20,7 +19,7 @@ export function Hero() {
         viewBox="0 0 460 420"
         className="pointer-events-none absolute right-0 top-0 hidden h-[420px] w-auto text-gold opacity-[0.08] md:block"
         stroke="currentColor"
-        strokeWidth={1.5}
+        strokeWidth={1.75}
         fill="none"
       >
         {/* Tall arch */}
@@ -58,23 +57,10 @@ export function Hero() {
                 Book a Call
               </Button>
               <Button variant="ghost" href="/#work">
-                See Our Work <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+                See Our Work{" "}
+                <ArrowRight className="icon-inline" strokeWidth={1.75} aria-hidden="true" />
               </Button>
             </div>
-          </Reveal>
-          <Reveal delay={0.28}>
-            <p className="mt-5 text-sm text-graphite">
-              Or{" "}
-              <a
-                href={site.whatsapp.href}
-                target="_blank"
-                rel="noreferrer"
-                className="text-ink underline decoration-gold/50 underline-offset-4 transition-colors duration-300 ease-out-soft hover:decoration-gold"
-              >
-                message us on WhatsApp
-              </a>
-              .
-            </p>
           </Reveal>
         </div>
       </Container>

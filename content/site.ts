@@ -8,22 +8,17 @@ export const site = {
   description:
     "Arcadian turns existing property photos into videos, Stories and feed posts for Dubai real estate agencies. Choose ready-to-publish content or fully managed posting.",
   /*
-   * TODO — REPLACE BEFORE LAUNCH.
-   * These four values were not supplied, so they are left as visible
-   * placeholders rather than invented. `{{...}}` tokens are greppable and
-   * obviously wrong on sight; the domain has to parse as a URL (metadataBase
-   * calls `new URL()` on it), so it uses the reserved `.invalid` TLD, which
-   * can never resolve to somebody else's site.
+   * TODO — REPLACE BEFORE LAUNCH. The domain was not supplied, so it is left
+   * as a visible placeholder rather than invented; it has to parse as a URL
+   * (metadataBase calls `new URL()` on it), so it uses the reserved `.invalid`
+   * TLD, which can never resolve to somebody else's site.
    *
-   * They now render on the page — in the contact block, the footer, the form
-   * error messages and the pricing pilot — so nothing here can ship unnoticed.
+   * There is deliberately no `email` or `whatsapp` here. The site publishes no
+   * inbox and no messaging number — the contact form is the only route in — so
+   * adding one back means putting it on the page too, or it is a value nothing
+   * reads.
    */
   url: "https://arcadian.invalid",
-  email: "{{EMAIL}}",
-  whatsapp: {
-    display: "{{WHATSAPP_NUMBER}}",
-    href: "https://wa.me/{{WHATSAPP_NUMBER}}",
-  },
   pilotPrice: "{{PILOT_PRICE}}",
   responseNote: "We reply within one business day.",
   locale: "en",

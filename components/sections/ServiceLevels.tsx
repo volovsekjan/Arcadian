@@ -37,7 +37,7 @@ export function ServiceLevels() {
           <div className="mt-10">
             <Button variant="ghost" href="/#pricing">
               Compare the plans
-              <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+              <ArrowRight className="icon-inline" strokeWidth={1.75} aria-hidden="true" />
             </Button>
           </div>
         </Reveal>

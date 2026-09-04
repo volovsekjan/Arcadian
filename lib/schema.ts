@@ -9,7 +9,6 @@ export function organizationJsonLd() {
     name: site.name,
     url: site.url,
     logo: `${site.url}/icon.svg`,
-    email: site.email,
     description: site.description,
     sameAs: site.socials.map((social) => social.href),
   };

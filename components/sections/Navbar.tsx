@@ -141,9 +141,9 @@ export function Navbar() {
                 )}
               >
                 {open ? (
-                  <X className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
+                  <X className="icon-list" strokeWidth={1.75} aria-hidden="true" />
                 ) : (
-                  <Menu className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
+                  <Menu className="icon-list" strokeWidth={1.75} aria-hidden="true" />
                 )}
               </button>
             </div>

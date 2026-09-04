@@ -45,9 +45,9 @@ export function Accordion({ items, className, defaultOpen = 0 }: AccordionProps)
                 {item.question}
                 <ChevronDown
                   aria-hidden="true"
-                  strokeWidth={1.5}
+                  strokeWidth={1.75}
                   className={cn(
-                    "h-4 w-4 shrink-0 text-gold transition-transform duration-300 ease-out-soft",
+                    "icon-inline text-gold transition-transform duration-300 ease-out-soft",
                     isOpen && "rotate-180",
                   )}
                 />
