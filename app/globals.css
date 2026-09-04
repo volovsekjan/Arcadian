@@ -3,6 +3,19 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /*
+     * THE ACCENT, and the only place its default lives.
+     *
+     * Space-separated RGB channels so Tailwind's `/opacity` modifiers still
+     * resolve through the `gold` token family. The AccentPicker overwrites
+     * these two properties on <html> at runtime; everything on the page
+     * repaints because every gold reads them rather than a baked-in hex.
+     */
+    --accent-rgb: 216 162 92; /* #D8A25C */
+    --accent-soft-rgb: 229 190 139; /* #E5BE8B — hover tint, derived from the accent */
+  }
+
   html {
     scroll-behavior: smooth;
     /* Keep anchored sections clear of the sticky navbar */
@@ -56,23 +69,21 @@
    *              items, table data, and FAQ answers. Anything scanned,
    *              operated, or read at length.
    *
-   * Both tokens step up in size from the Satoshi they replace. A serif at the
-   * same pixel size reads optically smaller, and matching the number would
-   * look like a size drop rather than a change of voice. Neither goes below
-   * 15px: this is a display serif with fine strokes and a single weight, and
-   * its hairlines start to break up under that on non-retina screens - which
-   * is why the smallest UI text (eyebrows, chips, field labels) is not in the
-   * list above, despite being "small supporting text".
+   * Sizes are tuned to Source Serif 4, whose x-height is close to Satoshi's:
+   * the lede takes a small step up so the change of voice does not read as a
+   * size drop, and the note holds its size. Tracking stays at the face's own
+   * default - a transitional text serif is already spaced for reading, and
+   * adding letter-spacing to one only makes it look loose beside the other.
    */
 
   /* Section lede: the sentence under a section heading, and the hero subhead. */
   .type-lede {
-    @apply font-serif text-[1.1875rem] leading-[1.6] tracking-[0.005em] sm:text-[1.3125rem] sm:leading-[1.55];
+    @apply font-serif text-[1.125rem] leading-[1.65] sm:text-[1.25rem] sm:leading-[1.6];
   }
 
   /* Supporting note: card and step descriptions, captions, footnotes, taglines. */
   .type-note {
-    @apply font-serif text-[0.9375rem] leading-[1.55] tracking-[0.005em] sm:text-base;
+    @apply font-serif text-[0.9375rem] leading-[1.6] sm:text-base;
   }
 }
 

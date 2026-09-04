@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { ACCENT } from "@/lib/brand";
 
 // Edge runtime: @vercel/og's Node bundle fails to resolve its font asset on
 // Windows builds; the Edge bundle works everywhere (including Vercel).
@@ -50,7 +51,7 @@ export default async function AppleIcon() {
           width: 18,
           height: 18,
           borderRadius: "50%",
-          background: "#D8A25C",
+          background: ACCENT,
         }}
       />
     </div>,

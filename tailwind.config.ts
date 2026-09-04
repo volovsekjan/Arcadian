@@ -22,10 +22,25 @@ const config: Config = {
         graphite: "#4A463D", // secondary text
         mist: "#8C877A", // muted text / captions
         line: "#EAE6E0", // hairline borders — the only thing separating white bands now
+        /*
+         * THE ACCENT. Every gold on the site resolves through --accent-rgb,
+         * set once in app/globals.css :root and re-writable at runtime by the
+         * AccentPicker. Change it in one place and buttons, borders, icons,
+         * rules, ticks, focus rings and tints all follow.
+         *
+         * Values are space-separated RGB channels, not hex, because the UI
+         * leans on Tailwind's opacity modifiers (bg-gold/10, ring-gold/50,
+         * border-gold/40, decoration-gold/50 ...) and only this form lets
+         * `<alpha-value>` resolve.
+         */
         gold: {
-          DEFAULT: "#D8A25C", // primary accent (brand gold)
-          soft: "#E5BE8B", // accent hover / highlights (lighter tint of the brand gold)
-          deep: "#896029", // darker shade of the brand gold for SMALL text on light surfaces (AA ≥4.5:1)
+          DEFAULT: "rgb(var(--accent-rgb) / <alpha-value>)",
+          // Hover tint. Derived from the accent by the picker, so hovers move
+          // with it instead of drifting back to the old brand gold.
+          soft: "rgb(var(--accent-soft-rgb) / <alpha-value>)",
+          // Was #896029, a darker shade held back for small text. Now an alias
+          // of the accent itself, per the brand decision to run a single gold.
+          deep: "rgb(var(--accent-rgb) / <alpha-value>)",
         },
         espresso: "#201D16", // dark surfaces: video cards, lightbox, cookie banner, mobile nav
         // The single dark block that closes the page — contact and footer share
@@ -38,7 +53,7 @@ const config: Config = {
         display: ["var(--font-satoshi)", ...defaultTheme.fontFamily.sans],
         sans: ["var(--font-satoshi)", ...defaultTheme.fontFamily.sans],
         // Accent only — reach for it through .type-lede / .type-note, not directly.
-        serif: ["var(--font-instrument-serif)", ...defaultTheme.fontFamily.serif],
+        serif: ["var(--font-serif)", ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
         /*

@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/content/site";
+import { ACCENT, ACCENT_SOFT } from "@/lib/brand";
 
 // Edge runtime: @vercel/og's Node bundle fails to resolve its font asset on
 // Windows builds; the Edge bundle works everywhere (including Vercel).
@@ -51,7 +52,7 @@ export default async function OpenGraphImage() {
             width: 12,
             height: 12,
             borderRadius: "50%",
-            background: "#D8A25C",
+            background: ACCENT,
           }}
         />
         <div
@@ -59,7 +60,7 @@ export default async function OpenGraphImage() {
             fontSize: 28,
             letterSpacing: "0.24em",
             textTransform: "uppercase",
-            color: "#E5BE8B",
+            color: ACCENT_SOFT,
           }}
         >
           {site.name}
@@ -82,7 +83,7 @@ export default async function OpenGraphImage() {
           you already have.
         </div>
       </div>
-      <div style={{ display: "flex", width: 220, height: 3, background: "#D8A25C" }} />
+      <div style={{ display: "flex", width: 220, height: 3, background: ACCENT }} />
     </div>,
     {
       ...size,

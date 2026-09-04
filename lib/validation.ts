@@ -42,12 +42,7 @@ export const contactSchema = z.object({
     .min(2, "Please tell us your agency or company.")
     .max(120, "Company name is too long."),
   // A portal listing link, or a Drive/WeTransfer-style link to the photos.
-  listingUrl: z
-    .string()
-    .trim()
-    .max(500, "That link is too long.")
-    .optional()
-    .or(z.literal("")),
+  listingUrl: z.string().trim().max(500, "That link is too long.").optional().or(z.literal("")),
   listingsPerMonth: z.enum(["1-5", "6-15", "16-30", "30-plus", "not-sure"], {
     errorMap: () => ({ message: "Please choose an approximate volume." }),
   }),

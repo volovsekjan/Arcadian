@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif } from "next/font/google";
+import { Source_Serif_4 } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "@/components/sections/Footer";
 import { Navbar } from "@/components/sections/Navbar";
+import { AccentPicker } from "@/components/shared/AccentPicker";
 import { Analytics } from "@/components/shared/Analytics";
 import { CookieConsent } from "@/components/shared/CookieConsent";
 import { LightboxProvider } from "@/components/shared/Lightbox";
@@ -31,18 +32,22 @@ const satoshi = localFont({
 });
 
 /**
- * Instrument Serif is the accent only — section ledes, captions, footnotes and
- * taglines, through the `.type-lede` and `.type-note` tokens in globals.css.
- * It is a display serif with fine strokes and a single weight, so it is never
- * used for headings, UI, or anything below 15px.
+ * Source Serif 4 is the secondary voice: section ledes, descriptions,
+ * captions and footnotes, through the `.type-lede` and `.type-note` tokens in
+ * globals.css.
+ *
+ * A transitional text serif rather than a display one — low stroke contrast,
+ * upright axis, no calligraphic flourish, and a real weight range. That is
+ * what makes it safe at 15px, where a high-contrast display serif thins out
+ * and breaks up.
  */
-const instrumentSerif = Instrument_Serif({
+const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "600"],
   style: ["normal", "italic"],
-  variable: "--font-instrument-serif",
+  variable: "--font-serif",
   display: "swap",
-  fallback: ["Georgia", "Times New Roman", "serif"],
+  fallback: ["Georgia", "Cambria", "Times New Roman", "serif"],
 });
 
 export const metadata: Metadata = defaultMetadata;
@@ -60,7 +65,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${satoshi.variable} ${instrumentSerif.variable}`}>
+    <html lang="en" className={`${satoshi.variable} ${sourceSerif.variable}`}>
       <body>
         <a
           href="#main"
@@ -80,6 +85,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CookieConsent />
         <Analytics />
         <ScrollToTop />
+        {/* Live accent control. Delete this line (and the file) to remove it. */}
+        <AccentPicker />
       </body>
     </html>
   );
