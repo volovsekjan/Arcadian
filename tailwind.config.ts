@@ -41,14 +41,20 @@ const config: Config = {
         serif: ["var(--font-instrument-serif)", ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
-        // Fluid editorial type scale
-        display: ["clamp(2.75rem, 6vw, 5.5rem)", { lineHeight: "1.04", letterSpacing: "-0.02em" }],
+        /*
+         * Fluid editorial type scale. Sizes and line heights are unchanged;
+         * the tracking is tightened a step at every heading level because this
+         * scale was drawn for a serif display face, and Satoshi's wider,
+         * rounder counters open up noticeably at 44px and above. Negative
+         * tracking is what stops a large geometric sans reading as loose.
+         */
+        display: ["clamp(2.75rem, 6vw, 5.5rem)", { lineHeight: "1.04", letterSpacing: "-0.032em" }],
         "display-sm": [
           "clamp(2.25rem, 4.5vw, 4rem)",
-          { lineHeight: "1.08", letterSpacing: "-0.015em" },
+          { lineHeight: "1.08", letterSpacing: "-0.026em" },
         ],
-        h2: ["clamp(2rem, 4vw, 3.25rem)", { lineHeight: "1.12", letterSpacing: "-0.01em" }],
-        h3: ["clamp(1.375rem, 2.2vw, 1.75rem)", { lineHeight: "1.25", letterSpacing: "-0.005em" }],
+        h2: ["clamp(2rem, 4vw, 3.25rem)", { lineHeight: "1.12", letterSpacing: "-0.022em" }],
+        h3: ["clamp(1.375rem, 2.2vw, 1.75rem)", { lineHeight: "1.25", letterSpacing: "-0.012em" }],
         body: ["1.0625rem", { lineHeight: "1.7" }],
         eyebrow: ["0.8125rem", { lineHeight: "1.2", letterSpacing: "0.12em" }],
       },

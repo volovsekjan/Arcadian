@@ -14,7 +14,7 @@ export default function NotFound() {
         <h1 className="mt-5 font-display text-display-sm font-medium text-ink">
           This page has left the listing.
         </h1>
-        <p className="mt-5 max-w-xl text-graphite">
+        <p className="type-lede mt-5 max-w-xl text-graphite">
           The address you are looking for does not exist — or has recently been sold. Let us take
           you somewhere worth seeing.
         </p>

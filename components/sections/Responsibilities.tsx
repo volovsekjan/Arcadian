@@ -64,7 +64,7 @@ export function Responsibilities() {
         </div>
 
         <Reveal delay={0.16}>
-          <div className="mt-10 max-w-3xl space-y-4 text-sm leading-relaxed text-graphite">
+          <div className="type-note mt-10 max-w-3xl space-y-4 text-graphite">
             <p>
               Clients remain responsible for listing accuracy, marketing authorization and obtaining
               the required advertising permits. Arcadian can place the permit number and QR code

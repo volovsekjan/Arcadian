@@ -42,14 +42,27 @@
 
 @layer components {
   /*
-   * The two serif tokens. Instrument Serif appears ONLY through these, so the
-   * accent stays governed in one place instead of drifting across components.
+   * The serif tokens. Instrument Serif appears ONLY through these two classes
+   * and the one `font-serif` accent in the hero, so the accent stays governed
+   * in one place instead of drifting across components.
    *
-   * Both step up in size from the Satoshi they replace. A serif at the same
-   * pixel size reads optically smaller, and matching the number would look
-   * like a size drop rather than a change of voice. Neither goes below 15px:
-   * this is a display serif with fine strokes and a single weight, and its
-   * hairlines start to break up under that on non-retina screens.
+   * THE SPLIT: prose takes the serif, everything operable stays Satoshi.
+   *   serif    - section ledes, card and step descriptions, captions,
+   *              footnotes, taglines, closing prose, and emphasis spans
+   *              inside a heading. Text that describes or introduces, one to
+   *              three sentences.
+   *   Satoshi  - every heading, all navigation, buttons, form fields and
+   *              labels, eyebrows, prices and figures, feature and checklist
+   *              items, table data, and FAQ answers. Anything scanned,
+   *              operated, or read at length.
+   *
+   * Both tokens step up in size from the Satoshi they replace. A serif at the
+   * same pixel size reads optically smaller, and matching the number would
+   * look like a size drop rather than a change of voice. Neither goes below
+   * 15px: this is a display serif with fine strokes and a single weight, and
+   * its hairlines start to break up under that on non-retina screens - which
+   * is why the smallest UI text (eyebrows, chips, field labels) is not in the
+   * list above, despite being "small supporting text".
    */
 
   /* Section lede: the sentence under a section heading, and the hero subhead. */
@@ -57,7 +70,7 @@
     @apply font-serif text-[1.1875rem] leading-[1.6] tracking-[0.005em] sm:text-[1.3125rem] sm:leading-[1.55];
   }
 
-  /* Supporting note: captions, footnotes, taglines. */
+  /* Supporting note: card and step descriptions, captions, footnotes, taglines. */
   .type-note {
     @apply font-serif text-[0.9375rem] leading-[1.55] tracking-[0.005em] sm:text-base;
   }

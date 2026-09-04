@@ -55,7 +55,7 @@ export function HowItWorks() {
                         />
                         {step.title}
                       </h3>
-                      <p className="mt-2.5 text-graphite">{step.description}</p>
+                      <p className="type-note mt-2.5 text-graphite">{step.description}</p>
                     </div>
                   </Reveal>
                 </li>

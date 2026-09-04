@@ -23,7 +23,7 @@ export function Services() {
               <Card className="group flex h-full flex-col p-7 transition-all duration-300 ease-out-soft hover:-translate-y-1 hover:shadow-card">
                 <service.icon className="h-6 w-6 text-gold" strokeWidth={1.5} aria-hidden="true" />
                 <h3 className="mt-6 font-display text-xl font-medium text-ink">{service.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-graphite">{service.description}</p>
+                <p className="type-note mt-3 text-graphite">{service.description}</p>
               </Card>
             </Reveal>
           ))}

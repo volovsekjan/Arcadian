@@ -38,7 +38,7 @@ export function Spotlight() {
             description="Most agencies already have property photos. The problem is turning them into enough useful content — and making sure that content actually gets posted."
           />
 
-          <p className="mt-5 text-ivory/70">
+          <p className="type-note mt-5 text-ivory/70">
             Arcadian gives your team a repeatable process. You send the listing assets, review the
             work and choose whether your team publishes it or we do.
           </p>
