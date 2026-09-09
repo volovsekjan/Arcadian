@@ -117,7 +117,7 @@ export function ContactForm() {
           tabIndex={-1}
           className="mt-4 font-display text-xl font-medium text-ivory outline-none"
         >
-          Thank you — your request is on its way.
+          Thank you. Your request is on its way.
         </h3>
         <p className="mt-2 text-sm text-ivory/70">
           We will get back to you within one business day.

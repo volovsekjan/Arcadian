@@ -75,7 +75,7 @@ export function VideoCard({
       ) : (
         <Image
           src={project.poster}
-          alt={`${project.title} — ${project.location}`}
+          alt={`${project.title}, ${project.location}`}
           fill
           sizes={sizes}
           priority={priority}

@@ -13,7 +13,7 @@ export function Services() {
           <SectionHeading
             eyebrow="Services"
             title="One set of photos. A month of posts."
-            description="A portal upload uses your photos once. We use the same set to build a run of content that keeps the property in front of buyers for weeks after it goes live — typically one main Reel, two shorter cuts, a carousel and a set of Story frames per listing."
+            description="A portal upload uses your photos once. We use the same set to build a run of content that keeps the property in front of buyers for weeks after it goes live: typically one main Reel, two shorter cuts, a carousel and a set of Story frames per listing."
           />
         </Reveal>
 

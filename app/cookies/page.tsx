@@ -20,13 +20,13 @@ const sections: LegalSection[] = [
   {
     heading: "What cookies are",
     paragraphs: [
-      "[PLACEHOLDER] Cookies are small text files a website stores in your browser to remember something about your visit — a preference, a session, or an anonymous usage statistic. Similar technologies, such as local storage, work in much the same way and are covered by this policy.",
+      "[PLACEHOLDER] Cookies are small text files a website stores in your browser to remember something about your visit: a preference, a session, or an anonymous usage statistic. Similar technologies, such as local storage, work in much the same way and are covered by this policy.",
     ],
   },
   {
     heading: "The cookies we use",
     paragraphs: [
-      "[PLACEHOLDER] This site sets no cookies by default. The only optional one is a single, privacy-friendly analytics cookie (Plausible) that helps us understand which pages visitors find useful. It is set only after you choose Accept in the cookie banner — decline, and nothing is set.",
+      "[PLACEHOLDER] This site sets no cookies by default. The only optional one is a single, privacy-friendly analytics cookie (Plausible) that helps us understand which pages visitors find useful. It is set only after you choose Accept in the cookie banner. Decline, and nothing is set.",
       "[PLACEHOLDER] Your banner choice itself is kept in your browser’s local storage so we do not ask again on every visit. It contains nothing beyond the choice you made.",
       "[PLACEHOLDER] One further cookie, arcadian-country, stores a two-letter country code so prices can be shown in your currency. It is set by our own server from the region your connection resolves to, holds nothing else, and is not used for analytics or advertising. Your country or region choice, and whether you dismissed the region banner, are kept in local storage alongside the cookie choice above.",
     ],

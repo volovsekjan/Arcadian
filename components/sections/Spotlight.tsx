@@ -21,11 +21,11 @@ export function Spotlight() {
             <BeforeAfterSlider
               before="/images/before.png"
               after="/images/after.png"
-              beforeAlt="Listing photo before enhancement — dark and low resolution"
+              beforeAlt="Listing photo before enhancement, dark and low resolution"
               afterAlt="The same listing photo after photo correction and enhancement"
             />
             <p className="type-note mt-4 text-center text-ivory/60">
-              Drag to compare — the same listing photo, before and after.
+              Drag to compare the same listing photo, before and after.
             </p>
           </div>
         </Reveal>
@@ -35,7 +35,7 @@ export function Spotlight() {
             tone="dark"
             eyebrow="The problem we remove"
             title="Your agents should not be chasing editors and planning posts."
-            description="Most agencies already have property photos. The problem is turning them into enough useful content — and making sure that content actually gets posted."
+            description="Most agencies already have property photos. The problem is turning them into enough useful content, and making sure that content actually gets posted."
           />
 
           <p className="type-note mt-5 text-ivory/70">

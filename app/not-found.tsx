@@ -15,8 +15,8 @@ export default function NotFound() {
           This page has left the listing.
         </h1>
         <p className="type-lede mt-5 max-w-xl text-graphite">
-          The address you are looking for does not exist — or has recently been sold. Let us take
-          you somewhere worth seeing.
+          The address you are looking for does not exist, or has recently been sold. Let us take you
+          somewhere worth seeing.
         </p>
         <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
           <Button href="/" size="lg">

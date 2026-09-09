@@ -28,12 +28,12 @@ export const faq: FaqItem[] = [
   {
     question: "Will you publish the content for us?",
     answer:
-      "On the Content plan, no — your team receives organized, ready-to-publish files. On Managed Content and Funnel Takeover, we schedule and publish to the agreed accounts and platforms.",
+      "On the Content plan, no. Your team receives organized, ready-to-publish files. On Managed Content and Funnel Takeover, we schedule and publish to the agreed accounts and platforms.",
   },
   {
     question: "What does the Funnel Takeover plan include?",
     answer:
-      "We monitor comments and direct messages during agreed hours, reply using scripts your agency has approved, collect basic requirements from the buyer or renter, and route serious enquiries to the correct agent — with an optional WhatsApp handoff. Your agents remain responsible for property advice, viewings, negotiations and closing.",
+      "We monitor comments and direct messages during agreed hours, reply using scripts your agency has approved, collect basic requirements from the buyer or renter, and route serious enquiries to the correct agent, with an optional WhatsApp handoff. Your agents remain responsible for property advice, viewings, negotiations and closing.",
   },
   {
     question: "Do you use AI?",
@@ -48,7 +48,7 @@ export const faq: FaqItem[] = [
   {
     question: "Can we request changes?",
     answer:
-      "Yes. Each plan includes a set number of revision rounds — one round on the Content plan and the pilot. Factual corrections, such as a wrong price or listing detail, are always fixed regardless of revision rounds.",
+      "Yes. Each plan includes a set number of revision rounds: one round on the Content plan and the pilot. Factual corrections, such as a wrong price or listing detail, are always fixed regardless of revision rounds.",
   },
   {
     question: "Can we start with one property?",

@@ -6,7 +6,7 @@ import { ACCENT, ACCENT_SOFT } from "@/lib/brand";
 // Windows builds; the Edge bundle works everywhere (including Vercel).
 export const runtime = "edge";
 
-export const alt = `${site.name} — Property videos and social content made from your listing photos`;
+export const alt = `${site.name}: property videos and social content made from your listing photos`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

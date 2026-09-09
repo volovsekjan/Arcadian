@@ -18,7 +18,7 @@ export function Portfolio() {
           <SectionHeading
             eyebrow="Selected work"
             title="Examples of how we turn listing photos into videos, posts and Story assets."
-            description="The projects below are concept work — creative demonstrations of the format, not active property listings. Client work will be shown here as it is published."
+            description="The projects below are concept work, creative demonstrations of the format rather than active property listings. Client work will be shown here as it is published."
           />
           <Button variant="ghost" href="/#contact" className="hidden md:inline-flex">
             Book a Call

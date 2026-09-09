@@ -100,7 +100,7 @@ export function Navbar() {
           <Container className="flex h-full items-center justify-between">
             <Link
               href="/"
-              aria-label="Arcadian — home"
+              aria-label="Arcadian home"
               onClick={() => setOpen(false)}
               className={cn(
                 "inline-flex items-center",

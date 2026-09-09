@@ -94,7 +94,7 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
           ref={dialogRef}
           role="dialog"
           aria-modal="true"
-          aria-label={`${project.title} — ${project.location}`}
+          aria-label={`${project.title}, ${project.location}`}
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8"
         >
           <div
@@ -130,14 +130,14 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
                   <>
                     <Image
                       src={project.poster}
-                      alt={`${project.title} — ${project.location}`}
+                      alt={`${project.title}, ${project.location}`}
                       fill
                       sizes="(min-width: 640px) 384px, 100vw"
                       className="object-cover"
                     />
                     {/* TODO [PLACEHOLDER]: set `video` in content/projects.ts to remove this notice. */}
                     <p className="absolute inset-x-4 bottom-4 rounded-full bg-espresso/80 px-4 py-2 text-center text-xs uppercase tracking-[0.1em] text-ivory/80 backdrop-blur-sm">
-                      Preview — final video coming soon
+                      Final video coming soon
                     </p>
                   </>
                 )}

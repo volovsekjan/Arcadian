@@ -47,8 +47,8 @@ export function Hero() {
           <Reveal delay={0.16}>
             <p className="type-lede mt-6 max-w-2xl text-graphite">
               Send us the photos your agency has on file. We turn them into property Reels, Story
-              sets and feed posts your agents can publish this week — or we schedule and publish
-              them for you.
+              sets and feed posts your agents can publish this week, or we schedule and publish them
+              for you.
             </p>
           </Reveal>
           <Reveal delay={0.24}>

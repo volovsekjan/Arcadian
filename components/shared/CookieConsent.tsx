@@ -30,8 +30,8 @@ export function CookieConsent() {
       className="fixed inset-x-4 bottom-4 z-[90] mx-auto max-w-xl rounded-2xl border border-ivory/15 bg-espresso p-5 shadow-lift sm:inset-x-6 sm:bottom-6"
     >
       <p className="text-sm leading-relaxed text-ivory/85">
-        We use one privacy-friendly analytics cookie to understand how visitors use this site —
-        nothing is set unless you accept.{" "}
+        We use one privacy-friendly analytics cookie to understand how visitors use this site.
+        Nothing is set unless you accept.{" "}
         <Link
           href="/cookies"
           className="text-gold-soft underline decoration-gold/50 underline-offset-4 transition-colors hover:text-ivory"

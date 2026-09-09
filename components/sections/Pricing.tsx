@@ -18,7 +18,7 @@ export function Pricing() {
             align="center"
             eyebrow="Pricing"
             title="Choose how much we take on."
-            description="Every plan starts from the photos you already have. The difference is whether your team posts the work — or we do."
+            description="Every plan starts from the photos you already have. The difference is whether your team posts the work, or we do."
           />
         </Reveal>
 
