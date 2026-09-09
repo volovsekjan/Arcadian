@@ -41,7 +41,7 @@ export function Hero() {
           <Reveal delay={0.08}>
             <h1 className="font-display text-display font-medium text-ink">
               Your listings already have{" "}
-              <em className="font-serif italic text-gold">everything we need.</em>
+              <em className="type-title not-italic text-gold">everything we need.</em>
             </h1>
           </Reveal>
           <Reveal delay={0.16}>

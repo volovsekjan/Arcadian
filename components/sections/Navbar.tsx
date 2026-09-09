@@ -107,7 +107,7 @@ export function Navbar() {
                 open && "focus-visible:ring-offset-espresso",
               )}
             >
-              <Wordmark priority />
+              <Wordmark priority tone={open ? "ivory" : "ink"} />
             </Link>
 
             <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">

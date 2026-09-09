@@ -55,44 +55,41 @@
 
 @layer components {
   /*
-   * The serif tokens. Instrument Serif appears ONLY through these two classes
-   * and the one `font-serif` accent in the hero, so the accent stays governed
-   * in one place instead of drifting across components.
+   * TYPE TOKENS.
    *
-   * THE SPLIT: prose takes the serif, everything operable stays Satoshi.
-   *   serif    - section ledes, card and step descriptions, captions,
-   *              footnotes, taglines, closing prose, and emphasis spans
-   *              inside a heading. Text that describes or introduces, one to
-   *              three sentences.
-   *   Satoshi  - every heading, all navigation, buttons, form fields and
-   *              labels, eyebrows, prices and figures, feature and checklist
-   *              items, table data, and FAQ answers. Anything scanned,
-   *              operated, or read at length.
+   * Satoshi sets everything on the site. Prata sets exactly two things, and
+   * `.type-title` is how it reaches them: the section titles, and the one
+   * emphasised phrase in the hero H1. Card titles, FAQ questions, prices,
+   * navigation, buttons and all body copy stay Satoshi.
    *
-   * Sizes are tuned to Source Serif 4, whose x-height is close to Satoshi's:
-   * the lede takes a small step up so the change of voice does not read as a
-   * size drop, and the note holds its size. Tracking stays at the face's own
-   * default - a transitional text serif is already spaced for reading, and
-   * adding letter-spacing to one only makes it look loose beside the other.
+   * `.type-lede` and `.type-note` are size-and-rhythm roles only — they used
+   * to carry a serif and no longer do. Keeping them means the size hierarchy
+   * they established survives the change of face, and the whole secondary
+   * voice can be re-pointed at another family from one place if needed.
    */
+
+  /*
+   * Section titles. `font-normal` because Prata has a single weight and the
+   * headings otherwise inherit `font-medium`, which the browser would fake.
+   * `tracking-normal` because the heading scale's negative tracking was drawn
+   * for Satoshi; a display serif closes up and loses its thin strokes under it.
+   */
+  .type-title {
+    @apply font-serif font-normal tracking-normal;
+  }
 
   /* Section lede: the sentence under a section heading, and the hero subhead. */
   .type-lede {
-    @apply font-serif text-[1.125rem] leading-[1.65] sm:text-[1.25rem] sm:leading-[1.6];
+    @apply font-sans text-[1.125rem] leading-[1.6] sm:text-[1.1875rem] sm:leading-[1.6];
   }
 
   /* Supporting note: card and step descriptions, captions, footnotes, taglines. */
   .type-note {
-    @apply font-serif text-[0.9375rem] leading-[1.6] sm:text-base;
+    @apply font-sans text-[0.9375rem] leading-[1.6] sm:text-[0.9375rem];
   }
 }
 
 @layer utilities {
-  /* Hairline rule used by eyebrow labels and dividers */
-  .rule-gold {
-    @apply inline-block h-px w-8 bg-gold align-middle;
-  }
-
   /*
    * ICON SCALE. Three sizes, one per role, so icons stay in proportion to the
    * text they sit beside instead of drifting a step at a time per component.

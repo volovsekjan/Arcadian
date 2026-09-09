@@ -5,30 +5,41 @@ type WordmarkProps = {
   className?: string;
   /** Preload the logo (use for the above-the-fold navbar, not the footer). */
   priority?: boolean;
+  /**
+   * Which cut of the wordmark to use. The two files are the same artwork in
+   * two ink colours, so pick by the surface behind it:
+   *   "ink"   black wordmark, for white surfaces (the navbar)
+   *   "ivory" white wordmark, for the midnight and espresso surfaces
+   *           (the footer, and the navbar while the mobile overlay is open)
+   * The arch glyph is gold in both, so only the word changes colour.
+   */
+  tone?: "ink" | "ivory";
 };
 
 /**
- * The Arcadian brand mark — the official logo (public/logos/arcadian_logo.svg).
- * It is a gold two-tone wordmark that reads on both ivory and espresso surfaces,
- * so it needs no per-background tinting. Single source of truth for the brand
- * mark across the navbar and footer.
+ * The Arcadian brand mark.
  *
- * Sized by height (`h-*`) with `w-auto`, so the aspect ratio is always
- * preserved; the intrinsic width/height below reserve the box and prevent any
- * layout shift. The SVG's viewBox was cropped to the artwork (art untouched),
- * giving a ~5:1 ratio so the mark fills its box instead of floating in padding.
+ * Both files are trimmed from the supplied logo_webpage.png / logo_footer.png.
+ * Those are 8334x2503 canvases in which the artwork occupies 83% of the width
+ * and only 45% of the height, so used untrimmed the logo either rendered small
+ * inside a tall transparent box or forced the navbar taller to compensate.
+ * Trimming to the artwork lets `h-*` mean what it says. The originals are kept
+ * in public/logos as the source files.
+ *
+ * Both trimmed files share one bounding box, so the mark sits identically in
+ * the navbar and the footer.
+ *
+ * Sized by height with `w-auto`, so the ratio is always preserved; the
+ * intrinsic width/height below reserve the box and prevent layout shift.
  */
-export function Wordmark({ className, priority = false }: WordmarkProps) {
+export function Wordmark({ className, priority = false, tone = "ink" }: WordmarkProps) {
   return (
     <Image
-      src="/logos/arcadian_logo.svg"
+      src={tone === "ivory" ? "/logos/logo_footer_mark.png" : "/logos/logo_webpage_mark.png"}
       alt="Arcadian"
-      width={887}
-      height={176}
+      width={1726}
+      height={284}
       priority={priority}
-      // SVGs gain nothing from the raster optimizer; serving the file directly
-      // avoids Next's SVG content-type handling and keeps rendering deterministic.
-      unoptimized
       className={cn("h-6 w-auto sm:h-7", className)}
     />
   );

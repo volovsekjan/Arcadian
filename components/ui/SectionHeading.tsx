@@ -14,10 +14,9 @@ type SectionHeadingProps = {
 /**
  * Eyebrow + display H2 + optional description, in the house style.
  *
- * The description is the site's one recurring editorial voice, so it carries
- * `.type-lede` (Instrument Serif) while the heading stays Satoshi. Setting it
- * here rather than per section is what keeps the serif consistent across all
- * eleven sections — and easy to withdraw from all of them at once.
+ * The title carries `.type-title` (Prata) and the description `.type-lede`
+ * (Satoshi). Setting both here rather than per section is what keeps the two
+ * faces consistent across all eleven sections, and re-pointable from one file.
  */
 export function SectionHeading({
   eyebrow,
@@ -34,12 +33,7 @@ export function SectionHeading({
           {eyebrow}
         </Eyebrow>
       )}
-      <h2
-        className={cn(
-          "font-display text-h2 font-medium",
-          tone === "dark" ? "text-ivory" : "text-ink",
-        )}
-      >
+      <h2 className={cn("type-title text-h2", tone === "dark" ? "text-ivory" : "text-ink")}>
         {title}
       </h2>
       {description && (

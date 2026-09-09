@@ -24,7 +24,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.8fr_1fr_1fr] lg:grid-cols-[2.6fr_1fr_1fr]">
           <div>
             <Link href="/" className="inline-flex focus-visible:ring-offset-midnight">
-              <Wordmark />
+              <Wordmark tone="ivory" />
             </Link>
             <p className="type-note mt-3 max-w-xs text-ivory/60">{site.tagline}</p>
           </div>

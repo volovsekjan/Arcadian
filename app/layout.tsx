@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Source_Serif_4 } from "next/font/google";
+import { Prata } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "@/components/sections/Footer";
@@ -32,22 +32,21 @@ const satoshi = localFont({
 });
 
 /**
- * Source Serif 4 is the secondary voice: section ledes, descriptions,
- * captions and footnotes, through the `.type-lede` and `.type-note` tokens in
- * globals.css.
+ * Prata is the accent face, and nothing else. It sets the section titles and
+ * the one emphasised phrase in the H1 — every other word on the site is
+ * Satoshi, including card titles, FAQ questions, prices and all body copy.
  *
- * A transitional text serif rather than a display one — low stroke contrast,
- * upright axis, no calligraphic flourish, and a real weight range. That is
- * what makes it safe at 15px, where a high-contrast display serif thins out
- * and breaks up.
+ * One weight (400) and no italic exist for this family, so headings that carry
+ * it are set to `font-normal` rather than inheriting `font-medium`, and the
+ * hero phrase is upright: a synthetic slant on a high-contrast display serif
+ * shears the thin strokes and reads as a rendering fault.
  */
-const sourceSerif = Source_Serif_4({
+const prata = Prata({
   subsets: ["latin"],
-  weight: ["400", "600"],
-  style: ["normal", "italic"],
+  weight: "400",
   variable: "--font-serif",
   display: "swap",
-  fallback: ["Georgia", "Cambria", "Times New Roman", "serif"],
+  fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
 export const metadata: Metadata = defaultMetadata;
@@ -65,7 +64,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${satoshi.variable} ${sourceSerif.variable}`}>
+    <html lang="en" className={`${satoshi.variable} ${prata.variable}`}>
       <body>
         <a
           href="#main"
