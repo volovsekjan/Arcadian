@@ -60,7 +60,7 @@ function Mark({ value, ours }: { value: ComparisonValue; ours: boolean }) {
 
 export function Comparison() {
   return (
-    <section id="compare" className="border-t border-line bg-ivory py-24 md:py-32">
+    <section id="compare" className="bg-ivory py-24 md:py-32">
       <Container>
         <Reveal>
           <SectionHeading

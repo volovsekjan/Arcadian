@@ -7,7 +7,7 @@ import { steps } from "@/content/steps";
 /** Section 4.5 — the four-step process, split layout on the bone band. */
 export function HowItWorks() {
   return (
-    <section id="process" className="border-t border-line bg-bone py-24 md:py-32">
+    <section id="process" className="bg-bone py-24 md:py-32">
       <Container>
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Sticky lives on the grid item (full row height), not inside Reveal's

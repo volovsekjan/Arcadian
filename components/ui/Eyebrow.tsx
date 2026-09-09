@@ -22,8 +22,10 @@ type EyebrowProps = {
  * a tiny mark inside a box seven times its height and pushed every section
  * heading down the page.
  *
- * Sized 22x12px: the arches then match the cap height of the 13px label beside
- * them and the row height is unchanged from the rule it replaced.
+ * Sized 30x16px. The arches read as a small emblem before the 13px label
+ * rather than a hairline flourish — they are the only mark the section labels
+ * share, so they carry the section-heading rhythm on their own now that the
+ * band separators are gone.
  *
  * The mark is a raster with #D1A971 baked in, which is the same gold as the
  * accent default and the logo artwork — so it matches out of the box. It does
@@ -46,7 +48,7 @@ export function Eyebrow({ children, className, withMark = true, tone = "light" }
           width={1216}
           height={656}
           aria-hidden="true"
-          className="h-3 w-auto shrink-0"
+          className="h-4 w-auto shrink-0"
         />
       )}
       {children}
