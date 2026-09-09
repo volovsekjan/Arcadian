@@ -1,4 +1,5 @@
 import { ArrowRight, Check, X } from "lucide-react";
+import { Price } from "@/components/shared/Price";
 import { Reveal } from "@/components/shared/Reveal";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -43,6 +44,15 @@ function Mark({ value, ours }: { value: ComparisonValue; ours: boolean }) {
         <X className="icon-inline text-mist" strokeWidth={2.5} aria-hidden="true" />
         <span className="sr-only">No</span>
       </>
+    );
+  }
+  if (typeof value === "object") {
+    return (
+      <Price
+        set={value.price}
+        suffix={value.suffix}
+        className="nums-tabular text-sm leading-relaxed text-graphite"
+      />
     );
   }
   return <span className="text-sm leading-relaxed text-graphite">{value}</span>;

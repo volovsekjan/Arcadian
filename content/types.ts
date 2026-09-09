@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import type { PriceSet } from "@/lib/regions";
 
 export type Project = {
   slug: string;
@@ -40,8 +41,8 @@ export type PricingTier = {
   name: string;
   /** One-line plain-language summary, e.g. "We make the content. Your team posts it." */
   tagline: string;
-  /** Display price without the "From" prefix, e.g. "AED 3,500". */
-  price: string;
+  /** Display price per currency, without the "From" prefix. See PriceSet. */
+  price: PriceSet;
   period: string | null;
   features: string[];
   /** Scope boundary shown under the feature list. */

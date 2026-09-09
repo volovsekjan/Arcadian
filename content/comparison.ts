@@ -1,3 +1,6 @@
+import { pricing } from "./pricing";
+import type { PriceSet } from "@/lib/regions";
+
 /**
  * The comparison table in #compare.
  *
@@ -7,8 +10,12 @@
  * rows along with it.
  */
 
-/** `yes` renders a gold tick, `no` a muted cross, a string renders as plain text. */
-export type ComparisonValue = "yes" | "no" | string;
+/**
+ * `yes` renders a gold tick, `no` a muted cross, a string renders as plain
+ * text, and `{ price }` renders that price in the visitor's active currency
+ * so the table never contradicts the pricing section below it.
+ */
+export type ComparisonValue = "yes" | "no" | string | { price: PriceSet; suffix?: string };
 
 export type ComparisonRow = {
   criterion: string;
@@ -33,7 +40,7 @@ export const comparisonRows: ComparisonRow[] = [
   {
     criterion: "Cost",
     values: [
-      "from AED 3,500/month, fixed",
+      { price: pricing[0].price, suffix: "/month, fixed" },
       "per project, varies",
       "salary and software, or selling time",
     ],

@@ -8,6 +8,8 @@ import { AccentPicker } from "@/components/shared/AccentPicker";
 import { Analytics } from "@/components/shared/Analytics";
 import { CookieConsent } from "@/components/shared/CookieConsent";
 import { LightboxProvider } from "@/components/shared/Lightbox";
+import { RegionBanner } from "@/components/shared/RegionBanner";
+import { RegionProvider } from "@/components/shared/RegionProvider";
 import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import { defaultMetadata } from "@/lib/metadata";
 import { organizationJsonLd } from "@/lib/schema";
@@ -76,11 +78,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
         />
-        <LightboxProvider>
-          <Navbar />
-          <main id="main">{children}</main>
-          <Footer />
-        </LightboxProvider>
+        <RegionProvider>
+          <LightboxProvider>
+            {/* Above the sticky navbar and in normal flow, so it scrolls away
+                and the navbar takes the top edge after it. */}
+            <RegionBanner />
+            <Navbar />
+            <main id="main">{children}</main>
+            <Footer />
+          </LightboxProvider>
+        </RegionProvider>
         <CookieConsent />
         <Analytics />
         <ScrollToTop />

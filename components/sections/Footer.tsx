@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RegionPicker } from "@/components/shared/RegionBanner";
 import { Container } from "@/components/ui/Container";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { site } from "@/content/site";
@@ -27,6 +28,11 @@ export function Footer() {
               <Wordmark tone="ivory" />
             </Link>
             <p className="type-note mt-3 max-w-xs text-ivory/60">{site.tagline}</p>
+            {/* Always reachable: the banner shows at most once, and a visitor
+                whose region was guessed right never sees it at all. */}
+            <div className="mt-6 max-w-[15rem]">
+              <RegionPicker />
+            </div>
           </div>
 
           <nav aria-label="Footer navigation">

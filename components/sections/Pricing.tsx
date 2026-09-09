@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { Price } from "@/components/shared/Price";
 import { Reveal } from "@/components/shared/Reveal";
 import { pricing, pilot } from "@/content/pricing";
 import { cn } from "@/lib/utils";
@@ -45,9 +46,10 @@ export function Pricing() {
                 <div className="mt-7">
                   <p className="text-sm text-graphite">From</p>
                   <p className="mt-0.5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                    <span className="nums-tabular font-display text-4xl font-medium text-ink [overflow-wrap:anywhere]">
-                      {tier.price}
-                    </span>
+                    <Price
+                      set={tier.price}
+                      className="nums-tabular font-display text-4xl font-medium text-ink [overflow-wrap:anywhere]"
+                    />
                     {tier.period && <span className="text-sm text-graphite">{tier.period}</span>}
                   </p>
                 </div>

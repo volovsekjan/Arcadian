@@ -10,7 +10,7 @@ export const pricing: PricingTier[] = [
     id: "content",
     name: "Content",
     tagline: "We make the content. Your team posts it.",
-    price: "AED 3,500",
+    price: { AED: "AED 3,500" },
     period: "/month",
     features: [
       "3 property Reels",
@@ -30,7 +30,7 @@ export const pricing: PricingTier[] = [
     id: "managed-content",
     name: "Managed Content",
     tagline: "We make it, schedule it and post it.",
-    price: "AED 7,500",
+    price: { AED: "AED 7,500" },
     period: "/month",
     features: [
       "10 property Reels per month",
@@ -52,7 +52,7 @@ export const pricing: PricingTier[] = [
     id: "funnel-takeover",
     name: "Funnel Takeover",
     tagline: "We manage the content and the first response.",
-    price: "AED 15,000",
+    price: { AED: "AED 15,000" },
     period: "/month",
     features: [
       "20 property Reels per month",
