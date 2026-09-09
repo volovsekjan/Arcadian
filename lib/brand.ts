@@ -12,8 +12,8 @@
  * literal somewhere. Everything else derives from one of these two.
  */
 
-/** #D8A25C — the accent. */
-export const ACCENT = "#D8A25C";
+/** #D1A971 — the accent. Same gold as the logo and arch mark artwork. */
+export const ACCENT = "#D1A971";
 
-/** #E5BE8B — the hover tint. The picker derives this from ACCENT at runtime. */
-export const ACCENT_SOFT = "#E5BE8B";
+/** #E0C59E — the hover tint. The picker derives this from ACCENT at runtime. */
+export const ACCENT_SOFT = "#E0C59E";

@@ -28,7 +28,7 @@ const DEFAULT_ACCENT = ACCENT.toUpperCase();
 
 const STORAGE_KEY = "arcadian:accent";
 
-/** Lightness delta from the brand accent to its hover tint (#D8A25C -> #E5BE8B). */
+/** Lightness delta from the brand accent to its hover tint (#D1A971 -> #E0C59E). */
 const SOFT_LIGHTEN = 0.118;
 
 type Rgb = { r: number; g: number; b: number };

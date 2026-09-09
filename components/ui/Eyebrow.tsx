@@ -25,8 +25,10 @@ type EyebrowProps = {
  * Sized 22x12px: the arches then match the cap height of the 13px label beside
  * them and the row height is unchanged from the rule it replaced.
  *
- * Note this mark is a raster with the gold baked in, so unlike the rule it no
- * longer follows `--accent-rgb` when the accent is changed.
+ * The mark is a raster with #D1A971 baked in, which is the same gold as the
+ * accent default and the logo artwork — so it matches out of the box. It does
+ * not follow `--accent-rgb` though, so picking a different accent leaves these
+ * marks and the logo behind. Recolouring them needs an SVG of the mark.
  */
 export function Eyebrow({ children, className, withMark = true, tone = "light" }: EyebrowProps) {
   return (

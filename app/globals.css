@@ -12,8 +12,8 @@
      * these two properties on <html> at runtime; everything on the page
      * repaints because every gold reads them rather than a baked-in hex.
      */
-    --accent-rgb: 216 162 92; /* #D8A25C */
-    --accent-soft-rgb: 229 190 139; /* #E5BE8B — hover tint, derived from the accent */
+    --accent-rgb: 209 169 113; /* #D1A971 — matches the gold in the logo and arch mark */
+    --accent-soft-rgb: 224 197 158; /* #E0C59E — hover tint, derived from the accent */
   }
 
   html {
