@@ -49,6 +49,7 @@ export function Responsibilities() {
         <Reveal>
           <SectionHeading
             eyebrow="Responsibilities"
+            emphasis="compact"
             title="Permit-safe by default."
             description="Property marketing in Dubai depends on accurate listings and valid permits. We are built around that, not around it. Here is how the work divides."
           />

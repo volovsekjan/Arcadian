@@ -78,6 +78,22 @@
     @apply font-serif font-normal tracking-normal;
   }
 
+  /*
+   * Compact section title: Satoshi, bold, one size down from the display
+   * treatment.
+   *
+   * It changes face rather than just weight because Prata ships a single
+   * weight. `font-bold` on Prata would be a browser-synthesised fake, which
+   * smears the stems of a high-contrast serif and reads as a rendering fault
+   * — the same reason the hero's accent phrase is upright rather than a
+   * synthetic italic. Where a title needs real weight, Satoshi provides it.
+   *
+   * Pair with `text-h3` at the call site for the smaller size.
+   */
+  .type-title-compact {
+    @apply font-sans font-bold;
+  }
+
   /* Section lede: the sentence under a section heading, and the hero subhead. */
   .type-lede {
     @apply font-sans text-[1.125rem] leading-[1.6] sm:text-[1.1875rem] sm:leading-[1.6];

@@ -12,7 +12,7 @@ import { projects } from "@/content/projects";
  */
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pb-20 pt-16 md:pb-24 md:pt-24">
+    <section className="relative overflow-hidden pb-10 pt-8 md:pb-12 md:pt-12">
       {/* Faint architectural line-art motif — decorative only. */}
       <svg
         aria-hidden="true"

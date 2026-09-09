@@ -8,6 +8,17 @@ type SectionHeadingProps = {
   align?: "left" | "center";
   /** "dark" for sections on espresso backgrounds. */
   tone?: "light" | "dark";
+  /**
+   * Title treatment.
+   *
+   * "display" (default) — Prata at h2. The house voice, for the sections that
+   *   make a claim.
+   * "compact" — Satoshi, bold, one size down at h3. For the functional
+   *   sections (the form, the FAQ, compliance), where the heading is a
+   *   signpost rather than a statement. It changes face because Prata ships a
+   *   single weight and a bold Prata would be a synthetic fake.
+   */
+  emphasis?: "display" | "compact";
   className?: string;
 };
 
@@ -24,6 +35,7 @@ export function SectionHeading({
   description,
   align = "left",
   tone = "light",
+  emphasis = "display",
   className,
 }: SectionHeadingProps) {
   return (
@@ -33,7 +45,12 @@ export function SectionHeading({
           {eyebrow}
         </Eyebrow>
       )}
-      <h2 className={cn("type-title text-h2", tone === "dark" ? "text-ivory" : "text-ink")}>
+      <h2
+        className={cn(
+          emphasis === "compact" ? "type-title-compact text-h3" : "type-title text-h2",
+          tone === "dark" ? "text-ivory" : "text-ink",
+        )}
+      >
         {title}
       </h2>
       {description && (

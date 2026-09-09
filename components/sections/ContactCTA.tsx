@@ -29,6 +29,7 @@ export function ContactCTA() {
           <SectionHeading
             tone="dark"
             eyebrow="Get started"
+            emphasis="compact"
             title="Tell us about your listings. We will take it from there."
             description="Share a few details about your agency and monthly volume. We will walk you through the plans — or set up a single-listing pilot if you want to test the workflow first."
           />
