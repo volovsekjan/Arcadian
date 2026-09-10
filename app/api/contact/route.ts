@@ -51,16 +51,22 @@ export async function POST(request: Request) {
     return reply({ ok: false, message: "The contact form is temporarily unavailable." }, 500);
   }
 
-  // 4. Forward the fields n8n expects as separate top-level values. `plan` is
-  //    kept as the key for the selected service so existing n8n mappings keep
-  //    working. `consent` and `authorized` are intentionally not forwarded
+  // 4. Forward the fields n8n expects as separate top-level values.
+  //    `consent` and `authorized` are intentionally not forwarded
   //    (validation-only).
+  //
+  //    `plan` is sent EMPTY rather than dropped. The "Service of interest"
+  //    field it carried has been removed from the form, but this key existed
+  //    specifically so n8n could map it, and a workflow that maps a missing
+  //    key can fail differently from one that maps an empty string. Sending
+  //    "" keeps the payload shape n8n was built against.
+  //    TODO: delete the key once the n8n workflow no longer references it.
   const outgoing = JSON.stringify({
     name: data.name,
     email: data.email,
     whatsapp: data.whatsapp,
     company: data.company,
-    plan: data.service,
+    plan: "",
     listingUrl: data.listingUrl ?? "",
     listingsPerMonth: data.listingsPerMonth,
     message: data.message ?? "",

@@ -7,12 +7,7 @@ import { CheckCircle2, ChevronDown, Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-import {
-  contactSchema,
-  listingVolumeOptions,
-  serviceOptions,
-  type ContactInput,
-} from "@/lib/validation";
+import { contactSchema, listingVolumeOptions, type ContactInput } from "@/lib/validation";
 
 const fieldClasses =
   "w-full rounded-xl border border-ivory/25 bg-ivory/10 px-4 py-3 text-body-sm text-ivory placeholder:text-ivory/70 transition-colors focus-visible:ring-offset-midnight";
@@ -56,7 +51,21 @@ export function ContactForm() {
     formState: { errors, isSubmitting },
   } = useForm<ContactInput>({
     resolver: zodResolver(contactSchema),
-    mode: "onTouched",
+    /*
+     * Validate on submit, not on touch.
+     *
+     * `onTouched` showed "Please tell us your name." the moment focus left an
+     * empty field, so simply tabbing through the form lit it up red before
+     * anyone had tried to send anything.
+     *
+     * `reValidateMode` stays "onChange" on purpose: an error still cannot
+     * appear until Send Request is pressed, but once one is on screen it
+     * clears as the field is corrected, rather than persisting until the next
+     * submit. If errors should freeze between submits, this becomes
+     * "onSubmit" too.
+     */
+    mode: "onSubmit",
+    reValidateMode: "onChange",
     defaultValues: {
       name: "",
       email: "",
@@ -64,7 +73,6 @@ export function ContactForm() {
       company: "",
       listingUrl: "",
       listingsPerMonth: "not-sure",
-      service: "not-sure",
       message: "",
       authorized: false,
       consent: false,
@@ -254,7 +262,7 @@ export function ContactForm() {
           )}
         </div>
 
-        <div>
+        <div className="sm:col-span-2">
           <label htmlFor="contact-volume" className={labelClasses}>
             New listings per month (approx.)*
           </label>
@@ -281,37 +289,6 @@ export function ContactForm() {
           {errors.listingsPerMonth && (
             <p id="contact-volume-error" className={errorClasses}>
               {errors.listingsPerMonth.message}
-            </p>
-          )}
-        </div>
-
-        <div>
-          <label htmlFor="contact-service" className={labelClasses}>
-            Service of interest*
-          </label>
-          <div className="relative">
-            <select
-              id="contact-service"
-              aria-invalid={!!errors.service}
-              aria-describedby={errors.service ? "contact-service-error" : undefined}
-              className={cn(fieldClasses, "appearance-none pr-10")}
-              {...register("service")}
-            >
-              {serviceOptions.map((option) => (
-                <option key={option.value} value={option.value} className="bg-midnight text-ivory">
-                  {option.label}
-                </option>
-              ))}
-            </select>
-            <ChevronDown
-              className="icon-inline pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-ivory/50"
-              strokeWidth={1.75}
-              aria-hidden="true"
-            />
-          </div>
-          {errors.service && (
-            <p id="contact-service-error" className={errorClasses}>
-              {errors.service.message}
             </p>
           )}
         </div>

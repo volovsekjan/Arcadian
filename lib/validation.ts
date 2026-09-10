@@ -1,16 +1,5 @@
 import { z } from "zod";
 
-/** Options for the "Service of interest" select in the contact form. */
-export const serviceOptions = [
-  { value: "content", label: "Content" },
-  { value: "managed-content", label: "Managed Content" },
-  { value: "funnel-takeover", label: "Funnel Takeover" },
-  { value: "paid-pilot", label: "Paid pilot" },
-  { value: "not-sure", label: "Not sure yet" },
-] as const;
-
-export type ServiceValue = (typeof serviceOptions)[number]["value"];
-
 /** Options for the approximate number of new listings per month. */
 export const listingVolumeOptions = [
   { value: "1-5", label: "1–5" },
@@ -45,9 +34,6 @@ export const contactSchema = z.object({
   listingUrl: z.string().trim().max(500, "That link is too long.").optional().or(z.literal("")),
   listingsPerMonth: z.enum(["1-5", "6-15", "16-30", "30-plus", "not-sure"], {
     errorMap: () => ({ message: "Please choose an approximate volume." }),
-  }),
-  service: z.enum(["content", "managed-content", "funnel-takeover", "paid-pilot", "not-sure"], {
-    errorMap: () => ({ message: "Please choose a service." }),
   }),
   message: z
     .string()
