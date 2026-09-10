@@ -59,7 +59,19 @@ export function Eyebrow({ children, className, withMark = true, tone = "light" }
           className="h-4 w-auto shrink-0"
         />
       )}
-      {children}
+      {/*
+        Optical correction, on top of the geometric centring above.
+        The mark is bottom-heavy: its legs are solid vertical strokes while the
+        arch tops are thin curves, so its visual mass sits below its geometric
+        centre. Centred by the box, the label therefore reads high against it.
+        This drops the label onto the mark's optical centre.
+
+        `translate-y` rather than a margin so the nudge stays purely visual:
+        a margin on a flex item would change the item's box, and with
+        `items-center` that shifts the centring it is trying to correct.
+        In `em` so it tracks the label size if the token changes.
+      */}
+      <span className="translate-y-[0.1em]">{children}</span>
     </span>
   );
 }
