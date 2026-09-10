@@ -1,8 +1,8 @@
 import { ArrowRight, CalendarCheck, Inbox, ShieldCheck } from "lucide-react";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { BeforeAfterSlider } from "@/components/shared/BeforeAfterSlider";
 import { Reveal } from "@/components/shared/Reveal";
 
 const points = [
@@ -18,15 +18,19 @@ export function Spotlight() {
       <Container className="grid gap-14 lg:grid-cols-12 lg:items-center">
         <Reveal className="lg:col-span-7">
           <div className="mx-auto w-full max-w-sm">
-            <BeforeAfterSlider
-              before="/images/before.png"
-              after="/images/after.png"
-              beforeAlt="Listing photo before enhancement, dark and low resolution"
-              afterAlt="The same listing photo after photo correction and enhancement"
-            />
-            <p className="mt-4 text-center text-fine text-ivory/60">
-              Drag to compare the same listing photo, before and after.
-            </p>
+            {/* Single still, replacing the drag-to-compare slider. The frame
+                below keeps the slider's exact box (9:16, same radius and
+                hairline) so the section's layout does not move; the source is
+                941x1672, which is 9:16, so object-cover crops nothing. */}
+            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-ivory/10">
+              <Image
+                src="/images/before.png"
+                alt="Living room interior from a property listing"
+                fill
+                sizes="(min-width: 1024px) 384px, 90vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </Reveal>
 

@@ -27,6 +27,20 @@ export const defaultMetadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  /*
+   * Declared rather than left to the file convention, so the icon set is
+   * visible in code. `/icon.svg` is the rounded dark square with the serif "A"
+   * and the gold dot (app/icon.svg); `/apple-icon` is the same mark rendered
+   * to PNG at 180px by app/apple-icon.tsx.
+   *
+   * `shortcut` points at the SVG too. There is no favicon.ico: nothing in the
+   * repo can generate one, and every browser that matters reads the SVG.
+   */
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
+  },
   // og:title/og:description/twitter:* deliberately omit title/description so
   // they fall back to each page's own resolved metadata (subpages would
   // otherwise inherit the homepage values wholesale). The branded OG image is
