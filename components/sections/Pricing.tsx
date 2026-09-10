@@ -35,22 +35,24 @@ export function Pricing() {
                 )}
               >
                 {tier.highlighted && (
-                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-4 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-ink">
+                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-4 py-1.5 text-fine font-semibold uppercase tracking-[0.1em] text-ink">
                     Most Popular
                   </span>
                 )}
 
-                <h3 className="font-display text-xl font-medium text-ink">{tier.name}</h3>
-                <p className="type-note mt-1.5 text-graphite">{tier.tagline}</p>
+                <h3 className="font-sans text-h3 font-medium text-ink">{tier.name}</h3>
+                <p className="mt-1.5 text-body-sm text-graphite">{tier.tagline}</p>
 
                 <div className="mt-7">
-                  <p className="text-sm text-graphite">From</p>
+                  <p className="text-body-sm text-graphite">From</p>
                   <p className="mt-0.5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
                     <Price
                       set={tier.price}
-                      className="nums-tabular font-display text-4xl font-medium text-ink [overflow-wrap:anywhere]"
+                      className="nums-tabular font-sans text-h2 font-medium text-ink [overflow-wrap:anywhere]"
                     />
-                    {tier.period && <span className="text-sm text-graphite">{tier.period}</span>}
+                    {tier.period && (
+                      <span className="text-body-sm text-graphite">{tier.period}</span>
+                    )}
                   </p>
                 </div>
 
@@ -62,12 +64,12 @@ export function Pricing() {
                         strokeWidth={2}
                         aria-hidden="true"
                       />
-                      <span className="text-sm leading-relaxed text-graphite">{feature}</span>
+                      <span className="text-body-sm leading-relaxed text-graphite">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                <p className="mt-6 border-t border-line pt-5 text-sm leading-relaxed text-graphite">
+                <p className="mt-6 border-t border-line pt-5 text-body-sm leading-relaxed text-graphite">
                   {tier.scopeNote}
                 </p>
 
@@ -86,7 +88,7 @@ export function Pricing() {
         </div>
 
         <Reveal delay={0.16}>
-          <p className="type-note mt-10 text-center text-graphite">
+          <p className="mt-10 text-center text-fine text-graphite">
             Final scope depends on monthly listing volume, number of accounts and required
             deliverables. All prices exclude VAT and advertising spend.
           </p>
@@ -95,9 +97,9 @@ export function Pricing() {
         {/* Lower-commitment way in: the paid single-listing pilot. */}
         <Reveal className="mx-auto mt-16 max-w-2xl">
           <Card className="p-8">
-            <h3 className="font-display text-xl font-medium text-ink">{pilot.title}</h3>
-            <p className="type-note mt-2 text-graphite">{pilot.description}</p>
-            <p className="mt-6 text-sm font-medium text-ink">The pilot can include:</p>
+            <h3 className="font-sans text-h3 font-medium text-ink">{pilot.title}</h3>
+            <p className="mt-2 text-body-sm text-graphite">{pilot.description}</p>
+            <p className="mt-6 text-body-sm font-medium text-ink">The pilot can include:</p>
             <ul className="mt-3 space-y-2.5">
               {pilot.includes.map((item) => (
                 <li key={item} className="flex items-start gap-3">
@@ -106,7 +108,7 @@ export function Pricing() {
                     strokeWidth={2}
                     aria-hidden="true"
                   />
-                  <span className="text-sm leading-relaxed text-graphite">{item}</span>
+                  <span className="text-body-sm leading-relaxed text-graphite">{item}</span>
                 </li>
               ))}
             </ul>

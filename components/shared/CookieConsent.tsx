@@ -29,7 +29,7 @@ export function CookieConsent() {
       aria-label="Cookie consent"
       className="fixed inset-x-4 bottom-4 z-[90] mx-auto max-w-xl rounded-2xl border border-ivory/15 bg-espresso p-5 shadow-lift sm:inset-x-6 sm:bottom-6"
     >
-      <p className="text-sm leading-relaxed text-ivory/85">
+      <p className="text-body-sm leading-relaxed text-ivory/85">
         We use one privacy-friendly analytics cookie to understand how visitors use this site.
         Nothing is set unless you accept.{" "}
         <Link
@@ -43,14 +43,14 @@ export function CookieConsent() {
         <button
           type="button"
           onClick={() => choose("granted")}
-          className="h-10 rounded-full bg-gold px-5 text-sm font-medium text-ink transition-colors duration-300 hover:bg-gold-soft focus-visible:ring-offset-espresso"
+          className="h-10 rounded-full bg-gold px-5 text-body-sm font-medium text-ink transition-colors duration-300 hover:bg-gold-soft focus-visible:ring-offset-espresso"
         >
           Accept
         </button>
         <button
           type="button"
           onClick={() => choose("denied")}
-          className="h-10 rounded-full border border-ivory/25 px-5 text-sm font-medium text-ivory transition-colors duration-300 hover:border-ivory/60 focus-visible:ring-offset-espresso"
+          className="h-10 rounded-full border border-ivory/25 px-5 text-body-sm font-medium text-ivory transition-colors duration-300 hover:border-ivory/60 focus-visible:ring-offset-espresso"
         >
           Decline
         </button>

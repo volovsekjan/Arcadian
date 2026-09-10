@@ -115,7 +115,7 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="relative text-sm text-graphite transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 after:ease-out-soft hover:text-ink hover:after:scale-x-100"
+                  className="relative text-body-sm text-graphite transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 after:ease-out-soft hover:text-ink hover:after:scale-x-100"
                 >
                   {item.label}
                 </Link>
@@ -177,7 +177,7 @@ export function Navbar() {
                         >
                           {String(i + 1).padStart(2, "0")}
                         </span>
-                        <span className="font-display text-3xl font-medium tracking-tight text-ivory transition-colors duration-300 ease-out-soft hover:text-gold-soft">
+                        <span className="font-sans text-h2 font-medium tracking-tight text-ivory transition-colors duration-300 ease-out-soft hover:text-gold-soft">
                           {item.label}
                         </span>
                       </Link>

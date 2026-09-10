@@ -220,12 +220,12 @@ export function AccentPicker() {
       </label>
 
       <div className="mt-3 flex items-center gap-2">
-        <span className="text-xs text-mist">Current</span>
+        <span className="text-fine text-mist">Current</span>
         <button
           type="button"
           onClick={copy}
           title="Copy to clipboard"
-          className="nums-tabular ml-auto inline-flex items-center gap-1.5 rounded-md border border-line px-2 py-1 font-mono text-xs text-ink transition-colors hover:border-ink/40"
+          className="nums-tabular ml-auto inline-flex items-center gap-1.5 rounded-md border border-line px-2 py-1 font-mono text-fine text-ink transition-colors hover:border-ink/40"
         >
           {accent}
           {copied ? (
@@ -255,7 +255,7 @@ export function AccentPicker() {
         WCAG AA wants 4.5:1 there, and the brand gold is well under it — so the
         readout is a live warning, not decoration.
       */}
-      <p className="mt-3 flex items-baseline justify-between gap-2 text-xs">
+      <p className="mt-3 flex items-baseline justify-between gap-2 text-fine">
         <span className="text-mist">On white</span>
         <span className={cn("nums-tabular font-medium", ratio >= 4.5 ? "text-ink" : "text-mist")}>
           {ratio.toFixed(2)}:1 {ratio >= 4.5 ? "AA" : "below AA"}
@@ -267,7 +267,7 @@ export function AccentPicker() {
         onClick={() => update(DEFAULT_ACCENT)}
         disabled={isDefault}
         className={cn(
-          "mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-line px-3 py-2 text-xs text-graphite transition-colors duration-300 ease-out-soft",
+          "mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-line px-3 py-2 text-fine text-graphite transition-colors duration-300 ease-out-soft",
           isDefault ? "cursor-default opacity-45" : "hover:border-ink hover:text-ink",
         )}
       >

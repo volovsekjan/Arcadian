@@ -9,25 +9,23 @@ type SectionHeadingProps = {
   /** "dark" for sections on espresso backgrounds. */
   tone?: "light" | "dark";
   /**
-   * Title treatment.
+   * Title voice.
    *
-   * "display" (default) — Prata at h2. The house voice, for the sections that
-   *   make a claim.
-   * "compact" — Satoshi, bold, one size down at h3. For the functional
-   *   sections (the form, the FAQ, compliance), where the heading is a
-   *   signpost rather than a statement. It changes face because Prata ships a
-   *   single weight and a bold Prata would be a synthetic fake.
+   * "heading" (default) — Satoshi semibold at `text-h2`. Every section
+   *   heading on the site, because a heading is informational.
+   * "slogan" — Prata at the same size, for a line meant to be felt rather
+   *   than read. Opt in per section; nothing uses it by default.
    */
-  emphasis?: "display" | "compact";
+  emphasis?: "heading" | "slogan";
   className?: string;
 };
 
 /**
  * Eyebrow + display H2 + optional description, in the house style.
  *
- * The title carries `.type-title` (Prata) and the description `.type-lede`
- * (Satoshi). Setting both here rather than per section is what keeps the two
- * faces consistent across all eleven sections, and re-pointable from one file.
+ * The title is `text-h2` in Satoshi semibold and the description `text-body`
+ * in Satoshi. Setting both here rather than per section is what keeps the
+ * scale consistent across all eleven sections, and re-pointable from one file.
  */
 export function SectionHeading({
   eyebrow,
@@ -35,7 +33,7 @@ export function SectionHeading({
   description,
   align = "left",
   tone = "light",
-  emphasis = "display",
+  emphasis = "heading",
   className,
 }: SectionHeadingProps) {
   return (
@@ -47,14 +45,15 @@ export function SectionHeading({
       )}
       <h2
         className={cn(
-          emphasis === "compact" ? "type-title-compact text-h3" : "type-title text-h2",
+          "text-h2",
+          emphasis === "slogan" ? "type-slogan" : "font-sans font-semibold",
           tone === "dark" ? "text-ivory" : "text-ink",
         )}
       >
         {title}
       </h2>
       {description && (
-        <p className={cn("type-lede mt-5", tone === "dark" ? "text-ivory/70" : "text-graphite")}>
+        <p className={cn("mt-5 text-body", tone === "dark" ? "text-ivory/70" : "text-graphite")}>
           {description}
         </p>
       )}

@@ -27,7 +27,7 @@ function RegionCode({ id }: { id: RegionId }) {
   return (
     <span
       aria-hidden="true"
-      className="nums-tabular rounded border border-gold/40 bg-gold/10 px-1.5 py-0.5 font-sans text-[0.625rem] font-semibold uppercase tracking-[0.08em] text-gold"
+      className="nums-tabular rounded border border-gold/40 bg-gold/10 px-1.5 py-0.5 font-sans text-fine font-semibold uppercase tracking-[0.08em] text-gold"
     >
       {code}
     </span>
@@ -45,7 +45,7 @@ export function RegionBanner() {
       className="border-b border-ivory/10 bg-midnight"
     >
       <Container className="flex flex-col gap-3 py-3 sm:flex-row sm:items-center sm:gap-5">
-        <p className="flex items-start gap-2.5 text-sm leading-relaxed text-ivory/80">
+        <p className="flex items-start gap-2.5 text-body-sm leading-relaxed text-ivory/80">
           <Globe className="icon-inline mt-0.5 text-gold" strokeWidth={1.75} aria-hidden="true" />
           <span>
             You&rsquo;re on the {baseRegion.label} website. Choose your country or region to see
@@ -61,7 +61,7 @@ export function RegionBanner() {
             <select
               defaultValue={detected}
               onChange={(event) => chooseRegion(event.target.value as RegionId)}
-              className="h-9 appearance-none rounded-full border border-ivory/25 bg-ivory/10 pl-3.5 pr-9 text-sm text-ivory transition-colors hover:border-ivory/50 focus-visible:ring-offset-midnight"
+              className="h-9 appearance-none rounded-full border border-ivory/25 bg-ivory/10 pl-3.5 pr-9 text-body-sm text-ivory transition-colors hover:border-ivory/50 focus-visible:ring-offset-midnight"
             >
               {regions.map((region) => (
                 <option key={region.id} value={region.id} className="bg-midnight text-ivory">
@@ -104,7 +104,7 @@ export function RegionPicker() {
       <select
         value={region.id}
         onChange={(event) => chooseRegion(event.target.value as RegionId)}
-        className="h-9 w-full appearance-none rounded-full border border-ivory/20 bg-ivory/5 pl-3.5 pr-9 text-sm text-ivory/80 transition-colors hover:border-ivory/40 focus-visible:ring-offset-midnight"
+        className="h-9 w-full appearance-none rounded-full border border-ivory/20 bg-ivory/5 pl-3.5 pr-9 text-body-sm text-ivory/80 transition-colors hover:border-ivory/40 focus-visible:ring-offset-midnight"
       >
         {regions.map((option) => (
           <option key={option.id} value={option.id} className="bg-midnight text-ivory">

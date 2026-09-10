@@ -20,7 +20,6 @@ export function FAQ() {
             <Reveal>
               <SectionHeading
                 eyebrow="FAQ"
-                emphasis="compact"
                 title="Frequently asked questions."
                 description="Everything you need to know before your first listing. If your question is not here, we are one message away."
               />

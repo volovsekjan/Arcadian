@@ -48,29 +48,50 @@ const config: Config = {
         midnight: "#0F0F0E",
       },
       fontFamily: {
-        // Satoshi is the dominant typeface. Both tokens resolve to it, so
-        // `font-display` and `font-sans` differ by weight and size, not family.
-        display: ["var(--font-satoshi)", ...defaultTheme.fontFamily.sans],
+        // DUAL VOICE, and the only two families on the site.
+        // sans  = Satoshi: every informational word. Body copy, section
+        //         headings, subheadings, navigation, buttons, fine print.
+        // serif = Prata: the lines meant to be felt. The hero quote, and any
+        //         slogan explicitly opted in through `.type-slogan`.
+        // There is deliberately no third token and no `display` alias: two
+        // names for Satoshi is how a dual-voice system drifts.
         sans: ["var(--font-satoshi)", ...defaultTheme.fontFamily.sans],
-        // Accent only — reach for it through .type-lede / .type-note, not directly.
         serif: ["var(--font-serif)", ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
         /*
-         * Fluid editorial type scale. Sizes and line heights are unchanged;
-         * the tracking is tightened a step at every heading level because this
-         * scale was drawn for a serif display face, and Satoshi's wider,
-         * rounder counters open up noticeably at 44px and above. Negative
-         * tracking is what stops a large geometric sans reading as loose.
+         * THE SCALE. Every font size on the site is one of these nine tokens;
+         * there are no arbitrary `text-[...]` values and no uses of Tailwind's
+         * default scale left. Each name states its role, so a stray size is
+         * visible in review rather than only on the page.
+         *
+         * Fluid steps use clamp(min, vw, max): the min protects small screens,
+         * the max stops headings running away on a desktop monitor.
+         *
+         * `fine` is the floor. Nothing meant to be read is set below 13px,
+         * which is why there is no token under it to reach for.
          */
-        display: ["clamp(2.75rem, 6vw, 5.5rem)", { lineHeight: "1.04", letterSpacing: "-0.032em" }],
-        "display-sm": [
-          "clamp(2.25rem, 4.5vw, 4rem)",
-          { lineHeight: "1.08", letterSpacing: "-0.026em" },
+        // Hero H1. The only place this size appears.
+        display: ["clamp(2rem, 4vw, 3.5rem)", { lineHeight: "1.08", letterSpacing: "-0.03em" }],
+        // Section H2. Distinctly a heading, never competing with the hero.
+        h2: ["clamp(1.375rem, 2.5vw, 2rem)", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
+        // Subheadings and card titles. One token, where there used to be 18px
+        // and 20px sitting side by side.
+        h3: [
+          "clamp(1.125rem, 1.5vw, 1.375rem)",
+          { lineHeight: "1.35", letterSpacing: "-0.01em" },
         ],
-        h2: ["clamp(2rem, 4vw, 3.25rem)", { lineHeight: "1.12", letterSpacing: "-0.022em" }],
-        h3: ["clamp(1.375rem, 2.2vw, 1.75rem)", { lineHeight: "1.25", letterSpacing: "-0.012em" }],
+        // Reading size. Section ledes, the hero subhead, long-form copy.
         body: ["1.0625rem", { lineHeight: "1.7" }],
+        // Supporting copy: card and step descriptions, list items, table data.
+        "body-sm": ["0.875rem", { lineHeight: "1.6" }],
+        // Primary call to action.
+        cta: ["1rem", { lineHeight: "1.2" }],
+        // Secondary and supporting calls to action.
+        "cta-sm": ["0.875rem", { lineHeight: "1.2" }],
+        // Fine print, badges, captions, footnotes. The accessibility floor.
+        fine: ["0.8125rem", { lineHeight: "1.5" }],
+        // Uppercase section label.
         eyebrow: ["0.8125rem", { lineHeight: "1.2", letterSpacing: "0.12em" }],
       },
       maxWidth: {

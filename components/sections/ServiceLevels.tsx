@@ -26,8 +26,8 @@ export function ServiceLevels() {
                 <span className="font-sans text-eyebrow font-semibold uppercase text-gold-deep">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-4 font-display text-xl font-medium text-ink">{level.name}</h3>
-                <p className="type-note mt-3 text-graphite">{level.summary}</p>
+                <h3 className="mt-4 font-sans text-h3 font-medium text-ink">{level.name}</h3>
+                <p className="mt-3 text-body-sm text-graphite">{level.summary}</p>
               </Card>
             </Reveal>
           ))}

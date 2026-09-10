@@ -15,11 +15,11 @@ import {
 } from "@/lib/validation";
 
 const fieldClasses =
-  "w-full rounded-xl border border-ivory/25 bg-ivory/10 px-4 py-3 text-sm text-ivory placeholder:text-ivory/70 transition-colors focus-visible:ring-offset-midnight";
+  "w-full rounded-xl border border-ivory/25 bg-ivory/10 px-4 py-3 text-body-sm text-ivory placeholder:text-ivory/70 transition-colors focus-visible:ring-offset-midnight";
 
-const labelClasses = "mb-2 block text-sm font-medium text-ivory/90";
+const labelClasses = "mb-2 block text-body-sm font-medium text-ivory/90";
 
-const errorClasses = "mt-2 text-sm text-gold-soft";
+const errorClasses = "mt-2 text-body-sm text-gold-soft";
 
 type Status = "idle" | "error" | "success";
 
@@ -115,17 +115,17 @@ export function ContactForm() {
         <h3
           ref={successHeadingRef}
           tabIndex={-1}
-          className="mt-4 font-display text-xl font-medium text-ivory outline-none"
+          className="mt-4 font-sans text-h3 font-medium text-ivory outline-none"
         >
           Thank you. Your request is on its way.
         </h3>
-        <p className="mt-2 text-sm text-ivory/70">
+        <p className="mt-2 text-body-sm text-ivory/70">
           We will get back to you within one business day.
         </p>
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-6 inline-flex h-10 items-center justify-center rounded-full border border-ivory/35 px-5 text-sm text-ivory transition-colors duration-300 ease-out-soft hover:border-ivory/70 focus-visible:ring-offset-midnight"
+          className="mt-6 inline-flex h-10 items-center justify-center rounded-full border border-ivory/35 px-5 text-body-sm text-ivory transition-colors duration-300 ease-out-soft hover:border-ivory/70 focus-visible:ring-offset-midnight"
         >
           Send another request
         </button>
@@ -143,7 +143,7 @@ export function ContactForm() {
       {status === "error" && (
         <div
           role="alert"
-          className="mb-5 rounded-xl border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-ivory"
+          className="mb-5 rounded-xl border border-gold/40 bg-gold/10 px-4 py-3 text-body-sm text-ivory"
         >
           <p>{errorMessage}</p>
         </div>
@@ -346,7 +346,7 @@ export function ContactForm() {
               className="icon-inline mt-0.5 accent-gold focus-visible:ring-offset-midnight"
               {...register("authorized")}
             />
-            <label htmlFor="contact-authorized" className="text-sm text-ivory/85">
+            <label htmlFor="contact-authorized" className="text-body-sm text-ivory/85">
               I confirm that I am authorized to share these listing assets for the purpose of
               creating marketing content.
             </label>
@@ -368,7 +368,7 @@ export function ContactForm() {
               className="icon-inline mt-0.5 accent-gold focus-visible:ring-offset-midnight"
               {...register("consent")}
             />
-            <label htmlFor="contact-consent" className="text-sm text-ivory/85">
+            <label htmlFor="contact-consent" className="text-body-sm text-ivory/85">
               I agree that Arcadian may use my details to respond to this enquiry, as described in
               the{" "}
               <Link

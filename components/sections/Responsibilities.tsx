@@ -28,12 +28,12 @@ const arcadianProvides = [
 function ResponsibilityList({ heading, items }: { heading: string; items: readonly string[] }) {
   return (
     <Card className="h-full p-8">
-      <h3 className="font-display text-xl font-medium text-ink">{heading}</h3>
+      <h3 className="font-sans text-h3 font-medium text-ink">{heading}</h3>
       <ul className="mt-6 space-y-3">
         {items.map((item) => (
           <li key={item} className="flex items-start gap-3">
             <Check className="icon-inline mt-0.5 text-gold" strokeWidth={2} aria-hidden="true" />
-            <span className="text-sm leading-relaxed text-graphite">{item}</span>
+            <span className="text-body-sm leading-relaxed text-graphite">{item}</span>
           </li>
         ))}
       </ul>
@@ -49,7 +49,6 @@ export function Responsibilities() {
         <Reveal>
           <SectionHeading
             eyebrow="Responsibilities"
-            emphasis="compact"
             title="Permit-safe by default."
             description="Property marketing in Dubai depends on accurate listings and valid permits. We are built around that, not around it. Here is how the work divides."
           />
@@ -65,7 +64,7 @@ export function Responsibilities() {
         </div>
 
         <Reveal delay={0.16}>
-          <div className="type-note mt-10 max-w-3xl space-y-4 text-graphite">
+          <div className="mt-10 max-w-3xl space-y-4 text-body-sm text-graphite">
             <p>
               Clients remain responsible for listing accuracy, marketing authorization and obtaining
               the required advertising permits. Arcadian can place the permit number and QR code

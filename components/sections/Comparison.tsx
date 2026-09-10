@@ -51,11 +51,11 @@ function Mark({ value, ours }: { value: ComparisonValue; ours: boolean }) {
       <Price
         set={value.price}
         suffix={value.suffix}
-        className="nums-tabular text-sm leading-relaxed text-graphite"
+        className="nums-tabular text-body-sm leading-relaxed text-graphite"
       />
     );
   }
-  return <span className="text-sm leading-relaxed text-graphite">{value}</span>;
+  return <span className="text-body-sm leading-relaxed text-graphite">{value}</span>;
 }
 
 export function Comparison() {
@@ -88,7 +88,7 @@ export function Comparison() {
                       key={column}
                       scope="col"
                       className={cn(
-                        "px-5 pb-4 align-bottom font-display text-lg font-medium leading-snug",
+                        "px-5 pb-4 align-bottom font-sans text-h3 font-medium leading-snug",
                         i === OURS
                           ? "rounded-t-2xl border-x border-t-2 border-x-line border-t-gold bg-gold/[0.06] pt-5 text-ink"
                           : "text-graphite",
@@ -104,7 +104,7 @@ export function Comparison() {
                   <tr key={row.criterion} className="align-top">
                     <th
                       scope="row"
-                      className="border-t border-line py-5 pr-6 text-sm font-medium leading-relaxed text-ink"
+                      className="border-t border-line py-5 pr-6 text-body-sm font-medium leading-relaxed text-ink"
                     >
                       {row.criterion}
                     </th>
@@ -114,7 +114,7 @@ export function Comparison() {
                         className={cn(
                           "border-t border-line px-5 py-5",
                           i === OURS &&
-                            "border-x border-x-line bg-gold/[0.06] text-sm font-medium text-ink",
+                            "border-x border-x-line bg-gold/[0.06] text-body-sm font-medium text-ink",
                           i === OURS &&
                             rowIndex === comparisonRows.length - 1 &&
                             "rounded-b-2xl border-b",
@@ -135,7 +135,7 @@ export function Comparison() {
           {comparisonRows.map((row, i) => (
             <Reveal key={row.criterion} delay={Math.min(i, 4) * 0.06}>
               <div className="overflow-hidden rounded-2xl border border-line">
-                <h3 className="border-b border-line px-5 py-4 font-display text-base font-medium leading-snug text-ink">
+                <h3 className="border-b border-line px-5 py-4 font-sans text-h3 font-medium leading-snug text-ink">
                   {row.criterion}
                 </h3>
                 <dl className="divide-y divide-line">
@@ -149,7 +149,7 @@ export function Comparison() {
                     >
                       <dt
                         className={cn(
-                          "w-32 shrink-0 text-[0.6875rem] font-semibold uppercase tracking-[0.11em]",
+                          "w-32 shrink-0 text-fine font-semibold uppercase tracking-[0.11em]",
                           columnIndex === OURS ? "text-gold-deep" : "text-mist",
                         )}
                       >
@@ -157,7 +157,7 @@ export function Comparison() {
                       </dt>
                       <dd
                         className={cn(
-                          "flex items-center text-sm",
+                          "flex items-center text-body-sm",
                           columnIndex === OURS ? "font-medium text-ink" : "text-graphite",
                         )}
                       >
@@ -173,7 +173,7 @@ export function Comparison() {
 
         <Reveal delay={0.16}>
           <div className="mt-10 flex flex-col gap-6">
-            <p className="type-note max-w-2xl text-graphite">{comparisonFootnote}</p>
+            <p className="max-w-2xl text-fine text-graphite">{comparisonFootnote}</p>
             <div>
               <Button variant="ghost" href="/#pricing">
                 See the plans

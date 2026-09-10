@@ -30,7 +30,7 @@ export function Accordion({ items, className, defaultOpen = 0 }: AccordionProps)
         const panelId = `${baseId}-panel-${index}`;
         return (
           <div key={item.question}>
-            <h3 className="font-display text-lg font-medium leading-snug">
+            <h3 className="font-sans text-h3 font-medium leading-snug">
               <button
                 type="button"
                 id={headerId}

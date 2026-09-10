@@ -20,7 +20,7 @@ import { organizationJsonLd } from "@/lib/schema";
  * Font License — see app/fonts/LICENSE.txt); one variable file covers the
  * whole 300–900 range, so every weight the UI uses costs no extra request.
  *
- * Both `font-display` and `font-sans` resolve here, so the existing tokens
+ * Both `font-sans` and `font-sans` resolve here, so the existing tokens
  * keep working untouched across every component.
  */
 const satoshi = localFont({
@@ -70,7 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <a
           href="#main"
-          className="sr-only z-[110] rounded-full bg-espresso px-5 py-2.5 text-sm text-ivory focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+          className="sr-only z-[110] rounded-full bg-espresso px-5 py-2.5 text-body-sm text-ivory focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
         >
           Skip to content
         </a>

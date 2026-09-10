@@ -87,7 +87,7 @@ export function VideoCard({
         className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/5 to-espresso/25"
       />
       <span className="absolute inset-x-0 bottom-0 p-4">
-        <span className="font-display text-lg leading-snug text-ivory">{project.title}</span>
+        <span className="font-sans text-h3 leading-snug text-ivory">{project.title}</span>
       </span>
     </div>
   );

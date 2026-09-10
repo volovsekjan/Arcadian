@@ -29,12 +29,11 @@ export function ContactCTA() {
           <SectionHeading
             tone="dark"
             eyebrow="Get started"
-            emphasis="compact"
             title="Tell us about your listings. We will take it from there."
             description="Share a few details about your agency and monthly volume. We will walk you through the plans, or set up a single-listing pilot if you want to test the workflow first."
           />
 
-          <ul className="mt-10 space-y-4 text-sm">
+          <ul className="mt-10 space-y-4 text-body-sm">
             {reassurances.map((item) => (
               <li key={item.text} className="flex items-center gap-3">
                 <item.icon className="icon-list text-gold" strokeWidth={1.75} aria-hidden="true" />
@@ -43,7 +42,7 @@ export function ContactCTA() {
             ))}
           </ul>
 
-          <div className="mt-8 flex items-center gap-3 text-sm">
+          <div className="mt-8 flex items-center gap-3 text-body-sm">
             <Clock className="icon-list text-gold" strokeWidth={1.75} aria-hidden="true" />
             <span className="text-ivory/70">{site.responseNote}</span>
           </div>

@@ -24,7 +24,7 @@ export function Spotlight() {
               beforeAlt="Listing photo before enhancement, dark and low resolution"
               afterAlt="The same listing photo after photo correction and enhancement"
             />
-            <p className="type-note mt-4 text-center text-ivory/60">
+            <p className="mt-4 text-center text-fine text-ivory/60">
               Drag to compare the same listing photo, before and after.
             </p>
           </div>
@@ -38,7 +38,7 @@ export function Spotlight() {
             description="Most agencies already have property photos. The problem is turning them into enough useful content, and making sure that content actually gets posted."
           />
 
-          <p className="type-note mt-5 text-ivory/70">
+          <p className="mt-5 text-body-sm text-ivory/70">
             Arcadian gives your team a repeatable process. You send the listing assets, review the
             work and choose whether your team publishes it or we do.
           </p>

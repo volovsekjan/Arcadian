@@ -30,12 +30,13 @@ const variants: Record<Variant, string> = {
   primary: "rounded-full bg-gold text-ink hover:bg-gold-soft",
   secondary:
     "rounded-full border border-ink/25 text-ink hover:border-ink hover:bg-ink hover:text-ivory",
-  ghost: "text-ink underline decoration-gold/50 underline-offset-4 hover:decoration-gold",
+  ghost:
+    "text-cta-sm text-ink underline decoration-gold/50 underline-offset-4 hover:decoration-gold",
 };
 
 const sizes: Record<Size, string> = {
-  md: "h-11 px-6 text-sm",
-  lg: "h-12 px-8 text-base",
+  md: "h-11 px-6 text-cta-sm",
+  lg: "h-12 px-8 text-cta",
 };
 
 /**

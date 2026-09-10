@@ -136,15 +136,15 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
                       className="object-cover"
                     />
                     {/* TODO [PLACEHOLDER]: set `video` in content/projects.ts to remove this notice. */}
-                    <p className="absolute inset-x-4 bottom-4 rounded-full bg-espresso/80 px-4 py-2 text-center text-xs uppercase tracking-[0.1em] text-ivory/80 backdrop-blur-sm">
+                    <p className="absolute inset-x-4 bottom-4 rounded-full bg-espresso/80 px-4 py-2 text-center text-fine uppercase tracking-[0.1em] text-ivory/80 backdrop-blur-sm">
                       Final video coming soon
                     </p>
                   </>
                 )}
               </div>
               <div className="flex items-baseline justify-between gap-3 px-5 py-4">
-                <span className="font-display text-lg text-ivory">{project.title}</span>
-                <span className="text-xs uppercase tracking-[0.1em] text-ivory/60">
+                <span className="font-sans text-h3 text-ivory">{project.title}</span>
+                <span className="text-fine uppercase tracking-[0.1em] text-ivory/60">
                   {project.location}
                 </span>
               </div>

@@ -26,8 +26,8 @@ export function Services() {
                   strokeWidth={1.75}
                   aria-hidden="true"
                 />
-                <h3 className="mt-6 font-display text-xl font-medium text-ink">{service.title}</h3>
-                <p className="type-note mt-3 text-graphite">{service.description}</p>
+                <h3 className="mt-6 font-sans text-h3 font-medium text-ink">{service.title}</h3>
+                <p className="mt-3 text-body-sm text-graphite">{service.description}</p>
               </Card>
             </Reveal>
           ))}

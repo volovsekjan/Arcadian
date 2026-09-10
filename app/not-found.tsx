@@ -11,10 +11,10 @@ export default function NotFound() {
     <section className="flex min-h-[65vh] items-center py-24">
       <Container>
         <Eyebrow>404</Eyebrow>
-        <h1 className="mt-5 font-display text-display-sm font-medium text-ink">
+        <h1 className="mt-5 font-sans text-display font-medium text-ink">
           This page has left the listing.
         </h1>
-        <p className="type-lede mt-5 max-w-xl text-graphite">
+        <p className="mt-5 max-w-xl text-body text-graphite">
           The address you are looking for does not exist, or has recently been sold. Let us take you
           somewhere worth seeing.
         </p>

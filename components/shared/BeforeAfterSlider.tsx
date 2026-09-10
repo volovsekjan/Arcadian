@@ -101,10 +101,10 @@ export function BeforeAfterSlider({
           its description to AT without rendering a second image. */}
       <span className="sr-only">{beforeAlt}</span>
 
-      <span className="absolute left-3 top-3 rounded-full bg-espresso/70 px-3 py-1.5 text-[0.625rem] font-semibold uppercase tracking-[0.1em] text-ivory backdrop-blur-sm">
+      <span className="absolute left-3 top-3 rounded-full bg-espresso/70 px-3 py-1.5 text-fine font-semibold uppercase tracking-[0.1em] text-ivory backdrop-blur-sm">
         Before
       </span>
-      <span className="absolute right-3 top-3 rounded-full bg-ivory/90 px-3 py-1.5 text-[0.625rem] font-semibold uppercase tracking-[0.1em] text-ink backdrop-blur-sm">
+      <span className="absolute right-3 top-3 rounded-full bg-ivory/90 px-3 py-1.5 text-fine font-semibold uppercase tracking-[0.1em] text-ink backdrop-blur-sm">
         After
       </span>
 

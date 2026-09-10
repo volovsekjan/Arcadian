@@ -6,7 +6,7 @@ import { site } from "@/content/site";
 
 const columnHeading = "text-eyebrow font-semibold uppercase text-gold";
 const footerLink =
-  "text-sm text-ivory/70 transition-colors hover:text-ivory focus-visible:ring-offset-midnight";
+  "text-body-sm text-ivory/70 transition-colors hover:text-ivory focus-visible:ring-offset-midnight";
 
 /**
  * Site footer.
@@ -27,7 +27,7 @@ export function Footer() {
             <Link href="/" className="inline-flex focus-visible:ring-offset-midnight">
               <Wordmark tone="ivory" />
             </Link>
-            <p className="type-note mt-3 max-w-xs text-ivory/60">{site.tagline}</p>
+            <p className="mt-3 max-w-xs text-fine text-ivory/60">{site.tagline}</p>
             {/* Always reachable: the banner shows at most once, and a visitor
                 whose region was guessed right never sees it at all. */}
             <div className="mt-6 max-w-[15rem]">
@@ -63,10 +63,10 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-ivory/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-ivory/50">
+          <p className="text-fine text-ivory/50">
             &copy; {new Date().getFullYear()} Arcadian. All rights reserved.
           </p>
-          <span className="text-xs text-ivory/50">More content from every property listing.</span>
+          <span className="text-fine text-ivory/50">More content from every property listing.</span>
         </div>
       </Container>
     </footer>

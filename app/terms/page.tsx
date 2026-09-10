@@ -73,11 +73,11 @@ export default function TermsPage() {
     <section className="py-20 md:py-28">
       <Container className="max-w-3xl">
         <Eyebrow>Legal</Eyebrow>
-        <h1 className="mt-5 font-display text-display-sm font-medium text-ink">Terms of Service</h1>
-        <p className="mt-4 text-sm text-graphite">Last updated: [PLACEHOLDER]</p>
+        <h1 className="mt-5 font-sans text-display font-medium text-ink">Terms of Service</h1>
+        <p className="mt-4 text-body-sm text-graphite">Last updated: [PLACEHOLDER]</p>
 
         {/* TODO: insert real legal text */}
-        <div className="mt-10 rounded-2xl border border-gold/40 bg-gold/10 p-5 text-sm leading-relaxed text-ink">
+        <div className="mt-10 rounded-2xl border border-gold/40 bg-gold/10 p-5 text-body-sm leading-relaxed text-ink">
           [PLACEHOLDER] This page is a template. Replace it with your final legal text, reviewed by
           counsel, before launch.
         </div>
@@ -85,7 +85,7 @@ export default function TermsPage() {
         <div>
           {sections.map((section) => (
             <div key={section.heading}>
-              <h2 className="mt-12 font-display text-h3 font-medium text-ink">{section.heading}</h2>
+              <h2 className="mt-12 font-sans text-h3 font-medium text-ink">{section.heading}</h2>
               {section.paragraphs.map((paragraph, i) => (
                 <p key={i} className="mt-4 leading-relaxed text-graphite">
                   {paragraph}
