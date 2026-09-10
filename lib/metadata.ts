@@ -28,25 +28,34 @@ export const defaultMetadata: Metadata = {
     canonical: "/",
   },
   /*
-   * Declared rather than left to the file convention, so the icon set is
-   * visible in code and points where it is told to.
+   * The tab icon.
    *
-   * The tab icon is the gold arch mark. Note its proportions: the source is
-   * 1216x656, so 1.85:1. A favicon box is square, so at the 16px browsers
-   * actually draw it the mark fits to width and stands about 9px tall. It
-   * reads as a small gold flourish rather than a legible mark; that is the
-   * geometry of a wide mark in a square box, not a scaling bug. Cropping to a
-   * single arch would be the fix if it needs more presence.
+   * These are SQUARE renders of the gold arch mark, generated from
+   * public/logos/icon_gold_mark.png. That source is 1216x656 (1.85:1), and a
+   * favicon slot is square: pointing a browser at a wide image leaves it to
+   * fit or squash as it likes, and some squash. There is no CSS for a favicon
+   * and no attribute on the link tag that changes it, so the aspect ratio has
+   * to be correct in the file itself.
    *
-   * There is no favicon.ico: nothing in the repo can generate one, and every
-   * browser that matters reads PNG.
+   * Each render places the mark at its true 1.85:1 on a transparent square,
+   * centred, with 4% padding a side so it never touches the edge. Downscaling
+   * averaged in premultiplied alpha, or the transparent surround would have
+   * bled into the mark's antialiased edges and greyed them.
+   *
+   * Two sizes because a 16px tab drawn down from 256px goes soft; 32 is there
+   * for the tab and 256 for bookmarks, history and high-DPI.
+   *
+   * Regenerate both if the mark artwork changes.
    */
   icons: {
-    icon: [{ url: "/logos/icon_gold_mark.png", type: "image/png" }],
-    shortcut: [{ url: "/logos/icon_gold_mark.png", type: "image/png" }],
-    // Still the dark monogram from app/apple-icon.tsx: an Apple touch icon is
-    // a full-bleed rounded tile on a home screen, which a transparent wide
-    // mark cannot fill. Flagged rather than changed.
+    icon: [
+      { url: "/logos/favicon-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/logos/favicon-256.png", type: "image/png", sizes: "256x256" },
+    ],
+    shortcut: [{ url: "/logos/favicon-32.png", type: "image/png", sizes: "32x32" }],
+    // Still the dark monogram tile from app/apple-icon.tsx: an Apple touch
+    // icon is full-bleed on a home screen, which a transparent mark cannot
+    // fill.
     apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
   },
 
