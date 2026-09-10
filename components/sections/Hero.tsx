@@ -12,7 +12,7 @@ import { projects } from "@/content/projects";
  */
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pb-section pt-8 md:pb-section-lg md:pt-12">
+    <section className="relative overflow-hidden py-section md:py-section-lg">
       {/* Faint architectural line-art motif — decorative only. */}
       <svg
         aria-hidden="true"
