@@ -83,11 +83,12 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          // pt-4 sits above the fixed-height row below, so the logo, nav and
-          // button all drop 16px from the viewport edge. It is constant across
-          // both states, which keeps the condense a clean 16px and leaves the
-          // 80/40 scroll thresholds valid.
-          "sticky top-0 z-50 border-b pt-4 transition-colors duration-300 ease-out-soft",
+          // No vertical padding here on purpose. The row below is a
+          // fixed-height box with `items-center`, which centres the tallest
+          // child exactly, so space above and below is equal by construction.
+          // A one-sided pt-* on this element is what broke that before: it
+          // pushed the whole row down without adding anything underneath.
+          "sticky top-0 z-50 border-b transition-colors duration-300 ease-out-soft",
           open
             ? "border-ivory/10 bg-espresso"
             : scrolled
@@ -98,7 +99,7 @@ export function Navbar() {
         <div
           className={cn(
             "transition-[height] duration-300 ease-out-soft",
-            scrolled ? "h-20" : "h-24",
+            scrolled ? "h-16" : "h-20",
           )}
         >
           <Container className="flex h-full items-center justify-between">
@@ -165,7 +166,7 @@ export function Navbar() {
             exit={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
             transition={{ duration: reduceMotion ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Container className="flex min-h-full flex-col pb-10 pt-36">
+            <Container className="flex min-h-full flex-col pb-10 pt-28">
               <nav aria-label="Mobile">
                 <ul className="divide-y divide-ivory/10 border-y border-ivory/10">
                   {site.nav.map((item, i) => (
