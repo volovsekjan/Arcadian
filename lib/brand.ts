@@ -1,10 +1,10 @@
 /**
  * Brand accent, as literal hex.
  *
- * The runtime accent lives in CSS, as `--accent-rgb` in app/globals.css — that
- * is what the whole page reads and what the AccentPicker rewrites. This module
- * exists for the places CSS cannot reach: the generated OG image, the Apple
- * touch icon, and the picker's own default and reset value.
+ * The accent lives in CSS, as `--accent-rgb` in app/globals.css — that is what
+ * the whole page reads. This module exists for the places CSS cannot reach:
+ * the generated OG image and the Apple touch icon, both rendered on the
+ * server at build time.
  *
  * KEEP IN SYNC with the `:root` block in app/globals.css. Two declarations is
  * the floor here — a static image is rendered on the server at build time and

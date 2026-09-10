@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "@/components/sections/Footer";
 import { Navbar } from "@/components/sections/Navbar";
-import { AccentPicker } from "@/components/shared/AccentPicker";
 import { Analytics } from "@/components/shared/Analytics";
 import { CookieConsent } from "@/components/shared/CookieConsent";
 import { LightboxProvider } from "@/components/shared/Lightbox";
@@ -91,8 +90,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CookieConsent />
         <Analytics />
         <ScrollToTop />
-        {/* Live accent control. Delete this line (and the file) to remove it. */}
-        <AccentPicker />
       </body>
     </html>
   );

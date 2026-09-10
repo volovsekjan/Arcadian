@@ -5,10 +5,16 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/content/site";
 
+/*
+ * All four points, in ONE list. The response note used to sit in its own
+ * block below with mt-8, so the gaps ran 16/16/32px; as a fourth list item it
+ * inherits the same space-y-4 as the rest.
+ */
 const reassurances = [
   { icon: CalendarOff, text: "No additional shoot." },
   { icon: Check, text: "No obligation." },
   { icon: ShieldCheck, text: "Nothing is published without your approval." },
+  { icon: Clock, text: site.responseNote },
 ] as const;
 
 /**
@@ -46,11 +52,6 @@ export function ContactCTA() {
               </li>
             ))}
           </ul>
-
-          <div className="mt-8 flex items-center gap-3 text-body-sm">
-            <Clock className="icon-list text-gold" strokeWidth={1.75} aria-hidden="true" />
-            <span className="text-ivory/70">{site.responseNote}</span>
-          </div>
         </Reveal>
 
         <Reveal delay={0.1} className="lg:col-span-7">

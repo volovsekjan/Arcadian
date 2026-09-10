@@ -8,9 +8,13 @@
      * THE ACCENT, and the only place its default lives.
      *
      * Space-separated RGB channels so Tailwind's `/opacity` modifiers still
-     * resolve through the `gold` token family. The AccentPicker overwrites
-     * these two properties on <html> at runtime; everything on the page
-     * repaints because every gold reads them rather than a baked-in hex.
+     * resolve through the `gold` token family. Change these two lines and
+     * every gold on the site follows: buttons, borders, icons, rules, ticks,
+     * focus rings and tints all read them rather than a baked-in hex.
+     *
+     * They were also rewritable at runtime by a floating picker widget, which
+     * has been removed. The variables stay because being the single place the
+     * accent is defined is worth it on its own.
      */
     --accent-rgb: 209 169 113; /* #D1A971 — matches the gold in the logo and arch mark */
     --accent-soft-rgb: 224 197 158; /* #E0C59E — hover tint, derived from the accent */
