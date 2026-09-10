@@ -2,9 +2,9 @@ import { z } from "zod";
 
 /** Options for the approximate number of new listings per month. */
 export const listingVolumeOptions = [
-  { value: "1-5", label: "1–5" },
-  { value: "6-15", label: "6–15" },
-  { value: "16-30", label: "16–30" },
+  { value: "1-5", label: "1-5" },
+  { value: "6-15", label: "6-15" },
+  { value: "16-30", label: "16-30" },
   { value: "30-plus", label: "More than 30" },
   { value: "not-sure", label: "Not sure yet" },
 ] as const;

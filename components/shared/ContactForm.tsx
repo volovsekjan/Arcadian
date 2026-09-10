@@ -242,7 +242,7 @@ export function ContactForm() {
           )}
         </div>
 
-        <div className="sm:col-span-2">
+        <div>
           <label htmlFor="contact-listing-url" className={labelClasses}>
             Listing URL or photo link (optional)
           </label>
@@ -262,7 +262,7 @@ export function ContactForm() {
           )}
         </div>
 
-        <div className="sm:col-span-2">
+        <div>
           <label htmlFor="contact-volume" className={labelClasses}>
             New listings per month (approx.)*
           </label>
