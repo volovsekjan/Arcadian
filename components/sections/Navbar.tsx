@@ -83,7 +83,11 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 border-b transition-colors duration-300 ease-out-soft",
+          // pt-4 sits above the fixed-height row below, so the logo, nav and
+          // button all drop 16px from the viewport edge. It is constant across
+          // both states, which keeps the condense a clean 16px and leaves the
+          // 80/40 scroll thresholds valid.
+          "sticky top-0 z-50 border-b pt-4 transition-colors duration-300 ease-out-soft",
           open
             ? "border-ivory/10 bg-espresso"
             : scrolled
@@ -161,7 +165,7 @@ export function Navbar() {
             exit={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
             transition={{ duration: reduceMotion ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Container className="flex min-h-full flex-col pb-10 pt-32">
+            <Container className="flex min-h-full flex-col pb-10 pt-36">
               <nav aria-label="Mobile">
                 <ul className="divide-y divide-ivory/10 border-y border-ivory/10">
                   {site.nav.map((item, i) => (

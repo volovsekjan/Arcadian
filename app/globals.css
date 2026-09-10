@@ -20,11 +20,11 @@
     scroll-behavior: smooth;
     /*
      * Keep anchored sections clear of the sticky navbar. Tracks the CONDENSED
-     * height (h-20, 5rem), since the bar is always condensed by the time a
-     * jump lands, plus 1.5rem of air. Move this whenever the navbar height
-     * moves or anchor targets tuck under the bar.
+     * bar: pt-4 (1rem) plus h-20 (5rem) is 6rem, plus 1.5rem of air. Move
+     * this whenever the navbar's padding or height moves, or anchor targets
+     * tuck under the bar.
      */
-    scroll-padding-top: 6.5rem;
+    scroll-padding-top: 7.5rem;
   }
 
   @media (prefers-reduced-motion: reduce) {
