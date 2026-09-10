@@ -77,10 +77,7 @@ const config: Config = {
         h2: ["clamp(1.375rem, 2.5vw, 2rem)", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
         // Subheadings and card titles. One token, where there used to be 18px
         // and 20px sitting side by side.
-        h3: [
-          "clamp(1.125rem, 1.5vw, 1.375rem)",
-          { lineHeight: "1.35", letterSpacing: "-0.01em" },
-        ],
+        h3: ["clamp(1.125rem, 1.5vw, 1.375rem)", { lineHeight: "1.35", letterSpacing: "-0.01em" }],
         // Reading size. Section ledes, the hero subhead, long-form copy.
         body: ["1.0625rem", { lineHeight: "1.7" }],
         // Supporting copy: card and step descriptions, list items, table data.
@@ -92,7 +89,9 @@ const config: Config = {
         // Fine print, badges, captions, footnotes. The accessibility floor.
         fine: ["0.8125rem", { lineHeight: "1.5" }],
         // Uppercase section label.
-        eyebrow: ["0.8125rem", { lineHeight: "1.2", letterSpacing: "0.12em" }],
+        // Uppercase section label. 15px so it carries next to the 16px arch
+        // mark beside it; at 13px the mark read as the louder of the two.
+        eyebrow: ["0.9375rem", { lineHeight: "1.2", letterSpacing: "0.12em" }],
       },
       maxWidth: {
         container: "85rem", // 1360px content column

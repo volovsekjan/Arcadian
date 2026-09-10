@@ -37,7 +37,14 @@ export function Eyebrow({ children, className, withMark = true, tone = "light" }
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2.5 font-sans text-eyebrow font-semibold uppercase",
+        // `leading-none` is the alignment fix, not `items-center` — that was
+        // already here. The token's 1.2 line height reserves descender space
+        // that uppercase text never uses, so centring the 16px mark against
+        // that taller box left it sitting low against the letters. Collapsing
+        // the box to the glyph height puts the mark's centre on the cap band.
+        // Safe at 1.0 here because the label is uppercase and has no
+        // descenders to clip.
+        "inline-flex items-center gap-2.5 font-sans text-eyebrow font-bold uppercase leading-none",
         tone === "dark" ? "text-gold" : "text-gold-deep",
         className,
       )}
