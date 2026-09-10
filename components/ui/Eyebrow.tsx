@@ -71,7 +71,7 @@ export function Eyebrow({ children, className, withMark = true, tone = "light" }
         `items-center` that shifts the centring it is trying to correct.
         In `em` so it tracks the label size if the token changes.
       */}
-      <span className="translate-y-[0.22em]">{children}</span>
+      <span className="translate-y-[0.19em]">{children}</span>
     </span>
   );
 }
