@@ -7,7 +7,7 @@ import { services } from "@/content/services";
 /** Section 4.4 — the six things we produce from a client's listing photos. */
 export function Services() {
   return (
-    <section id="services" className="bg-ivory py-24 md:py-32">
+    <section id="services" className="bg-ivory py-section md:py-section-lg">
       <Container>
         <Reveal>
           <SectionHeading

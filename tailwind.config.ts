@@ -93,6 +93,22 @@ const config: Config = {
         // mark beside it; at 13px the mark read as the louder of the two.
         eyebrow: ["0.9375rem", { lineHeight: "1.2", letterSpacing: "0.12em" }],
       },
+      spacing: {
+        /*
+         * Vertical breathing room on ONE side of a major section, so the gap
+         * between any two adjacent sections is twice this.
+         *
+         * Single source of truth: every section uses `py-section
+         * md:py-section-lg`, and the hero uses the `pb-` form because its top
+         * is the navbar gap rather than a section gap and stays tighter.
+         *
+         * Was py-24 md:py-32 (96/128px a side, so 192/256px between
+         * sections). That much white read as a void once the band separators
+         * came out and every background went white.
+         */
+        section: "4rem",
+        "section-lg": "5rem",
+      },
       maxWidth: {
         container: "85rem", // 1360px content column
       },

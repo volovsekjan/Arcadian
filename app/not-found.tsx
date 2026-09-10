@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Page not found" };
 
 export default function NotFound() {
   return (
-    <section className="flex min-h-[65vh] items-center py-24">
+    <section className="flex min-h-[65vh] items-center py-section md:py-section-lg">
       <Container>
         <Eyebrow>404</Eyebrow>
         <h1 className="mt-5 font-sans text-display font-medium text-ink">

@@ -14,7 +14,7 @@ const points = [
 /** Section — the operational problem Arcadian removes, on the black band. */
 export function Spotlight() {
   return (
-    <section className="bg-black py-24 md:py-32">
+    <section className="bg-black py-section md:py-section-lg">
       <Container className="grid gap-14 lg:grid-cols-12 lg:items-center">
         <Reveal className="lg:col-span-7">
           <div className="mx-auto w-full max-w-sm">

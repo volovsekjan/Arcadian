@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 /** Section 4.6 — selected work: the full portfolio grid with editorial offsets. */
 export function Portfolio() {
   return (
-    <section id="work" className="bg-ivory py-24 md:py-32">
+    <section id="work" className="bg-ivory py-section md:py-section-lg">
       <Container>
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading

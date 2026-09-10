@@ -23,7 +23,7 @@ const reassurances = [
  */
 export function ContactCTA() {
   return (
-    <section id="contact" className="bg-midnight py-24 md:py-32">
+    <section id="contact" className="bg-midnight py-section md:py-section-lg">
       <Container className="grid items-start gap-14 lg:grid-cols-12 lg:gap-20">
         <Reveal className="lg:col-span-5">
           <SectionHeading

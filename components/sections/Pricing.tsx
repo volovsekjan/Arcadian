@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 /** Section 4.8 — three service levels, the middle one highlighted, plus the paid pilot. */
 export function Pricing() {
   return (
-    <section id="pricing" className="bg-ivory py-24 md:py-32">
+    <section id="pricing" className="bg-ivory py-section md:py-section-lg">
       <Container>
         <Reveal>
           <SectionHeading
@@ -22,7 +22,7 @@ export function Pricing() {
           />
         </Reveal>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-3 lg:items-stretch">
+        <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:items-stretch">
           {pricing.map((tier, i) => (
             // min-w-0 lets the single-column grid track shrink to the container
             // on mobile; without it a long price token keeps the card at its

@@ -44,7 +44,7 @@ function ResponsibilityList({ heading, items }: { heading: string; items: readon
 /** Section — who does what, including Dubai advertising-permit responsibilities. */
 export function Responsibilities() {
   return (
-    <section className="bg-bone py-24 md:py-32">
+    <section className="bg-bone py-section md:py-section-lg">
       <Container>
         <Reveal>
           <SectionHeading

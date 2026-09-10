@@ -9,7 +9,7 @@ import { serviceLevels } from "@/content/levels";
 /** What Arcadian does, explained through the three levels of service. */
 export function ServiceLevels() {
   return (
-    <section className="bg-ivory pb-24 pt-16 md:pb-32 md:pt-20">
+    <section className="bg-ivory py-section md:py-section-lg">
       <Container>
         <Reveal>
           <SectionHeading

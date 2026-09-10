@@ -60,7 +60,7 @@ function Mark({ value, ours }: { value: ComparisonValue; ours: boolean }) {
 
 export function Comparison() {
   return (
-    <section id="compare" className="bg-ivory py-24 md:py-32">
+    <section id="compare" className="bg-ivory py-section md:py-section-lg">
       <Container>
         <Reveal>
           <SectionHeading
@@ -131,7 +131,7 @@ export function Comparison() {
         </Reveal>
 
         {/* Mobile — one card per criterion, Arcadian first and in gold. */}
-        <div className="mt-12 flex flex-col gap-4 md:hidden">
+        <div className="mt-14 flex flex-col gap-4 md:hidden">
           {comparisonRows.map((row, i) => (
             <Reveal key={row.criterion} delay={Math.min(i, 4) * 0.06}>
               <div className="overflow-hidden rounded-2xl border border-line">

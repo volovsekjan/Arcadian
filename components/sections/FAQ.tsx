@@ -13,7 +13,7 @@ import { faq } from "@/content/faq";
  */
 export function FAQ() {
   return (
-    <section id="faq" className="py-24 md:py-32">
+    <section id="faq" className="py-section md:py-section-lg">
       <Container>
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-5">
