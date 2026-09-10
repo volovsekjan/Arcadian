@@ -94,7 +94,7 @@ export function Navbar() {
         <div
           className={cn(
             "transition-[height] duration-300 ease-out-soft",
-            scrolled ? "h-16" : "h-20",
+            scrolled ? "h-20" : "h-24",
           )}
         >
           <Container className="flex h-full items-center justify-between">
@@ -110,7 +110,7 @@ export function Navbar() {
               <Wordmark priority tone={open ? "ivory" : "ink"} className="h-4 sm:h-5" />
             </Link>
 
-            <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
+            <nav aria-label="Primary" className="hidden items-center gap-10 lg:flex">
               {site.nav.map((item) => (
                 <Link
                   key={item.href}
@@ -122,7 +122,7 @@ export function Navbar() {
               ))}
             </nav>
 
-            <div className="flex items-center gap-3 sm:gap-5">
+            <div className="flex items-center gap-4 sm:gap-6">
               <Button href={site.cta.href} size="md" className="hidden sm:inline-flex">
                 {site.cta.label}
               </Button>
@@ -161,7 +161,7 @@ export function Navbar() {
             exit={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
             transition={{ duration: reduceMotion ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Container className="flex min-h-full flex-col pb-10 pt-28">
+            <Container className="flex min-h-full flex-col pb-10 pt-32">
               <nav aria-label="Mobile">
                 <ul className="divide-y divide-ivory/10 border-y border-ivory/10">
                   {site.nav.map((item, i) => (

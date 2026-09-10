@@ -102,12 +102,12 @@ const config: Config = {
          * md:py-section-lg`, and the hero uses the `pb-` form because its top
          * is the navbar gap rather than a section gap and stays tighter.
          *
-         * Was py-24 md:py-32 (96/128px a side, so 192/256px between
-         * sections). That much white read as a void once the band separators
-         * came out and every background went white.
+         * History: py-24 md:py-32 (96/128px a side) read as a void once the
+         * band separators came out and every background went white; it came
+         * down to 4/5rem, then back up a step to these values.
          */
-        section: "4rem",
-        "section-lg": "5rem",
+        section: "4.5rem",
+        "section-lg": "5.5rem",
       },
       maxWidth: {
         container: "85rem", // 1360px content column
