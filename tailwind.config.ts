@@ -119,6 +119,17 @@ const config: Config = {
          */
         "section-seam": "2.25rem",
         "section-seam-lg": "2.75rem",
+        /*
+         * The hero opener, above the H1. Deliberately larger than a section
+         * step: this is the first thing under a sticky navbar rather than a
+         * gap between two bands, so it carries the page's opening pause and
+         * has no neighbour above to share the space with.
+         *
+         * Named rather than left as a raw pt-28, so it is visibly an
+         * exception instead of drift.
+         */
+        "hero-top": "7rem",
+        "hero-top-lg": "9rem",
       },
       maxWidth: {
         container: "85rem", // 1360px content column
