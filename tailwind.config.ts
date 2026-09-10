@@ -108,6 +108,17 @@ const config: Config = {
          */
         section: "4.5rem",
         "section-lg": "5.5rem",
+        /*
+         * Half the section step, for the seam between two sections that share
+         * a background and so already read as one block. The full step exists
+         * to separate visually distinct bands; across an invisible boundary it
+         * only adds void.
+         *
+         * Used on the contact/footer seam, which is one continuous midnight
+         * surface with no border between the two.
+         */
+        "section-seam": "2.25rem",
+        "section-seam-lg": "2.75rem",
       },
       maxWidth: {
         container: "85rem", // 1360px content column

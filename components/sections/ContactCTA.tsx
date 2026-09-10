@@ -23,7 +23,12 @@ const reassurances = [
  */
 export function ContactCTA() {
   return (
-    <section id="contact" className="bg-midnight py-section md:py-section-lg">
+    <section
+      id="contact"
+      // Standard gap above, seam below: the footer shares this
+      // background with no border, so the two are one dark block.
+      className="bg-midnight pb-section-seam pt-section md:pb-section-seam-lg md:pt-section-lg"
+    >
       <Container className="grid items-start gap-14 lg:grid-cols-12 lg:gap-20">
         <Reveal className="lg:col-span-5">
           <SectionHeading
