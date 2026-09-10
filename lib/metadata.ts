@@ -29,18 +29,27 @@ export const defaultMetadata: Metadata = {
   },
   /*
    * Declared rather than left to the file convention, so the icon set is
-   * visible in code. `/icon.svg` is the rounded dark square with the serif "A"
-   * and the gold dot (app/icon.svg); `/apple-icon` is the same mark rendered
-   * to PNG at 180px by app/apple-icon.tsx.
+   * visible in code and points where it is told to.
    *
-   * `shortcut` points at the SVG too. There is no favicon.ico: nothing in the
-   * repo can generate one, and every browser that matters reads the SVG.
+   * The tab icon is the gold arch mark. Note its proportions: the source is
+   * 1216x656, so 1.85:1. A favicon box is square, so at the 16px browsers
+   * actually draw it the mark fits to width and stands about 9px tall. It
+   * reads as a small gold flourish rather than a legible mark; that is the
+   * geometry of a wide mark in a square box, not a scaling bug. Cropping to a
+   * single arch would be the fix if it needs more presence.
+   *
+   * There is no favicon.ico: nothing in the repo can generate one, and every
+   * browser that matters reads PNG.
    */
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    shortcut: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    icon: [{ url: "/logos/icon_gold_mark.png", type: "image/png" }],
+    shortcut: [{ url: "/logos/icon_gold_mark.png", type: "image/png" }],
+    // Still the dark monogram from app/apple-icon.tsx: an Apple touch icon is
+    // a full-bleed rounded tile on a home screen, which a transparent wide
+    // mark cannot fill. Flagged rather than changed.
     apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
   },
+
   // og:title/og:description/twitter:* deliberately omit title/description so
   // they fall back to each page's own resolved metadata (subpages would
   // otherwise inherit the homepage values wholesale). The branded OG image is

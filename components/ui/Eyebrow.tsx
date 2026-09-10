@@ -1,58 +1,38 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 type EyebrowProps = {
   children: React.ReactNode;
   className?: string;
-  /** Show the leading Arcadian mark (the "[A] LABEL" pattern). */
+  /** Show the leading gold arch mark. */
   withMark?: boolean;
   /**
    * "light" (default) = on white surfaces; "dark" = on the midnight and black
-   * bands. The mark inverts with it, see below.
+   * bands. Only the label colour changes; the mark is gold on both.
    */
   tone?: "light" | "dark";
 };
 
 /**
- * Small-caps gold section label, led by the Arcadian monogram.
+ * Small-caps gold section label, led by the arch mark.
  *
- * The mark is the browser-tab icon: a rounded square, a serif "A", and the
- * gold dot. It is drawn inline rather than loaded from a file for three
- * reasons: it stays crisp at 20px where a raster of a rounded square shows its
- * edges, it costs no request, and the dot can take `fill-gold` — so unlike the
- * PNG it replaced, the mark now follows the accent picker instead of holding a
- * baked-in gold.
+ * ONE component, so the mark is identical across every section that uses a
+ * SectionHeading: What we do, The problem we remove, Services, The
+ * alternatives, How it works, and the five others. Setting it here is what
+ * keeps it consistent rather than five sections each doing their own thing.
  *
- * It INVERTS on dark sections. The tab icon is a dark square, which would be
- * all but invisible on the midnight and black bands, so there the square takes
- * the light ink and the letter takes the dark. The gold dot is constant.
+ * `icon_gold_mark.png` is trimmed from the supplied `icon_gold.png`, whose
+ * arches occupy only the middle 54% by 29% of a 4500px square. Rendered
+ * untrimmed it put a tiny mark inside a box seven times its height and pushed
+ * every heading down the page.
  *
- * KEEP IN SYNC with app/icon.svg, which is the same artwork at 64px and is
- * what Next serves as the favicon.
+ * Sized 30x16px, which matches the cap height of the 13px label beside it.
+ *
+ * Trade-off worth knowing: this is a raster with #D1A971 baked in. It matches
+ * the accent default, but unlike an inline SVG it does not read
+ * `--accent-rgb`, so changing the accent in the picker leaves these marks and
+ * the logo on the old gold.
  */
-function ArcadianMark({ tone }: { tone: "light" | "dark" }) {
-  return (
-    <svg viewBox="0 0 64 64" aria-hidden="true" className="h-5 w-5 shrink-0" role="presentation">
-      <rect
-        width="64"
-        height="64"
-        rx="14"
-        className={tone === "dark" ? "fill-ivory" : "fill-espresso"}
-      />
-      <text
-        x="31"
-        y="44"
-        textAnchor="middle"
-        fontSize="36"
-        fontFamily="Georgia, 'Times New Roman', serif"
-        className={tone === "dark" ? "fill-espresso" : "fill-ivory"}
-      >
-        A
-      </text>
-      <circle cx="46" cy="21" r="3.5" className="fill-gold" />
-    </svg>
-  );
-}
-
 export function Eyebrow({ children, className, withMark = true, tone = "light" }: EyebrowProps) {
   return (
     <span
@@ -62,7 +42,16 @@ export function Eyebrow({ children, className, withMark = true, tone = "light" }
         className,
       )}
     >
-      {withMark && <ArcadianMark tone={tone} />}
+      {withMark && (
+        <Image
+          src="/logos/icon_gold_mark.png"
+          alt=""
+          width={1216}
+          height={656}
+          aria-hidden="true"
+          className="h-4 w-auto shrink-0"
+        />
+      )}
       {children}
     </span>
   );
