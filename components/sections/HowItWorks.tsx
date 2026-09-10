@@ -42,12 +42,12 @@ export function HowItWorks() {
                   <Reveal delay={i * 0.08} className="grid grid-cols-[3rem_1fr] gap-x-6">
                     <span
                       aria-hidden="true"
-                      className="nums-tabular relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-bone font-sans text-body-sm text-gold-deep"
+                      className="nums-tabular relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-bone font-sans text-body font-medium text-gold-deep"
                     >
                       {step.number}
                     </span>
                     <div>
-                      <h3 className="flex items-center gap-2.5 pt-2.5 font-sans text-h3 font-medium text-ink">
+                      <h3 className="flex items-center gap-2.5 pt-2.5 font-sans text-h3 font-semibold text-ink">
                         <step.icon
                           className="icon-list text-gold"
                           strokeWidth={1.75}
@@ -55,7 +55,9 @@ export function HowItWorks() {
                         />
                         {step.title}
                       </h3>
-                      <p className="mt-2.5 text-body-sm text-graphite">{step.description}</p>
+                      <p className="mt-2.5 text-body font-medium text-graphite">
+                        {step.description}
+                      </p>
                     </div>
                   </Reveal>
                 </li>
