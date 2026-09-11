@@ -21,7 +21,7 @@ export function Spotlight() {
             <BeforeAfterSlider
               before="/images/before.png"
               after="/images/after.png"
-              beforeAlt="Listing photo before enhancement, dark and low resolution"
+              beforeAlt="Listing photo before enhancement, dark and flat"
               afterAlt="The same listing photo after photo correction and enhancement"
             />
             {/* The affordance. Without it the handle is the only hint that the
