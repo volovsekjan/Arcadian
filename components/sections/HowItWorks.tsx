@@ -15,7 +15,7 @@ export function HowItWorks() {
           <div className="lg:sticky lg:top-28">
             <Reveal>
               <figure className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-line">
-                {/* TODO [PLACEHOLDER]: replace with a real portfolio still or short looping video */}
+                {/* TODO: replace with a real portfolio still or short looping video */}
                 <Image
                   src="/images/process.svg"
                   alt="Editorial interior artwork"

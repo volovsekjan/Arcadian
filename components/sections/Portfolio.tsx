@@ -7,7 +7,7 @@ import { VideoCard } from "@/components/shared/VideoCard";
 import { projects } from "@/content/projects";
 import { cn } from "@/lib/utils";
 
-// TODO [PLACEHOLDER]: drop in real videos + posters via content/projects.ts.
+// TODO: drop in real videos + posters via content/projects.ts.
 
 /** Section 4.6 — selected work: the full portfolio grid with editorial offsets. */
 export function Portfolio() {

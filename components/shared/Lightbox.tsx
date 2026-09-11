@@ -135,7 +135,7 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
                       sizes="(min-width: 640px) 384px, 100vw"
                       className="object-cover"
                     />
-                    {/* TODO [PLACEHOLDER]: set `video` in content/projects.ts to remove this notice. */}
+                    {/* TODO: set `video` in content/projects.ts to remove this notice. */}
                     <p className="absolute inset-x-4 bottom-4 rounded-full bg-espresso/80 px-4 py-2 text-center text-fine uppercase tracking-[0.1em] text-ivory/80 backdrop-blur-sm">
                       Final video coming soon
                     </p>

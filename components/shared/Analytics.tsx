@@ -8,7 +8,9 @@ import { CONSENT_EVENT, getConsent, type ConsentValue } from "@/lib/consent";
 /**
  * Privacy-friendly analytics, loaded ONLY after cookie consent is granted.
  *
- * TODO [PLACEHOLDER]: this is wired for Plausible — set the real `data-domain`
+ * TODO: set a real production domain in content/site.ts. `data-domain` is
+ * derived from it, so while site.url is the .invalid placeholder this reports
+ * to a Plausible site that does not exist.
  * (it is derived from site.url in content/site.ts). To use Vercel Analytics
  * instead: `npm i @vercel/analytics` and render <VercelAnalytics /> here under
  * the same consent gate.
@@ -19,7 +21,9 @@ export function Analytics() {
   useEffect(() => {
     setConsentState(getConsent());
     const onChange = (event: Event) => {
-      setConsentState((event as CustomEvent<ConsentValue>).detail);
+      // `detail` is null when the choice is reset from the Cookie Policy page.
+      // Anything other than "granted" unmounts the script below.
+      setConsentState((event as CustomEvent<ConsentValue | null>).detail ?? null);
     };
     window.addEventListener(CONSENT_EVENT, onChange);
     return () => window.removeEventListener(CONSENT_EVENT, onChange);
