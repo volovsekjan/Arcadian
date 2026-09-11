@@ -13,13 +13,15 @@ export const site = {
    * (metadataBase calls `new URL()` on it), so it uses the reserved `.invalid`
    * TLD, which can never resolve to somebody else's site.
    *
+   * There is no `pilotPrice`. The pilot has no published figure: the copy says
+   * it is confirmed before you start, so there is nothing here to fill.
+   *
    * There is deliberately no `email` or `whatsapp` here. The site publishes no
    * inbox and no messaging number — the contact form is the only route in — so
    * adding one back means putting it on the page too, or it is a value nothing
    * reads.
    */
   url: "https://arcadian.invalid",
-  pilotPrice: "{{PILOT_PRICE}}",
   responseNote: "We reply within one business day.",
   locale: "en",
   nav: [

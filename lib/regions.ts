@@ -28,9 +28,36 @@ export type RegionId = "ae" | "eu" | "uk" | "us" | "intl";
  */
 export type PriceSet = { AED: string } & Partial<Record<Exclude<CurrencyCode, "AED">, string>>;
 
-/** The price to show for a currency, falling back to the base list. */
+/**
+ * Already-reported gaps, so a fallback during render warns once rather than on
+ * every paint. Module-level, so it survives re-renders but not a reload.
+ */
+const reportedGaps = new Set<string>();
+
+/**
+ * The price to show for a currency, falling back to the base list.
+ *
+ * The fallback is a safety net, not a feature: it keeps a real price on screen
+ * instead of a blank, but the visitor then sees AED while the selector says
+ * EUR. That is silent by nature, so in development it says so.
+ */
 export function priceIn(set: PriceSet, currency: CurrencyCode): string {
-  return set[currency] ?? set.AED;
+  const exact = set[currency];
+  if (exact) return exact;
+
+  if (process.env.NODE_ENV === "development") {
+    const key = `${currency}:${set.AED}`;
+    if (!reportedGaps.has(key)) {
+      reportedGaps.add(key);
+      console.warn(
+        `[regions] No ${currency} price for "${set.AED}" — falling back to AED. ` +
+          `The region selector will appear to do nothing for this price. ` +
+          `Add a ${currency} entry to the PriceSet in content/pricing.ts.`,
+      );
+    }
+  }
+
+  return set.AED;
 }
 
 export type Region = {

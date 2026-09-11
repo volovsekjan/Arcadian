@@ -1,16 +1,23 @@
-import { site } from "./site";
 import type { PricingTier } from "./types";
 
 /**
  * The three service levels. Prices are "from" figures — final scope depends on
  * monthly listing volume, number of accounts and required deliverables.
+ *
+ * Each `price` is a PriceSet holding all four markets. These are FIXED LIST
+ * PRICES, not conversions: each is what the studio charges in that market, so
+ * none of them drifts when an exchange rate moves. Each string is printed
+ * exactly as written, which is why the symbol and its placement differ.
+ *
+ * content/comparison.ts reads pricing[0].price directly, so the comparison
+ * table's Cost row and the Content card can never disagree.
  */
 export const pricing: PricingTier[] = [
   {
     id: "content",
     name: "Content",
     tagline: "We make the content. Your team posts it.",
-    price: { AED: "AED 3,500" },
+    price: { AED: "AED 3,500", EUR: "€850", GBP: "£750", USD: "$950" },
     period: "/month",
     features: [
       "3 property Reels",
@@ -30,7 +37,7 @@ export const pricing: PricingTier[] = [
     id: "managed-content",
     name: "Managed Content",
     tagline: "We make it, schedule it and post it.",
-    price: { AED: "AED 7,500" },
+    price: { AED: "AED 7,500", EUR: "€1,850", GBP: "£1,600", USD: "$2,050" },
     period: "/month",
     features: [
       "10 property Reels per month",
@@ -52,7 +59,7 @@ export const pricing: PricingTier[] = [
     id: "funnel-takeover",
     name: "Funnel Takeover",
     tagline: "We manage the content and the first response.",
-    price: { AED: "AED 15,000" },
+    price: { AED: "AED 15,000", EUR: "€3,700", GBP: "£3,200", USD: "$4,100" },
     period: "/month",
     features: [
       "20 property Reels per month",
@@ -77,7 +84,8 @@ export const pricing: PricingTier[] = [
 /** The paid single-listing pilot, shown below the plans. */
 export const pilot = {
   title: "Want to test the workflow first?",
-  description: `Start with one paid listing before committing to a monthly plan. ${site.pilotPrice}, one property, the full process end to end.`,
+  description:
+    "Start with one paid listing before committing to a monthly plan. One property, the full process end to end. Pilot pricing is confirmed before you start.",
   includes: [
     "1 main Reel",
     "2 shorter video cuts",

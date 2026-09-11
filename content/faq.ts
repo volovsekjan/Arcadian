@@ -1,4 +1,3 @@
-import { site } from "./site";
 import type { FaqItem } from "./types";
 
 /**
@@ -52,7 +51,8 @@ export const faq: FaqItem[] = [
   },
   {
     question: "Can we start with one property?",
-    answer: `Yes. The paid pilot is one listing at ${site.pilotPrice} and runs the full process end to end, so you see how we work before committing to a month.`,
+    answer:
+      "Yes. The paid pilot is one listing and runs the full process end to end, so you see how we work before committing to a month. Pilot pricing is confirmed before you start.",
   },
   {
     question: "Do you guarantee views, enquiries or sales?",
