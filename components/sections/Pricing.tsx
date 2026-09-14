@@ -45,7 +45,13 @@ export function Pricing() {
               <Button href="/#contact" size="lg">
                 Book a Call
               </Button>
-              <Button href="/#contact" variant="secondary" size="lg">
+              {/*
+                border-line is the same token the Responsibilities cards use
+                through <Card>. Overridden here rather than on the shared
+                `secondary` variant, so no other secondary button moves. The
+                hover (border-ink) is untouched.
+              */}
+              <Button href="/#contact" variant="secondary" size="lg" className="border-line">
                 Tell Us About Your Listings
               </Button>
             </div>

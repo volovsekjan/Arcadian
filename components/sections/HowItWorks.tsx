@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/shared/Reveal";
 import { steps } from "@/content/steps";
+import { cn } from "@/lib/utils";
 
 /** Section 4.5 — the four-step process, split layout on the bone band. */
 export function HowItWorks() {
@@ -36,9 +37,29 @@ export function HowItWorks() {
               />
             </Reveal>
 
-            <ol className="relative mt-12 space-y-11 before:absolute before:bottom-10 before:left-6 before:top-10 before:w-px before:bg-gold/25 before:content-['']">
+            {/*
+              The connector is drawn per step and omitted on the last one, so
+              nothing continues past 04. It used to be a single line on the
+              <ol> inset by a fixed 40px top and bottom; the bottom inset is
+              measured from the list's edge, not from the last circle, so
+              whenever the final step's text ran taller than its 48px circle
+              the line carried on below it.
+
+              Geometry per item: top-6 is the circle's vertical centre, and
+              -bottom-11 reaches exactly the space-y-11 gap to the next
+              circle's top edge. The circles sit above it on z-10 with an
+              opaque fill, so the line reads as running between them.
+            */}
+            <ol className="mt-12 space-y-11">
               {steps.map((step, i) => (
-                <li key={step.number}>
+                <li
+                  key={step.number}
+                  className={cn(
+                    "relative",
+                    i < steps.length - 1 &&
+                      "before:absolute before:-bottom-11 before:left-6 before:top-6 before:w-px before:bg-gold/25 before:content-['']",
+                  )}
+                >
                   <Reveal delay={i * 0.08} className="grid grid-cols-[3rem_1fr] gap-x-6">
                     <span
                       aria-hidden="true"
