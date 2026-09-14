@@ -1,3 +1,4 @@
+import { About } from "@/components/sections/About";
 import { Comparison } from "@/components/sections/Comparison";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { FAQ } from "@/components/sections/FAQ";
@@ -27,6 +28,11 @@ export default function HomePage() {
       <Spotlight />
       <Services />
       <Comparison />
+      {/* Who we are answers the question the comparison table raises: the table
+          argues the studio is the right kind of option, and this says why this
+          studio in particular. It also puts a black band between two light
+          sections, ahead of How it works. */}
+      <About />
       <HowItWorks />
       <Portfolio />
       <Pricing />

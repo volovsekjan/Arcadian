@@ -62,3 +62,13 @@ export type Benefit = {
   title: string;
   description: string;
 };
+
+/**
+ * One numbered row in the Who we are section. No icon field on purpose: the
+ * rows are numbered under hairlines rather than iconed, so that the section
+ * does not read as a second Services grid.
+ */
+export type Capability = {
+  title: string;
+  description: string;
+};
