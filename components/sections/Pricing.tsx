@@ -1,123 +1,59 @@
-import { Check } from "lucide-react";
+import { Reveal } from "@/components/shared/Reveal";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
-import { Price } from "@/components/shared/Price";
-import { Reveal } from "@/components/shared/Reveal";
-import { pricing, pilot } from "@/content/pricing";
-import { cn } from "@/lib/utils";
 
-/** Section 4.8 — three service levels, the middle one highlighted, plus the paid pilot. */
+/**
+ * The consultation CTA that stands where the pricing cards used to.
+ *
+ * The three tiers, their features, the Most Popular badge, the scope
+ * disclaimer and the pilot card were temporary: the final packages and prices
+ * are not settled, so publishing them invited questions nobody can answer yet.
+ * This section asks for the conversation instead.
+ *
+ * NOTHING IN THE PRICING SYSTEM WAS DELETED. content/pricing.ts still holds
+ * all three tiers in four currencies, lib/regions.ts still resolves them, and
+ * components/shared/Price.tsx still renders them. The data stayed live rather
+ * than being commented out, so it does not rot: content/comparison.ts imports
+ * it for the Cost row, and TypeScript still type-checks every field. Restoring
+ * the cards later is a matter of rendering them again, not rebuilding them.
+ *
+ * The id is unchanged, so the Pricing nav link, the footer link and the two
+ * ghost buttons that point at /#pricing all still land here.
+ */
 export function Pricing() {
   return (
     <section id="pricing" className="bg-ivory py-section md:py-section-lg">
       <Container>
         <Reveal>
-          <SectionHeading
-            align="center"
-            eyebrow="Pricing"
-            title="Choose how much we take on."
-            description="Every plan starts from the photos you already have. The difference is whether your team posts the work, or we do."
-          />
-        </Reveal>
+          {/*
+            A bordered panel rather than bare copy on the page. With the cards
+            gone this section would otherwise be three short lines floating in
+            a lot of white, which reads as something unfinished. The frame is
+            the one the pricing and pilot cards already used, so it carries
+            weight without introducing anything new.
+          */}
+          <div className="mx-auto max-w-3xl rounded-2xl border border-line px-7 py-14 text-center sm:px-12 sm:py-20">
+            <SectionHeading
+              align="center"
+              eyebrow="Work with us"
+              title="Built around how your agency works."
+              description="Every agency has a different listing volume, team structure and publishing workflow. Tell us how you work and where you need support, and we’ll recommend the right setup, scope and pricing for your team."
+            />
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:items-stretch">
-          {pricing.map((tier, i) => (
-            // min-w-0 lets the single-column grid track shrink to the container
-            // on mobile; without it a long price token keeps the card at its
-            // min-content width and overflows the page.
-            <Reveal key={tier.id} delay={i * 0.08} className="h-full min-w-0">
-              <Card
-                className={cn(
-                  "relative flex h-full flex-col p-8",
-                  tier.highlighted && "border-gold shadow-lift lg:-translate-y-3",
-                )}
-              >
-                {tier.highlighted && (
-                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-4 py-1.5 text-fine font-semibold uppercase tracking-[0.1em] text-ink">
-                    Most Popular
-                  </span>
-                )}
-
-                <h3 className="font-sans text-h3 font-medium text-ink">{tier.name}</h3>
-                <p className="mt-1.5 text-body-sm text-graphite">{tier.tagline}</p>
-
-                <div className="mt-7">
-                  <p className="text-body-sm text-graphite">From</p>
-                  <p className="mt-0.5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                    <Price
-                      set={tier.price}
-                      className="nums-tabular font-sans text-h2 font-medium text-ink [overflow-wrap:anywhere]"
-                    />
-                    {tier.period && (
-                      <span className="text-body-sm text-graphite">{tier.period}</span>
-                    )}
-                  </p>
-                </div>
-
-                <ul className="mt-8 flex-1 space-y-3">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <Check
-                        className="icon-inline mt-0.5 text-gold"
-                        strokeWidth={2}
-                        aria-hidden="true"
-                      />
-                      <span className="text-body-sm leading-relaxed text-graphite">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="mt-6 border-t border-line pt-5 text-body-sm leading-relaxed text-graphite">
-                  {tier.scopeNote}
-                </p>
-
-                <div className="mt-7">
-                  <Button
-                    href="/#contact"
-                    variant={tier.highlighted ? "primary" : "secondary"}
-                    className="w-full"
-                  >
-                    {tier.cta}
-                  </Button>
-                </div>
-              </Card>
-            </Reveal>
-          ))}
-        </div>
-
-        <Reveal delay={0.16}>
-          <p className="mt-10 text-center text-fine text-graphite">
-            Final scope depends on monthly listing volume, number of accounts and required
-            deliverables. All prices exclude VAT and advertising spend.
-          </p>
-        </Reveal>
-
-        {/* Lower-commitment way in: the paid single-listing pilot. */}
-        <Reveal className="mx-auto mt-16 max-w-2xl">
-          <Card className="p-8">
-            <h3 className="font-sans text-h3 font-medium text-ink">{pilot.title}</h3>
-            <p className="mt-2 text-body-sm text-graphite">{pilot.description}</p>
-            <p className="mt-6 text-body-sm font-medium text-ink">The pilot can include:</p>
-            <ul className="mt-3 space-y-2.5">
-              {pilot.includes.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <Check
-                    className="icon-inline mt-0.5 text-gold"
-                    strokeWidth={2}
-                    aria-hidden="true"
-                  />
-                  <span className="text-body-sm leading-relaxed text-graphite">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-7">
-              <Button href="/#contact" variant="secondary" className="w-full sm:w-auto">
-                {pilot.cta}
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+              <Button href="/#contact" size="lg">
+                Book a Call
+              </Button>
+              <Button href="/#contact" variant="secondary" size="lg">
+                Tell Us About Your Listings
               </Button>
             </div>
-          </Card>
+
+            <p className="mt-6 text-fine text-graphite">
+              No obligation. Scope and pricing are confirmed before any work begins.
+            </p>
+          </div>
         </Reveal>
       </Container>
     </section>
