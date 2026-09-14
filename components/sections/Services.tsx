@@ -12,8 +12,8 @@ export function Services() {
         <Reveal>
           <SectionHeading
             eyebrow="Services"
-            title="One set of photos. A month of posts."
-            description="A portal upload uses your photos once. We use the same set to build a run of content that keeps the property in front of buyers for weeks after it goes live: typically one main Reel, two shorter cuts, a carousel and a set of Story frames per listing."
+            title="One set of photos. More content from every listing."
+            description="Your listing photos can do more than sit on a property portal. We use the same approved assets to create social-first content that keeps the property visible across multiple formats and channels."
           />
         </Reveal>
 

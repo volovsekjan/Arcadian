@@ -14,8 +14,8 @@ export function ServiceLevels() {
         <Reveal>
           <SectionHeading
             eyebrow="What we do"
-            title="Three ways to work with us."
-            description="Arcadian is a production studio for real estate agencies. Every plan starts from the photos you already have. What changes is how much of the publishing you hand over."
+            title="What we can take off your plate."
+            description="From one set of listing photos, we can create the content your team needs to keep properties visible across social channels."
           />
         </Reveal>
 
@@ -35,8 +35,8 @@ export function ServiceLevels() {
 
         <Reveal delay={0.2}>
           <div className="mt-10">
-            <Button variant="ghost" href="/#pricing">
-              Compare the plans
+            <Button variant="ghost" href="/#services">
+              Explore our services
               <ArrowRight className="icon-inline" strokeWidth={1.75} aria-hidden="true" />
             </Button>
           </div>

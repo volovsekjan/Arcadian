@@ -208,7 +208,7 @@ export function ContactForm() {
             id="contact-whatsapp"
             type="tel"
             autoComplete="tel"
-            placeholder="+971 50 000 0000"
+            placeholder="+country code and number"
             aria-invalid={!!errors.whatsapp}
             aria-describedby={errors.whatsapp ? "contact-whatsapp-error" : undefined}
             className={fieldClasses}

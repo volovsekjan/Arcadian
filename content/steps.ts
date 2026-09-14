@@ -7,26 +7,25 @@ export const steps: Step[] = [
     icon: Images,
     title: "Send the listing",
     description:
-      "Share the property photos, correct listing details, brand assets and required permit information.",
+      "Share the approved property photos, accurate listing details, brand assets and any information required for the content.",
   },
   {
     number: "02",
     icon: Sparkles,
     title: "We produce it",
-    description: "We prepare the agreed videos, Story frames, feed posts and captions.",
+    description: "We prepare the agreed videos, Story assets, feed content and captions.",
   },
   {
     number: "03",
     icon: MessageSquareText,
     title: "Review the work",
-    description:
-      "Your team checks the property details and requests any revisions included in the plan.",
+    description: "Your team checks the content and requests any agreed revisions before approval.",
   },
   {
     number: "04",
     icon: Send,
     title: "Publish it, or leave it to us",
     description:
-      "On the Content plan you receive everything ready to use. On managed plans, Arcadian schedules and publishes it for you.",
+      "Your team can receive everything ready to publish, or we can support scheduling and publishing where that is included in the agreed scope.",
   },
 ];

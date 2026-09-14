@@ -67,7 +67,7 @@ const sections: LegalSection[] = [
     paragraphs: [
       "We share personal data only where it is necessary to run the website and answer you, and only with providers acting on our instructions under a written agreement.",
       "Those providers are: our website host, which serves this site and generates the server logs described above; an automation and email service, which receives enquiries submitted through the contact form and routes them to our team; and, if you accept analytics, our analytics provider, Plausible.",
-      "If we go on to work together, the people who need access to deliver the work will see the listing materials and contact details you supply. Where you place us on managed plans, we will also hold the account access you grant us for the platforms we publish to, under the terms agreed with you.",
+      "If we go on to work together, the people who need access to deliver the work will see the listing materials and contact details you supply. Where the agreed scope includes publishing on your behalf, we will also hold the account access you grant us for the platforms we publish to, under the terms agreed with you.",
       "We may disclose personal data where we are legally required to do so, or to establish or defend legal claims.",
     ],
   },
@@ -96,8 +96,8 @@ const sections: LegalSection[] = [
   {
     heading: "Cookies and browser storage",
     paragraphs: [
-      "This site sets one cookie, which records the two letter country code your connection resolves to so that prices can be shown in an appropriate currency. It contains nothing else and identifies no one.",
-      "The site also stores a small number of preferences in your browser's local storage: the region you selected, whether you dismissed the region banner, and your cookie choice. These stay on your device and are never sent to us.",
+      "This site sets one cookie, which records the two letter country code your connection resolves to so that the site can adapt what it shows to your region. It contains nothing else and identifies no one.",
+      "The site also stores your cookie choice in your browser's local storage, and may read two older region preferences if your browser already holds them from an earlier visit. These stay on your device and are never sent to us.",
       "Optional analytics are loaded only after you accept them. Our Cookie Policy sets all of this out in full, including how to change your mind.",
     ],
   },
@@ -130,7 +130,7 @@ export default function PrivacyPolicyPage() {
       <Container className="max-w-3xl">
         <Eyebrow>Legal</Eyebrow>
         <h1 className="mt-5 font-sans text-display font-medium text-ink">Privacy Policy</h1>
-        <p className="mt-4 text-body-sm text-graphite">Last updated: 11 September 2026</p>
+        <p className="mt-4 text-body-sm text-graphite">Last updated: 14 September 2026</p>
 
         <div>
           {sections.map((section) => (

@@ -41,7 +41,7 @@ export function ContactCTA() {
             tone="dark"
             eyebrow="Get started"
             title="Tell us about your listings. We will take it from there."
-            description="Share a few details about your agency and monthly volume. We will walk you through the plans, or set up a single-listing pilot if you want to test the workflow first."
+            description="Share a few details about your agency and listing volume. We’ll learn how your team works, recommend the right setup and define the scope together."
           />
 
           <ul className="mt-10 space-y-4 text-body-sm">

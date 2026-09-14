@@ -20,9 +20,15 @@ type LegalSection = {
  * Audited against the code before writing. The complete inventory is:
  *
  *   cookie        arcadian-country          set by middleware.ts, 30 days
- *   localStorage  arcadian:region           lib/regions.ts
- *   localStorage  arcadian:region-banner-dismissed
  *   localStorage  arcadian-cookie-consent   lib/consent.ts
+ *   localStorage  arcadian:region           read only, see below
+ *   localStorage  arcadian:region-banner-dismissed   read only, see below
+ *
+ * The two region keys are still read by lib/regions.ts, but nothing writes
+ * them any more: both controls that called chooseRegion/dismiss (the top
+ * banner and the footer picker) are no longer rendered. They are described as
+ * read-only below rather than dropped, because a returning visitor's browser
+ * may still hold them from an earlier visit.
  *   third party   Plausible                 components/shared/Analytics.tsx,
  *                                           consent-gated, sets NO cookies
  *
@@ -45,17 +51,17 @@ const sections: LegalSection[] = [
   {
     heading: "Strictly necessary: the country cookie",
     paragraphs: [
-      "One cookie, named arcadian-country, stores the two letter country code your connection resolves to, so that prices can be shown in a currency that makes sense for you. It is set by our own server, holds nothing but that code, and expires thirty days after it is set.",
+      "One cookie, named arcadian-country, stores the two letter country code your connection resolves to, so that the site can adapt what it shows to your region. It is set by our own server, holds nothing but that code, and expires thirty days after it is set.",
       "It identifies no one. Everyone connecting from the same country receives the same value, so it cannot distinguish one visitor from another, and it is not used for analytics or advertising.",
-      "This cookie is necessary for the currency feature to work, so it is not subject to consent. If you block it, the site still works: it falls back to your browser's time zone to guess a region, and you can always set the region by hand in the footer.",
+      "It is set as part of serving the site rather than for tracking, so it is not subject to consent. If you block it, the site still works: it falls back to your browser's time zone to work out a region.",
     ],
   },
   {
     heading: "Strictly necessary: preferences in your browser",
     paragraphs: [
-      "Three preferences are kept in your browser's local storage. They stay on your device and are never transmitted to us.",
-      "The first records the country or region you selected, so that your currency choice survives a refresh. The second records that you dismissed the region banner, so that it does not reappear on every visit. The third records the cookie choice you made below, for the same reason.",
-      "Clearing this site's data in your browser removes all three. The banner and the region prompt will then appear again on your next visit.",
+      "One preference is kept in your browser's local storage: the cookie choice you make below, so that we do not ask you again on every visit. It stays on your device and is never transmitted to us.",
+      "If you visited this site earlier, your browser may also still hold two older preferences recording a region you selected and a region prompt you dismissed. The site reads them if they are there, but it no longer writes them, because the controls that set them are no longer shown.",
+      "Clearing this site's data in your browser removes all of them, and the cookie banner will ask again on your next visit.",
     ],
   },
   {
@@ -77,7 +83,7 @@ const sections: LegalSection[] = [
     heading: "Changing your choice",
     paragraphs: [
       "You can change your answer at any time using the control below. Rejecting is as easy as accepting, and a rejection takes effect immediately: the analytics script is removed without needing a reload.",
-      "You can also clear this site's data in your browser settings, which removes the cookie and all three preferences and makes the banner ask again.",
+      "You can also clear this site's data in your browser settings, which removes the cookie and every preference described above and makes the banner ask again.",
     ],
   },
 ];
@@ -88,7 +94,7 @@ export default function CookiePolicyPage() {
       <Container className="max-w-3xl">
         <Eyebrow>Legal</Eyebrow>
         <h1 className="mt-5 font-sans text-display font-medium text-ink">Cookie Policy</h1>
-        <p className="mt-4 text-body-sm text-graphite">Last updated: 11 September 2026</p>
+        <p className="mt-4 text-body-sm text-graphite">Last updated: 14 September 2026</p>
 
         <div>
           {sections.map((section) => (

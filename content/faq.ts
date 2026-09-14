@@ -1,38 +1,64 @@
 import type { FaqItem } from "./types";
 
 /**
- * FAQ content — also emitted as FAQPage JSON-LD, so keep answers plain text.
+ * FAQ content, also emitted as FAQPage JSON-LD, so answers stay plain text.
+ *
+ * Rewritten for the global, scope-on-request positioning. Three things are
+ * deliberately absent, because the page no longer claims them:
+ *   - plan names and tiers, since the packages are not settled
+ *   - any figure, since public pricing is withdrawn
+ *   - Dubai permit specifics, which told every agency elsewhere that the page
+ *     was not written for them
+ *
+ * The last answer still refuses to promise reach or leads. That refusal is
+ * load-bearing: the rest of the site avoids performance claims, and this is
+ * where a visitor comes looking for one.
  */
 export const faq: FaqItem[] = [
   {
     question: "What do you need from us?",
     answer:
-      "Approved property photos, accurate listing details, your agency branding and the required permit information. If we post for you, we also need access to the agreed accounts or your scheduling tool.",
+      "Approved property photos, accurate listing details, your agency branding, and any marketing or compliance information required in your market. If we support publishing, we also need access to the agreed accounts or to your scheduling tool.",
   },
   {
     question: "Do we need another property shoot?",
     answer:
-      "No. We work from the photos you already have. If you also have video clips or drone footage we can use them, but they are not required.",
+      "No. We work from the photos you already have. If you also hold video clips or drone footage we will use them, but nothing about the process requires a new shoot.",
   },
   {
-    question: "What can you create from one listing?",
+    question: "What can you create from existing listing photos?",
     answer:
-      "A typical listing gives us one main Reel, one or two shorter cuts, a carousel and a set of Story frames, plus captions. The exact mix depends on your plan and on the photos available.",
+      "From one approved set we can produce vertical property Reels, shorter promotional cuts, feed posts and carousels, Story assets, and the captions to go with them. Where a unit is empty we can also furnish it on screen as a clearly labelled visualisation. The exact mix depends on what the photos support and what your channels need.",
   },
   {
     question: "How quickly will we receive the first draft?",
     answer:
-      "The first draft for a single listing is normally with you within three working days. Monthly plans run on a shared content calendar, so recurring work is scheduled rather than requested each time.",
+      "The first draft for a single listing is normally with you within three working days of receiving everything we need. Ongoing work runs on a shared calendar, so it is scheduled rather than requested each time.",
   },
   {
-    question: "Will you publish the content for us?",
+    question: "Can you publish the content for us?",
     answer:
-      "On the Content plan, no. Your team receives organized, ready-to-publish files. On Managed Content and Funnel Takeover, we schedule and publish to the agreed accounts and platforms.",
+      "Yes, where that is part of the agreed scope. We can prepare everything organised and ready for your team to post, or take on scheduling and publishing to the accounts and platforms you approve. Nothing is published without your approval.",
   },
   {
-    question: "What does the Funnel Takeover plan include?",
+    question: "Can you follow our brand guidelines?",
     answer:
-      "We monitor comments and direct messages during agreed hours, reply using scripts your agency has approved, collect basic requirements from the buyer or renter, and route serious enquiries to the correct agent, with an optional WhatsApp handoff. Your agents remain responsible for property advice, viewings, negotiations and closing.",
+      "Yes. Send us your fonts, colours, logo usage and any tone-of-voice notes, and we will work inside them so the content looks like it came from your agency rather than from a studio. If you do not have written guidelines, we can work from your existing material.",
+  },
+  {
+    question: "How does pricing work?",
+    answer:
+      "Scope and pricing depend on your monthly listing volume, the deliverables you need, the number of accounts and platforms involved, and how much of the publishing workflow you would like us to handle. We agree the scope and the price in writing before any work begins, so there is nothing to discover later.",
+  },
+  {
+    question: "Can we start with one listing?",
+    answer:
+      "Yes. Starting with a single property is the usual way in. It runs the full process end to end, so you can see how we work before committing to anything ongoing.",
+  },
+  {
+    question: "Do you work with agencies internationally?",
+    answer:
+      "Yes. The work is produced from assets you send us, so location is not a constraint. Your agency remains responsible for the accuracy of listing information and for any permissions, disclosures or advertising requirements that apply in your market, and we place the information you supply into the agreed content.",
   },
   {
     question: "Do you use AI?",
@@ -40,23 +66,13 @@ export const faq: FaqItem[] = [
       "Yes, as a production tool, and a person reviews every frame before it reaches you. We use it to correct and sharpen photos, extend them to vertical, tidy the presentation and animate stills into camera moves. We do not use it to invent rooms, amenities or views, to change the size or layout of a space, to remove structural defects, or to replace fitted materials. Where we furnish an empty unit, the content states that the furniture is a visualisation and is not part of the property.",
   },
   {
-    question: "Who is responsible for listing accuracy and permits?",
-    answer:
-      "Your agency confirms the listing details, holds the authorization to market the property, and supplies the required Trakheesi permit number and QR code. We place that permit information in the agreed content. On managed plans, content that requires permit information is not published until those materials have been supplied and approved.",
-  },
-  {
     question: "Can we request changes?",
     answer:
-      "Yes. Each plan includes a set number of revision rounds: one round on the Content plan and the pilot. Factual corrections, such as a wrong price or listing detail, are always fixed regardless of revision rounds.",
-  },
-  {
-    question: "Can we start with one property?",
-    answer:
-      "Yes. The paid pilot is one listing and runs the full process end to end, so you see how we work before committing to a month. Pilot pricing is confirmed before you start.",
+      "Yes. Every engagement includes an agreed number of revision rounds, set when we scope the work. Factual corrections, such as a wrong price or a wrong listing detail, are always fixed regardless of how many rounds remain.",
   },
   {
     question: "Do you guarantee views, enquiries or sales?",
     answer:
-      "No. Organic reach, enquiries and sales depend on many factors outside the content itself. Our job is to improve the quality, consistency and volume of your property marketing, then use performance data to improve what we create.",
+      "No, and treat anyone who does with caution. Organic reach and enquiries depend on far more than the content itself. What we control is the quality, the consistency and the volume of what goes out, and we use the performance data to improve what we make next.",
   },
 ];

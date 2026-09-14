@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { RegionPicker } from "@/components/shared/RegionBanner";
 import { Container } from "@/components/ui/Container";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { site } from "@/content/site";
@@ -28,11 +27,17 @@ export function Footer() {
               <Wordmark tone="ivory" />
             </Link>
             <p className="mt-3 max-w-xs text-fine text-ivory/60">{site.tagline}</p>
-            {/* Always reachable: the banner shows at most once, and a visitor
-                whose region was guessed right never sees it at all. */}
-            <div className="mt-6 max-w-[15rem]">
-              <RegionPicker />
-            </div>
+            {/*
+              The region selector is hidden while public pricing is withdrawn:
+              with no figures on the page there is nothing for a currency
+              choice to change, so offering one would be a control that does
+              nothing.
+
+              ONLY THE RENDER IS REMOVED. RegionProvider, the middleware
+              detection, the currency data, priceIn() and the localStorage
+              persistence are all untouched and still wired, so restoring this
+              is putting <RegionPicker /> back.
+            */}
           </div>
 
           <nav aria-label="Footer navigation">

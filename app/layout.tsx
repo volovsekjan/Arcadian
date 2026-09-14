@@ -7,7 +7,6 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Analytics } from "@/components/shared/Analytics";
 import { CookieConsent } from "@/components/shared/CookieConsent";
 import { LightboxProvider } from "@/components/shared/Lightbox";
-import { RegionBanner } from "@/components/shared/RegionBanner";
 import { RegionProvider } from "@/components/shared/RegionProvider";
 import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import { defaultMetadata } from "@/lib/metadata";
@@ -79,9 +78,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <RegionProvider>
           <LightboxProvider>
-            {/* Above the sticky navbar and in normal flow, so it scrolls away
-                and the navbar takes the top edge after it. */}
-            <RegionBanner />
+            {/*
+              The region banner is hidden for the same reason as the footer
+              region picker. It greeted anyone detected outside the base market
+              with "You are on the United Arab Emirates website" and a currency
+              dropdown: a single-market framing on a site that now presents
+              Arcadian globally, offering a currency switch when no figure
+              appears anywhere on the page.
+
+              ONLY THE RENDER IS REMOVED. RegionProvider still wraps the tree,
+              middleware still detects the country, and RegionBanner itself is
+              untouched, so restoring this is putting <RegionBanner /> back here
+              (it belongs above the sticky navbar and in normal flow, so it
+              scrolls away and the navbar takes the top edge after it).
+            */}
             <Navbar />
             <main id="main">{children}</main>
             <Footer />

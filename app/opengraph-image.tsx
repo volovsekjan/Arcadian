@@ -79,8 +79,8 @@ export default async function OpenGraphImage() {
           Your listings already have everything we need.
         </div>
         <div style={{ fontSize: 30, color: "#8C877A", maxWidth: 900 }}>
-          Property Reels, Story sets and feed posts for Dubai agencies, made from the listing photos
-          you already have.
+          Property Reels, Story assets and feed content for real estate agencies, made from the
+          listing photos you already have.
         </div>
       </div>
       <div style={{ display: "flex", width: 220, height: 3, background: ACCENT }} />

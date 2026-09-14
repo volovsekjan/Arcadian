@@ -1,5 +1,4 @@
 import { ArrowRight, Check, X } from "lucide-react";
-import { Price } from "@/components/shared/Price";
 import { Reveal } from "@/components/shared/Reveal";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -16,8 +15,11 @@ import { cn } from "@/lib/utils";
 /**
  * How Arcadian compares with what an agency would otherwise do.
  *
- * The Arcadian column carries the same gold treatment as the "Most Popular"
- * pricing card, so the two sections read as one system.
+ * The Arcadian column is a plain rectangle: a tint, gold on top, hairlines at
+ * the sides. It carries no corner radius, because the table is
+ * border-collapse and a rounded cell there clips its own background into a
+ * curve while the cell box stays square, leaving white quarter-circles inside
+ * the highlight.
  *
  * Desktop is a real <table>, so the row and column headers are announced with
  * each cell. A seven-by-four table cannot be read on a phone at any size and
@@ -46,15 +48,6 @@ function Mark({ value, ours }: { value: ComparisonValue; ours: boolean }) {
       </>
     );
   }
-  if (typeof value === "object") {
-    return (
-      <Price
-        set={value.price}
-        suffix={value.suffix}
-        className="nums-tabular text-body font-medium leading-relaxed text-graphite"
-      />
-    );
-  }
   return <span className="text-body font-medium leading-relaxed text-graphite">{value}</span>;
 }
 
@@ -66,7 +59,7 @@ export function Comparison() {
           <SectionHeading
             eyebrow="The alternatives"
             title="What agencies usually do instead."
-            description="Every agency solves this somehow. Here is how the options compare once you are listing twenty properties in a month."
+            description="There are several ways to produce property content. The difference is how repeatable the process is, how much your team needs to manage, and whether the workflow can scale with listing volume."
           />
         </Reveal>
 
@@ -90,7 +83,7 @@ export function Comparison() {
                       className={cn(
                         "px-5 pb-4 align-bottom font-sans text-h3 font-semibold leading-snug",
                         i === OURS
-                          ? "rounded-t-2xl border-x border-t-2 border-x-line border-t-gold bg-gold/[0.06] pt-5 text-ink"
+                          ? "border-x border-t-2 border-x-line border-t-gold bg-gold/[0.06] pt-5 text-ink"
                           : "text-graphite",
                       )}
                     >
@@ -115,9 +108,7 @@ export function Comparison() {
                           "border-t border-line px-5 py-5",
                           i === OURS &&
                             "border-x border-x-line bg-gold/[0.06] text-body font-semibold text-ink",
-                          i === OURS &&
-                            rowIndex === comparisonRows.length - 1 &&
-                            "rounded-b-2xl border-b",
+                          i === OURS && rowIndex === comparisonRows.length - 1 && "border-b",
                         )}
                       >
                         <Mark value={value} ours={i === OURS} />
@@ -178,7 +169,7 @@ export function Comparison() {
             <p className="max-w-2xl text-body-sm font-medium text-graphite">{comparisonFootnote}</p>
             <div>
               <Button variant="ghost" href="/#pricing">
-                See the plans
+                Work with us
                 <ArrowRight className="icon-inline" strokeWidth={1.75} aria-hidden="true" />
               </Button>
             </div>

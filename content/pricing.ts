@@ -9,8 +9,16 @@ import type { PricingTier } from "./types";
  * none of them drifts when an exchange rate moves. Each string is printed
  * exactly as written, which is why the symbol and its placement differ.
  *
- * content/comparison.ts reads pricing[0].price directly, so the comparison
- * table's Cost row and the Content card can never disagree.
+ * NOTHING RENDERS THIS AT PRESENT. The pricing cards were replaced by the
+ * consultation CTA in components/sections/Pricing.tsx, and the comparison
+ * table's Cost row is qualitative now, so this module has no importer left.
+ * It is kept, not deleted, because the pricing and currency machinery around
+ * it (lib/regions.ts, components/shared/Price.tsx) is intact and this is the
+ * data it expects. tsconfig includes every .ts file, so the tiers below are
+ * still type-checked against PricingTier; what is no longer checked is whether
+ * the copy here matches the site, and it does not: the tier names and the
+ * monthly figures predate the global, scope-on-request positioning. Rewrite
+ * them before rendering this again.
  */
 export const pricing: PricingTier[] = [
   {

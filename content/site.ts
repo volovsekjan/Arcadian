@@ -6,7 +6,7 @@ export const site = {
   name: "Arcadian",
   tagline: "Property videos and social content made from the photos you already have.",
   description:
-    "Arcadian turns existing property photos into videos, Stories and feed posts for Dubai real estate agencies. Choose ready-to-publish content or fully managed posting.",
+    "Arcadian turns the listing photos real estate agencies already hold into property Reels, Story assets and feed content. Ready to publish, or published for you.",
   /*
    * TODO — REPLACE BEFORE LAUNCH. The domain was not supplied, so it is left
    * as a visible placeholder rather than invented; it has to parse as a URL
@@ -29,7 +29,10 @@ export const site = {
     { label: "Services", href: "/#services" },
     { label: "Compare", href: "/#compare" },
     { label: "How It Works", href: "/#process" },
-    { label: "Pricing", href: "/#pricing" },
+    // The section is the Work With Us consultation CTA now, not a price list.
+    // The href is unchanged so the anchor, the footer link and the two ghost
+    // buttons pointing at /#pricing all still land.
+    { label: "Work With Us", href: "/#pricing" },
     { label: "FAQ", href: "/#faq" },
   ],
   cta: { label: "Book a Call", href: "/#contact" },

@@ -19,7 +19,8 @@ export function HowItWorks() {
                 {/* TODO: replace with a real portfolio still or short looping video */}
                 <Image
                   src="/images/process.svg"
-                  alt="Editorial interior artwork"
+                  aria-hidden="true"
+                  alt=""
                   fill
                   sizes="(min-width: 1024px) 44vw, 100vw"
                   className="object-cover"
@@ -33,7 +34,7 @@ export function HowItWorks() {
               <SectionHeading
                 eyebrow="How it works"
                 title="Send the photos once. Here is what happens next."
-                description="No shoot to schedule, no access to arrange. Four steps, and your team only has to act on two of them."
+                description="No shoot to schedule and no new production day to arrange. Send us the approved listing assets and we take the content from there."
               />
             </Reveal>
 

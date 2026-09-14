@@ -7,22 +7,18 @@ import { Reveal } from "@/components/shared/Reveal";
 const agencyProvides = [
   "Approved property photos",
   "Accurate listing details",
-  "Authorization to market the property",
   "Agency branding",
-  "Required Trakheesi permit information",
-  "Applicable QR code",
-  "Final approval before publishing",
+  "Any required marketing or compliance information",
+  "Final approval where required",
 ] as const;
 
 const arcadianProvides = [
   "Creative production",
-  "Photo presentation enhancement",
   "Video editing",
-  "Story and feed assets",
-  "Captions",
-  "Placement of supplied permit information",
-  "Publishing where included",
-  "Revisions included in the selected plan",
+  "Photo presentation enhancement",
+  "Reels, Stories and feed assets",
+  "Captions and calls to action",
+  "Formatting for your publishing channels",
 ] as const;
 
 function ResponsibilityList({ heading, items }: { heading: string; items: readonly string[] }) {
@@ -41,44 +37,41 @@ function ResponsibilityList({ heading, items }: { heading: string; items: readon
   );
 }
 
-/** Section — who does what, including Dubai advertising-permit responsibilities. */
+/**
+ * Working together: who supplies what.
+ *
+ * Market-neutral by design. This used to name Trakheesi permits, QR codes and
+ * Dubai specifically, which is wrong for a studio presenting itself globally:
+ * it told every agency outside the UAE that the page was not written for them.
+ * The obligation is the same everywhere, so it is stated once, generally, and
+ * each market supplies its own rules.
+ */
 export function Responsibilities() {
   return (
     <section className="bg-bone py-section md:py-section-lg">
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="Responsibilities"
-            title="Permit-safe by default."
-            description="Property marketing in Dubai depends on accurate listings and valid permits. We are built around that, not around it. Here is how the work divides."
+            eyebrow="Working together"
+            title="You provide the listing. We handle the production."
+            description="Every market has its own requirements. Your team provides the approved property assets and accurate listing information; we turn them into ready-to-use marketing content."
           />
         </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           <Reveal className="h-full">
-            <ResponsibilityList heading="Your agency provides" items={agencyProvides} />
+            <ResponsibilityList heading="What we need from you" items={agencyProvides} />
           </Reveal>
           <Reveal delay={0.08} className="h-full">
-            <ResponsibilityList heading="Arcadian provides" items={arcadianProvides} />
+            <ResponsibilityList heading="What we handle" items={arcadianProvides} />
           </Reveal>
         </div>
 
         <Reveal delay={0.16}>
-          <div className="mt-10 max-w-3xl space-y-4 text-body-sm text-graphite">
-            <p>
-              Clients remain responsible for listing accuracy, marketing authorization and obtaining
-              the required advertising permits. Arcadian can place the permit number and QR code
-              supplied by the client into the agreed content.
-            </p>
-            <p>
-              For managed plans, content requiring permit information will not be published until
-              the necessary materials have been supplied and approved.
-            </p>
-            <p>
-              If permit information is missing when a post is due, we hold the post and tell you. We
-              do not publish and fix it afterwards.
-            </p>
-          </div>
+          <p className="mt-10 max-w-3xl text-body-sm leading-relaxed text-graphite">
+            Your agency remains responsible for the accuracy of listing information and for any
+            permissions, disclosures or advertising requirements applicable in your market.
+          </p>
         </Reveal>
       </Container>
     </section>

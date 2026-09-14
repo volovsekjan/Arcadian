@@ -16,5 +16,4 @@
     <line x1="870" y1="720" x2="870" y2="1080"/>
   </g>
   <circle cx="920" cy="330" r="70" stroke="#A9834C" stroke-width="2.5" fill="none" opacity="0.6"/>
-  <text x="600" y="1360" text-anchor="middle" font-family="Georgia, serif" font-size="30" letter-spacing="10" fill="#8C877A">PLACEHOLDER</text>
 </svg>

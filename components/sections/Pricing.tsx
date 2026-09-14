@@ -13,10 +13,15 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
  *
  * NOTHING IN THE PRICING SYSTEM WAS DELETED. content/pricing.ts still holds
  * all three tiers in four currencies, lib/regions.ts still resolves them, and
- * components/shared/Price.tsx still renders them. The data stayed live rather
- * than being commented out, so it does not rot: content/comparison.ts imports
- * it for the Cost row, and TypeScript still type-checks every field. Restoring
- * the cards later is a matter of rendering them again, not rebuilding them.
+ * components/shared/Price.tsx still renders them, so restoring the cards is a
+ * matter of rendering them again rather than rebuilding them.
+ *
+ * It has no importer at all now — the comparison table's Cost row used to be
+ * the last one and is qualitative since the global repositioning. TypeScript
+ * still checks the file's shape, because tsconfig includes every .ts file, but
+ * nothing checks its copy against the site any more. Its tier names and
+ * monthly figures are therefore stale, and the header comment in
+ * content/pricing.ts says so.
  *
  * The id is unchanged, so the Pricing nav link, the footer link and the two
  * ghost buttons that point at /#pricing all still land here.

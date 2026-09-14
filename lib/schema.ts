@@ -27,10 +27,10 @@ export function serviceJsonLd() {
       name: site.name,
       url: site.url,
     },
-    areaServed: {
-      "@type": "City",
-      name: "Dubai",
-    },
+    // Served worldwide: the work is produced from assets the client sends, so
+    // there is no geography to narrow this to. A single City here told search
+    // engines the opposite of what the site now says.
+    areaServed: "Worldwide",
   };
 }
 
