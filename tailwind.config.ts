@@ -144,6 +144,22 @@ const config: Config = {
          */
         "hero-top": "5rem",
         "hero-top-lg": "6rem",
+        /*
+         * Desktop only, from lg up, where the hero is two columns and the
+         * opening gap reads as dead space rather than as air: the copy is
+         * centred in a box tall enough to hold the video, so the container's
+         * own slack is already adding to whatever this contributes.
+         *
+         * It does NOT replace `hero-top-lg`, which keeps tablet exactly as it
+         * was. Tablet stacks, has no video beside the copy and so none of that
+         * slack, and 6rem is right there.
+         *
+         * This is the floor, not a preference: the video is centred on the
+         * container and overhangs it, and that overhang eats into this padding
+         * before it reaches the navbar. Cut this further and the video's top
+         * edge closes on the bar. See the height cap in Hero.tsx.
+         */
+        "hero-top-wide": "4rem",
       },
       maxWidth: {
         container: "85rem", // 1360px content column

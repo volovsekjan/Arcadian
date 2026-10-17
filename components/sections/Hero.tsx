@@ -23,13 +23,31 @@ import { projects } from "@/content/projects";
  * SIZED BY THE VIEWPORT, NOT BY A COLUMN. From lg up it leaves the flow
  * entirely: a left offset in percent starts it partway across the container,
  * and the negative right offset is the full-bleed trick, resolving a
- * percentage against the container and a viewport unit against the screen so
- * the right edge lands exactly on the screen edge however wide the window is.
+ * percentage against the container and a viewport unit against the screen.
  * (Written out rather than quoted, because Tailwind scans this file as plain
  * text and will happily emit a rule for a class name it finds in a comment.)
- * That works out to about 62vw at lg and 69vw from xl, and it bleeds off the
- * page the same way the marquee below it does, so the hero has one idiom
- * rather than two.
+ * It bleeds off the page the same way the marquee below it does, so the hero
+ * has one idiom rather than two.
+ *
+ * THE RIGHT EDGE NOW LANDS PAST THE SCREEN, AND THE FRAME IS CROPPED THERE.
+ * The extra 8rem on that offset carries it beyond the viewport, and the
+ * section's overflow-hidden cuts it off. This is deliberate and it is the
+ * only way the brief closes: bigger and further right are contradictory while
+ * the right edge sits exactly on the screen edge, because growth has nowhere
+ * to go but leftward, deeper into the copy. Pushing the edge off-screen buys
+ * back the room to do both.
+ *
+ * Subtracting a LENGTH rather than more vw is what keeps that honest. The
+ * term is a constant 128px, so the crop is 128px at 1440 and still 128px at
+ * 2560; another vw term would have scaled the loss with the screen and thrown
+ * away a fifth of the frame on an ultrawide. The visible width is what grows
+ * with the viewport, not the waste.
+ *
+ * It costs real picture: about 12% of the frame's width is never seen on a
+ * desktop. The clip is on the right, which is the end the build-up settles
+ * into, so check it against the footage before trusting it on a new cut. This
+ * is the one decision here that is about this specific file rather than about
+ * geometry, and reverting it is a single term: drop the 8rem.
  *
  * THE COLUMN IS SIZED BY THE HEADLINE, AND THE NUMBER IS MEASURED. The brief
  * is two lines on desktop, and the longer of them is the Satoshi half:
@@ -77,19 +95,33 @@ import { projects } from "@/content/projects";
  * whatever the video is showing in the overlap band. The geometry below keeps
  * that band narrow, but it is a judgement about this clip, not a rule.
  *
- * THE HEIGHT CAP AND THE CONTAINER FLOOR ARE ONE PAIR, AND MUST STAY EQUAL.
+ * THE HEIGHT CAP, THE CONTAINER FLOOR AND THE TOP PADDING ARE ONE BUDGET.
  * The video is centred on the Container, so it overhangs top and bottom by
  * half of whatever it exceeds the Container's height by, and the section
- * clips at overflow-hidden. Matching the cap to the floor is what makes that
- * overhang zero: the video can never be taller than the box it is centred in,
- * so its top edge cannot climb into the navbar and its bottom cannot reach
- * the marquee, whatever the copy does.
+ * clips at overflow-hidden. The floor used to equal the cap, which made that
+ * overhang zero. It no longer can: the frame had to grow, growth is height,
+ * and holding the floor level with a 37rem cap would have pushed the copy
+ * down by as much as the shortened padding lifted it. The gap would not have
+ * closed at all.
  *
- * This used to be arithmetic on the text block's height, which worked only
- * while the headline was four lines tall. Two lines took about 150px out of
- * it, and under the old 44rem cap the video's top edge crossed the section
- * boundary and was cut off. A floor is the version of that guarantee that
- * does not depend on the copy.
+ * So the overhang is allowed, and the padding absorbs it. The section's own
+ * top padding is inside its overflow box, so a video reaching up into that
+ * padding is not clipped; only one that crosses the section's top edge is.
+ * The budget is (cap - floor) / 2 <= top padding, and at xl that is
+ * (592 - 512) / 2 = 40px of overhang against 64px of padding, which leaves
+ * the frame's top edge about 24px clear of the navbar.
+ *
+ * Those three numbers move together and the slack is thin. Raising the cap,
+ * lowering the floor and trimming the padding all spend from the same 24px,
+ * and the failure is silent: the video's top edge simply starts getting cut,
+ * or it closes on the bar. Re-check the arithmetic before touching any one
+ * of them.
+ *
+ * The floor itself used to be arithmetic on the text block's height, which
+ * worked only while the headline was four lines tall. Two lines took about
+ * 150px out of it, and under the old 44rem cap the video's top edge crossed
+ * the section boundary and was cut off. A floor is the version of that
+ * guarantee that does not depend on the copy.
  *
  * The floor is also why the column is vertically centred rather than sitting
  * at the top: the Container is now taller than the copy by design, and the
@@ -97,8 +129,11 @@ import { projects } from "@/content/projects";
  * apart as the copy gets shorter.
  *
  * Past the cap, object-contain fits the frame inside the wider box and
- * object-right holds it against the bleed edge, so the video still reaches
- * the screen edge and still is not cropped.
+ * object-right holds it against the bleed edge. That edge is now the
+ * off-screen one, which is what keeps the crop constant: whether the box or
+ * the cap is the binding limit, the frame is pinned to the same line 128px
+ * beyond the viewport, so the same 128px is lost either way. The cap changes
+ * how much is visible, never how much is cut.
  *
  * Below lg it returns to the flow and stacks under the CTAs at container
  * width, which is the reading order anyway. The text keeps max-w-3xl there,
@@ -106,8 +141,8 @@ import { projects } from "@/content/projects";
  */
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pb-section pt-hero-top md:pb-section-lg md:pt-hero-top-lg">
-      <Container className="relative lg:flex lg:min-h-[28rem] lg:flex-col lg:justify-center xl:min-h-[34rem]">
+    <section className="relative overflow-hidden pb-section pt-hero-top md:pb-section-lg md:pt-hero-top-lg lg:pt-hero-top-wide">
+      <Container className="relative lg:flex lg:min-h-[28rem] lg:flex-col lg:justify-center xl:min-h-[32rem]">
         {/* max-w-3xl is the pre-existing cap and still governs below lg. The
             percentages from lg up are the measured ones: 47% of the content
             column is what the headline's first line needs at the top of the
@@ -152,7 +187,7 @@ export function Hero() {
           16/9, so object-contain fits it exactly and leaves no letterbox at
           all on the widths where the height cap is not doing anything.
         */}
-        <div className="relative z-0 mt-12 aspect-[1916/1080] lg:pointer-events-none lg:absolute lg:left-[40%] lg:right-[calc(50%_-_50vw)] lg:top-1/2 lg:mt-0 lg:max-h-[28rem] lg:-translate-y-1/2 xl:left-[34%] xl:max-h-[34rem]">
+        <div className="relative z-0 mt-12 aspect-[1916/1080] lg:pointer-events-none lg:absolute lg:left-[45%] lg:right-[calc(50%_-_50vw_-_8rem)] lg:top-1/2 lg:mt-0 lg:max-h-[30rem] lg:-translate-y-1/2 xl:left-[37%] xl:max-h-[37rem]">
           <Reveal delay={0.2} className="h-full">
             <HeroVideo
               src="/videos/hero-section-video.mp4"
