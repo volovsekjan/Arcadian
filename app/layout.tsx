@@ -66,9 +66,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${satoshi.variable} ${prata.variable}`}>
       <body>
+        {/*
+          Skip link. In the DOM for keyboard and screen reader users, painted
+          only while it holds focus.
+
+          EVERY DECORATIVE UTILITY IS BEHIND focus:, and that is the whole
+          point. They used to be unconditional, which quietly defeated sr-only:
+          that class hides an element by collapsing it to 1px and zeroing its
+          padding, but Tailwind emits the padding utilities later in the
+          stylesheet than the accessibility ones, so px-5 and py-2.5 won the
+          cascade and restored a 40x20px box. The result was an espresso pill
+          sitting in the top left corner of every page load.
+
+          Guarding them means the resting state is sr-only and nothing else,
+          with no utility left to override it. On focus, not-sr-only lifts the
+          clip and the rest paint; fixed positioning keeps it out of the flow
+          in both states, so it can never shift the layout.
+        */}
         <a
           href="#main"
-          className="sr-only z-[110] rounded-full bg-espresso px-5 py-2.5 text-body-sm text-ivory focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[110] focus:rounded-full focus:bg-espresso focus:px-5 focus:py-2.5 focus:text-body-sm focus:text-ivory"
         >
           Skip to content
         </a>

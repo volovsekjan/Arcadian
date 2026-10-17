@@ -10,6 +10,7 @@ import { Responsibilities } from "@/components/sections/Responsibilities";
 import { ServiceLevels } from "@/components/sections/ServiceLevels";
 import { Services } from "@/components/sections/Services";
 import { Spotlight } from "@/components/sections/Spotlight";
+import { Tour } from "@/components/sections/Tour";
 import { faqJsonLd, serviceJsonLd } from "@/lib/schema";
 
 export default function HomePage() {
@@ -24,6 +25,10 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }}
       />
       <Hero />
+      {/* TEST EMBED. External 360 tour, iframed from its own deployment. That
+          project's frame-ancestors CSP decides where it may render: dev and
+          the apex/www domains yes, the vercel.app preview no. See Tour.tsx. */}
+      <Tour />
       <ServiceLevels />
       <Spotlight />
       <Services />

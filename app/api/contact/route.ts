@@ -55,16 +55,17 @@ export async function POST(request: Request) {
   //    `consent` and `authorized` are intentionally not forwarded
   //    (validation-only).
   //
-  //    `plan` is sent EMPTY rather than dropped. The "Service of interest"
-  //    field it carried has been removed from the form, but this key existed
-  //    specifically so n8n could map it, and a workflow that maps a missing
-  //    key can fail differently from one that maps an empty string. Sending
-  //    "" keeps the payload shape n8n was built against.
-  //    TODO: delete the key once the n8n workflow no longer references it.
+  //    `plan` and `whatsapp` are sent EMPTY rather than dropped. The fields
+  //    they carried ("Service of interest" and the WhatsApp number) have both
+  //    been removed from the form, but these keys existed specifically so n8n
+  //    could map them, and a workflow that maps a missing key can fail
+  //    differently from one that maps an empty string. Sending "" keeps the
+  //    payload shape n8n was built against.
+  //    TODO: delete both keys once the n8n workflow no longer references them.
   const outgoing = JSON.stringify({
     name: data.name,
     email: data.email,
-    whatsapp: data.whatsapp,
+    whatsapp: "",
     company: data.company,
     plan: "",
     listingUrl: data.listingUrl ?? "",
