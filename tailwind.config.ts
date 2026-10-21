@@ -120,16 +120,46 @@ const config: Config = {
         "section-seam": "2.25rem",
         "section-seam-lg": "2.75rem",
         /*
-         * The hero opener, above the H1. Deliberately larger than a section
-         * step: this is the first thing under a sticky navbar rather than a
-         * gap between two bands, so it carries the page's opening pause and
-         * has no neighbour above to share the space with.
+         * The hero opener, above the H1. Still larger than a section step,
+         * because this is the first thing under a sticky navbar rather than a
+         * gap between two bands and has no neighbour above to share the space
+         * with. But it was 7rem / 9rem, which on top of the navbar's own 5rem
+         * put the headline 224px down an empty white page and read as a gap
+         * rather than as a pause.
          *
-         * Named rather than left as a raw pt-28, so it is visibly an
+         * The desktop value is now the clear space a reader actually sees:
+         * 6rem between the bottom of the navbar and the first line.
+         *
+         * IT ALSO SETS THE HERO VIDEO'S CEILING. The video is centred on this
+         * block, so it grows upward as this shrinks. Cutting further means
+         * re-checking the height cap in components/sections/Hero.tsx.
+         *
+         * The mobile value stays a step above `section` (4.5rem) rather than
+         * landing on it. At 4.5rem the two compile to a single shared rule and
+         * the hero opener stops being an exception at all, which is the drift
+         * this token was named to prevent.
+         *
+         * Named rather than left as a raw pt-24, so it is visibly an
          * exception instead of drift.
          */
-        "hero-top": "7rem",
-        "hero-top-lg": "9rem",
+        "hero-top": "5rem",
+        "hero-top-lg": "6rem",
+        /*
+         * Desktop only, from lg up, where the hero is two columns and the
+         * opening gap reads as dead space rather than as air: the copy is
+         * centred in a box tall enough to hold the video, so the container's
+         * own slack is already adding to whatever this contributes.
+         *
+         * It does NOT replace `hero-top-lg`, which keeps tablet exactly as it
+         * was. Tablet stacks, has no video beside the copy and so none of that
+         * slack, and 6rem is right there.
+         *
+         * This is the floor, not a preference: the video is centred on the
+         * container and overhangs it, and that overhang eats into this padding
+         * before it reaches the navbar. Cut this further and the video's top
+         * edge closes on the bar. See the height cap in Hero.tsx.
+         */
+        "hero-top-wide": "4rem",
       },
       maxWidth: {
         container: "85rem", // 1360px content column

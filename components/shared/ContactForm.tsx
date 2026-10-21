@@ -69,7 +69,6 @@ export function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
-      whatsapp: "",
       company: "",
       listingUrl: "",
       listingsPerMonth: "not-sure",
@@ -201,27 +200,6 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="contact-whatsapp" className={labelClasses}>
-            WhatsApp number*
-          </label>
-          <input
-            id="contact-whatsapp"
-            type="tel"
-            autoComplete="tel"
-            placeholder="+country code and number"
-            aria-invalid={!!errors.whatsapp}
-            aria-describedby={errors.whatsapp ? "contact-whatsapp-error" : undefined}
-            className={fieldClasses}
-            {...register("whatsapp")}
-          />
-          {errors.whatsapp && (
-            <p id="contact-whatsapp-error" className={errorClasses}>
-              {errors.whatsapp.message}
-            </p>
-          )}
-        </div>
-
-        <div>
           <label htmlFor="contact-company" className={labelClasses}>
             Agency or company*
           </label>
@@ -238,26 +216,6 @@ export function ContactForm() {
           {errors.company && (
             <p id="contact-company-error" className={errorClasses}>
               {errors.company.message}
-            </p>
-          )}
-        </div>
-
-        <div>
-          <label htmlFor="contact-listing-url" className={labelClasses}>
-            Listing URL or photo link (optional)
-          </label>
-          <input
-            id="contact-listing-url"
-            type="text"
-            placeholder="A portal listing link, or a Drive / WeTransfer link to the photos"
-            aria-invalid={!!errors.listingUrl}
-            aria-describedby={errors.listingUrl ? "contact-listing-url-error" : undefined}
-            className={fieldClasses}
-            {...register("listingUrl")}
-          />
-          {errors.listingUrl && (
-            <p id="contact-listing-url-error" className={errorClasses}>
-              {errors.listingUrl.message}
             </p>
           )}
         </div>
@@ -289,6 +247,31 @@ export function ContactForm() {
           {errors.listingsPerMonth && (
             <p id="contact-volume-error" className={errorClasses}>
               {errors.listingsPerMonth.message}
+            </p>
+          )}
+        </div>
+
+        {/* Full width from here down. With the phone field gone the two
+            required pairs fill the grid exactly (name/email, company/volume),
+            so the optional link would otherwise sit alone in a half-row with
+            a gap beside it. It also has the longest placeholder on the form
+            and reads better with the room. */}
+        <div className="sm:col-span-2">
+          <label htmlFor="contact-listing-url" className={labelClasses}>
+            Listing URL or photo link (optional)
+          </label>
+          <input
+            id="contact-listing-url"
+            type="text"
+            placeholder="A portal listing link, or a Drive / WeTransfer link to the photos"
+            aria-invalid={!!errors.listingUrl}
+            aria-describedby={errors.listingUrl ? "contact-listing-url-error" : undefined}
+            className={fieldClasses}
+            {...register("listingUrl")}
+          />
+          {errors.listingUrl && (
+            <p id="contact-listing-url-error" className={errorClasses}>
+              {errors.listingUrl.message}
             </p>
           )}
         </div>

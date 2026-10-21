@@ -19,12 +19,9 @@ export const contactSchema = z.object({
     .trim()
     .email("Please enter a valid email address.")
     .max(254, "That email address is too long."),
-  whatsapp: z
-    .string()
-    .trim()
-    .min(7, "Please enter your WhatsApp number.")
-    .max(20, "That number is too long.")
-    .regex(/^\+?[0-9()\-\s]+$/, "Please enter a valid phone number."),
+  // No phone or WhatsApp field. The form does not collect a number at this
+  // stage, so there is nothing to validate; /api/contact still sends the key
+  // to n8n as an empty string, in the same way it sends `plan`.
   company: z
     .string()
     .trim()
